@@ -1,0 +1,302 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 5
+---
+= An Introduction to Variables
+
+Goal: To be able to incorporate variables with outputs and operators
+
+== What is a Variable?
+
+Consider a folder that is used to store a sheet of paper. This folder
+can only hold one sheet of paper at a time. The folder is given a name,
+and the information inside of the folder can be accessed and referred to
+if the name of the folder is known. The contents of the folder could be
+changed at any time and all previous information that was kept in the
+folder is thrown out.
+
+A variable works similar to the folder in this analogy. A computer has a
+storage system inside that is called *memory*. Parts of memory can be
+used to store data and information for later use. A variable sets
+up/allocates a section of memory to be used in a file. Only one piece of
+data can be stored in a section of memory at a given time. The data
+located in the memory can be changed and accessed at any given time so
+long as the address/the variable storing the memory is known.
+
+In general, variables are a means of storing data. Without variables and
+memory, the computer has no way of storing any information that is
+given.
+
+== Parts of a Variable
+
+A variable consists of many components. Most notably, variables will
+always have a *name* and a *type*.
+
+Normally, memory will be accessed by having an address. This address is
+expressed as a hexadecimal number (A minor inconvenience for humans to
+read). Variable names are simply labels that humans use to refer to data
+located in a part of memory. A code file will typically refer to
+specific parts of memory by using variable names. Using the folder
+analogy, the name will simply be the name of the folder.
+
+A variable type tells the computer what type of data this variable will
+be receiving. Each variable type in C++ has their own format and takes
+up a certain amount of memory. That being said, it is important for the
+computer to know whether it is working with integers or characters. A
+variable cannot store a piece of data that is of a different type nor
+can it change type altogether.
+
+There are many types of variables available for C++, but below is a list
+of the most prominent variable types in C++
+
+[cols=",a,a",options="header"]
+|=======================================================================
+|Type |Description |Examples
+|Integers (int) |Includes positive and negative numbers. +
+Does not include decimals
+|42 +
+-6
+
+|Characters (char) |Letters, numbers, all
+http://www.asciitable.com/[ASCII] Characters |&
+
+|Floating Numbers (float) |Floating numbers are basically real numbers. +
+
+Always use *integers over floating numbers* whenever possible. Integers
+are more reliable and will cause less random bugs.
+|3.1415 +
+1.0 +
+-0.1235 +
+
+|Boolean Values (bool) |Values that are either true (1) or false (0).
+This variable type takes the least memory/space.
+|`true` +
+`false`
+|=======================================================================
+
+For more information about theses variable types, as well as information
+about other variable types, refer to the
+link:/resources/beginners/syntax-references/variable-types-and-containers[Variable
+Types] doc that is shared with you.
+
+== Initializing a Variable
+
+In order for a computer to use a variable, it should first be told that
+this variable exists and it has access to it. When a computer is told to
+initialize a variable, it is allocating space/making room in the *Random
+Access Memory (RAM)* for the computer to quickly use to store and
+retrieve data. The way a variable is initialized resembles the
+following:
+
+ <variable type> <variable name>;
+
+The type of variable will be listed first, followed by the variable name
+and a semicolon.
+
+++++
+{% highlight cpp linenos %}
+//Examples of Variable Initializations
+using namespace std;
+
+int main() {
+    int mark; // integer variable
+    char firstInitial; // character variable
+    bool isPassing; // boolean variable
+    return 0;
+}
+{% endhighlight %}
+++++
+
+Things to avoid when thinking of variable names:
+
+* Giving 2 variables the same name
+** In this case, the computer would not know which variable is being
+referred to
+* Having the name of the variable be the name of a command for C++
+** Usually variable names and commands are in different colours in an IDE
+Variable Assignment
+
+In order to store data into a variable, an equal sign (`=`) operator is
+used in C++.
+
+ variableName = dataValue;
+
+The variable to assign is placed on the left side of the equal sign and
+a value/expression is placed on the right side. The expression on the
+right side will be evaluated and the value is stored into the variable.
+If the variable already has data stored in it, *that data will be
+overwritten* with the new value it is given.
+
+**Note: All characters in a code file must be enclosed by [.underline]#single# quotation marks. (`''`) **
+
+++++
+{% highlight cpp linenos %}
+using namespace std;
+
+int main(){
+    char c;
+    c = 'A'
+    bool checked;
+    checked = false;
+}
+{% endhighlight %}
+++++
+
+== Accessing a Variable
+
+Putting the variable name into the code will have the computer access
+the data stored in that variable. When variables are used in an
+expression, the variable name in the code will be substituted with the
+value that the variable is storing, and the expression will be
+evaluated. If the computer attempts to access data in a variable when
+there is no data assigned, it will return a garbage number, a number
+that has no relevancy.
+
+**Example Code:**
+
+++++
+{% highlight cpp linenos %}
+using namespace std;
+
+int main() {
+    int num, num2;      // multiple variables of the same type can be
+                        // initialized at once.
+                        // variables must be separated by commas
+    num = 5;
+    num2 = num + 4;     // num2 = (5) + 4       num2 = 9
+}
+{% endhighlight %}
+++++
+
+Since the value on the right side of the assignment will be evaluated
+before it is assigned into the variable on the left side, the same
+variable can appear on both sides of the assignment.
+
+++++
+{% highlight cpp linenos %}
+using namespace std;
+
+int main() {
+    int num;            // initializes variable
+    num = 6;
+    num = num + 1;      // 6 + 1 = 7
+    num = num * num;    // 7 * 7 = 49
+}
+{% endhighlight %}
+++++
+
+Like output commands, ensure that variable initialization and
+assignments all end with a semicolon.
+
+*Note: There are [.underline]#no such things as equations in code.# Having an equal
+sign does not mean that the left side is equal to the right side. It is
+simply assigning the variable on the left side to the value on the right
+side.*
+
+== In Summary:
+
+* Computers keep data in their internal storage system called memory
+* Variables allocates some memory in your RAM in order to store data
+* Variables always come with a type and a name
+* Before using a variable, they must first be initialized through variable
+initialization
+* Values can be assigned to a variable using the equal operator (`=`)
+* Expressions on the right side of a variable assignment may include
+operators and variables
+* Trying to access data from a variable when no data is assigned will
+return a garbage value
+
+== Practice Questions:
+
+* Create a .cpp file called swap.cpp that has 2 variables, `a = 10` and `b =
+1`
+** Your goal is to swap the values of the 2 variables and output them
+without putting `a = 10` or `b = 1`
+
+'''
+
+== Further Reading for Variables
+
+Variable initialization and variable assignment can be combined into one
+line like so.
+
+++++
+{% highlight cpp %}
+int num = 8;
+int num2 (8);
+{% endhighlight %}
+++++
+
+=== Signed Integers vs. Unsigned Integers
+
+[.right.text-center]
+image::media/image2.png[bit representation of signed integers,width=265,height=170]
+
+A computer stores data as a string of either 0s or 1s called *bits*. The
+more memory a data value needs, the more bits are required to store that
+data. Eight bits make up a *byte*, and an integer uses up 4 bytes of
+memory. An integer variable uses enough bits to have each permutation of
+0s and 1s represent a unique integer. When an integer variable is
+stored, the first bit is always used to indicate whether the integer is
+positive or negative. Integers that can be positive or negative are
+called signed integers.
+
+Sometimes, integers may be used in ways so that they will never become
+negative. This makes the one bit storing the sign of the integer quite
+wasteful. *Unsigned integers omit the possibility of having negative
+numbers.* The bit that is used from storing the sign will instead be
+used to store more positive numbers. Overall, unsigned integers are not
+necessary, but they can maximize the effectiveness of a variable with
+the same amount of memory.
+
+=== Long Long and Shorts
+
+An int variable is able to store any number from `-2 147 483 648` to `2 147
+483 647`. If the data values being used get so large that it exceeds the
+range of an int variable, another variable type would be used. *Long
+long* are variable types that take up *twice as much memory* than an int
+type. Because of that, it is able to store integers from `-9 quintillion`
+to `9 quintillion`. Since this data type does take up more memory than int
+types, it is advised not to use long longs unless absolutely necessary.
+
+A *short* is a variable integer type that takes up *less memory* than an
+int variable type. Understandably, a short can only store integers from
+`-32 768` to `32 767`. Both long long and short variable types can be signed
+or unsigned.
+
+=== Assignment Operators
+
+The equal sign belongs to the collection of operators called *assignment
+operators.* These operators are used to assign data to variables and
+they are all modified versions of the basic operator `=`.
+
+The following is a list of most of the assignment operators.
+
+[cols=",m,,m,m",options="header",]
+|=======================================================================
+|Name |Syntax |Description |Example |Equivalent Operation
+|Addition Assignment |+= |Adds the current data value with another |x +=
+3 |x = x + 3
+
+|Subtraction Assignment |-= |Subtracts the current data value with
+another |x -= 4 |x = x - 4
+
+|Multiplication Assignment |*= |Multiplies the current data value with
+another |x *= 2 |x = x * 2
+
+|Division Assignment |/= |Divides the current data value with another |x
+/= 5 |x = x / 5
+
+|Modulo Assignment |%= |Takes the remainder when the current data value
+is divided by another value |x %= 3 |x = x % 3
+
+|Increment |++ |Increases the current data value by 1 |x++ |x += 1
+
+|Decrement |-- |Decreases the current data value by 1 |x-- |x -= 1
+|=======================================================================
+
+Although useful, these operators are not required when writing a
+program. However, these operators are often used in code to help with
+readability.

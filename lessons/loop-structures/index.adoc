@@ -1,0 +1,322 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 8
+---
+= Loop Structures
+
+Goal: To be able to implement While and For loops into code
+
+== Introduction
+
+A loop is a mean of control flow where certain commands are repeated
+multiple times. They are used whenever similar actions are performed
+numerous times. The number of times and when to stop repeating can be
+controlled and can differ based on the values of variables.
+
+== While Loops
+
+The while loop is the most basic type of loop structure in C++. They are
+formatted as follows:
+
+++++
+{% highlight cpp %}
+while (condition) {
+    // commands to loop if condition is true
+}
+{% endhighlight %}
+++++
+
+[.right.text-center]
+image:media/image2.png[flowchart of a while loop,width=165,height=209]
+
+Once the program enters a while loop, it will check the condition stated
+in parenthesis. *If the condition results to true, then everything in
+the braces will be executed.* Once everything in the braces is executed,
+the program will move back to the beginning of the loop structure and
+check whether the condition still results to true or not. If the
+condition still results true, then the whole looping process repeats. If
+the condition results false, then the program will move down to any
+commands after the while loop.
+
+As long as the condition in parenthesis remains true, *the program will
+endlessly loop inside of the while loop.*
+
+**Sample Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+int main() {
+    int counter = 0;
+    // if condition returns false, go to line 10
+    while (counter < 3) {   // checks if the counter is below 3
+        counter++;          // adds one to the counter
+        cout << counter << endl;
+    }                       // after looping, it goes back to line 6
+    cout << "End";
+    return 0;
+}
+{% endhighlight %}
+++++
+
+In the previous example, a counter variable was initialized and the
+program will continue to loop and increase the counter by 1 when the
+counter is less than 3. Once the condition results false, it moves out
+of the while loop to the remaining code on Line 10.
+
+Apart from having the condition at the beginning of a while loop, a
+command known as *break* tells the program to immediately exit the
+current loop it is in. Break can be combined with an if statement so
+that the program can leave the loop if the condition in the if statement
+is met.
+
+The following code will have the same outputs as the code above:
+
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int counter = 0;         // initializes counter variable
+    while (true) {           // condition will always return true
+        if (counter >= 3) {  // exit condition
+            break;           // goes immediately to line 13
+        }
+        counter++;           // adds one to the counter
+        cout << counter << endl;
+    }                        // goes back to line 6
+    cout << "End";
+    return 0;
+}
+{% endhighlight %}
+++++
+
+== For Loops
+
+In the examples above, a counter variable was manually made in order to
+use the while loop. Typically, while loops are not used when the program
+loops a known number of times. For loops are also known as *counted
+loops* because it is *made to have a counter variable.* The format of
+the for loop resembles the following.
+
+++++
+{% highlight cpp %}
+for (int counterVariable; condition; changetoCounter) {
+    // commands while condition above is true
+}
+{% endhighlight %}
+++++
+
+The section in parentheses are divided into three groups
+
+* The first part initializes the counter variable to be used for the
+entire loop structure
+** Variable names for counters are often `i` or `j`
+* The second part is the condition that usually includes the counter
+variable.
+** If the condition results true, the program goes through the for loop
+** If the condition results false, the program will exit the for loop
+* The third part is the changes the counter variable goes through each
+time the program loops
+
+NOTE: Notice how each section is divided by semicolons.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main() {
+    // set counter, i, to 3
+    for (int i = 3; i > 0; i--) { // if i <= 0, go to line 9
+        cout << i << endl;
+    }   // goes back to line 6 and subtracts 1 to i
+    cout << "End";
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+3
+2
+1
+End
+....
+
+On line 6, a counter was created and set to 3 to start off. The program
+continued to loop, and the counter kept decrementing by one until the
+counter was 0, and the condition results false.
+
+== Brief Introduction to Scope
+
+In C++, scope refers to a specific region in code that are *surrounded
+by braces.* For example, the *main function* is its own scope and it can
+nest smaller scopes if it had loop or if structures in it. Braces act as
+*barriers* for variables. Chapter 8 warned how a variable cannot be
+initialized in an if structure and used outside of the if structure.
+This is because any initialized variable cannot be used outside of the
+scope it was initialized in.
+
+When a variable is initialized in a smaller scope (Ex: a loop), a place
+in memory is made and no other variable can be created with the same
+name as that variable. That variable is able to be accessed within
+smaller scopes and can be used any time so long as the program is still
+at the scope the variable was initialized in. When the program leaves
+that scope (Ex: when it leaves a loop), *all variables initialized
+inside that scope are destroyed* and space in the memory is freed. This
+means that a variable initialized in the smaller scope *no longer
+exists*. This also means that *another variable with the exact same name
+can be made*.
+
+This is why properly indenting code is important. Indentations show
+where exactly variables are able to be used and when they will be
+destroyed. It also shows how each scope nests within larger scopes. The
+number of indents a command has represents the number of nested scopes
+there are.
+
+On the example code on the next page, there are two different instances
+where variable `i` is initialized. However, since they were not declared
+in the same scope, the *two variables did not co-exist*. Instead, the
+second `i` variable was initialized when the first `i` variable was
+already destroyed.
+
+**Demonstration of Scopes:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+// pay attention to all the indents
+int main() {
+    // variable declared in the scope of the main fcn
+    int var = 0;
+    // counter declared in the scope of the for loop
+    for (int i = 0; i < 3; i++) {
+        cout << i << endl;
+        var++;
+    }
+    // i no longer exists, but var still exists
+    for (int i = 0; i < 3; i++) {
+        // i now exists again, since it was reinitialized
+        cout << i << endl;
+        var++;
+    }
+    // i no longer exists... again
+    cout << var;   // outputs total number of loops
+    return 0;
+}
+// var does not exist anymore
+{% endhighlight %}
+++++
+
+**Output:**
+....
+0
+1
+2
+0
+1
+2
+6
+....
+
+== In Summary
+
+* While loops and for loops are used to have the program repeat the same
+commands multiple times
+* The program will leave the while loop once the condition in the while
+loop results false
+* For loops include a counter variable as well as an if condition
+* A for loop is for counted loops and a while loop is for non-counted
+loops
+* Break can be used on both loops to end the looping procedure
+* Variables cannot be used outside of the scope the variable has been
+initialized in
+
+== Contest Questions
+
+* http://wcipeg.com/problem/p154ex8[_Exact Divisors_]
+* http://wcipeg.com/problem/P118EX4[_Times Tables_]
+* http://wcipeg.com/problem/ccc05j2[_RSA Numbers_]
+* http://wcipeg.com/problem/mockccc14s2[_Sleep Cycle_]
+** More difficult, great question
+
+'''
+
+== Further Reading on Loops Structures
+
+=== Do-While Loops
+
+Do-while loops are modified while loops. They makes sure that *the
+program runs everything in the loop structure at least once*. The
+condition for looping is checked at the very end of the loop structure
+and not at the beginning. The syntax of the do-while loop is the
+following:
+
+++++
+{% highlight cpp linenos %}
+do{
+    //code to be executed atleast once
+} while (condition);
+{% endhighlight %}
+++++
+
+=== Extra Information on For Loops and Nested Loops
+
+Nothing between the parenthesis in a for loop are required for a for
+loop to run. (except the semicolons) The for loop does not need an exit
+condition or a variable initialization. This allows the for loop to be
+more flexible as a counter variable can be initialized and used inside
+and outside of the scope of the for loop.
+
+When a loop is found inside of another loop, the inner loop is known as
+a *nested loop*. Nesting loops are commonly used in code. When the
+*break* command is used inside of a nested loop, the program will *exit
+the innermost loop* that it is currently in. That means, the program did
+not exit the larger loop yet and will require a separate break
+statement.
+
+An demonstration of how for loops can be used and how nested loops works
+are shown below.
+
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 0;    // counter variable pre-initialized
+    for (; i < 3;) {
+    // this for loop can be replaced with a while loop
+    // since there is not increase nor initialization
+        if (i % 2 == 0) {
+            // nests another loop if line 9 results true
+            for (int j = 0;; j++) {      // no condition
+                if (j == 3){
+                    break;              //go to line 16
+                }
+                cout << i << " " << j << endl;
+            }
+        }
+        i++; // counters can be modified within the loop
+    }
+    // variable i can still be used because it was not
+    // initialized inside of the for loop
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+0 0
+0 1
+0 2
+2 0
+2 1
+2 2
+....

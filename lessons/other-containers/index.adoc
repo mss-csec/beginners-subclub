@@ -1,0 +1,596 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 12
+---
+= Other Containers
+Goal: To know how and when to use C++ containersVectors
+
+Vectors are containers used to store an unknown number of elements. In
+other languages, vectors are also known as flexible arrays. Vectors
+allow elements to be added or removed at any given time. This means that
+the *size of a vector can change*. Elements in a vector have indexes and
+can be accessed like an array. Vectors can be used if the *<vector>
+library* is included. Typically, arrays are used over vectors whenever
+possible. Vectors are only used when the size of an array will change
+frequently. Info on vectors and their member functions can be found
+http://www.cplusplus.com/reference/vector/vector/[_here_]:
+
+Example Code:
+
+[cols=",",]
+|==================================================================
+a|
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+ |#include <iostream> _// cin, cout_ +
+#include <vector> _// vector container_ +
+using namespace std; +
+int main()\{ +
+vector<int> vec; _// initializes a vector of integers_ +
+int temp; _// used for vector.push_back_ +
+cout<<"Add some numbers to the vector"<<endl; +
+cout<<"Enter 0 to stop entering numbers"<<endl; +
+while(true)\{ +
+cin>>temp; _// gets user input_ +
+if (temp==0)\{ _// if 0 is inputted, the loop breaks_ +
+break; +
+} +
+vec.push_back(temp); _//adds an element to the end of the vector_ +
+} +
+_//vec.size returns the size of the vector_ +
+cout<<"Your vector has "<<vec.size()<<" elements: "; +
+_// lists all elements in the vector_ +
+for(int i=0;i<vec.size();i++)\{ +
+cout<<vec[i]<<" "; _//elements in a vector have indexes too._ +
+} +
+return 0; +
+}
+|==================================================================
+
+Sample run:
+
+[cols="",]
+|===================================
+a|
+Add some numbers to the vector
+
+Enter 0 to stop entering numbers
+
+2 3 4 5 6 0
+
+You vector has 5 elements: 2 3 4 5 6
+
+|===================================
+
+Queues (First-in, First-out)
+
+Queues are containers used to store an unknown number of elements. The
+*first element* that is added to a queue will always be the *first
+element* to be removed from a queue. *The last element* that is added to
+a queue will be the *last element* to be removed. Queues do not allow
+every element to be accessed, only the first and the last element in a
+queue. They are often used to simulate queues and lines in real life.
+Queues can be used it the *<queue> library* is included.
+
+More info on queues and their member functions can be found
+http://www.cplusplus.com/reference/queue/queue/[_here_]:
+
+Example Code:
+
+[cols=",",]
+|=================================================================
+a|
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+ |#include <iostream> _// cin, cout_ +
+#include <queue> _// queue container_ +
+using namespace std; +
+int main()\{ +
+queue<int> line; _// initializes queue of integers_ +
+int temp; _// variable for user input_ +
+cout<<"How many numbers are in the queue?"<<endl; +
+cin >> temp; +
+for(int i=0;i<temp;i++)\{ +
+line.push(i); _// adds an element to the back of the queue_ +
+} +
+cout<<"How many numbers will leave the queue?"<<endl; +
+cin >>temp; +
+for(int i=0;i<temp;i++)\{ +
+line.pop(); _// removes an element from the front of the queue_ +
+} +
+_// line.size returns the size of the queue_ +
+cout<<"The queue has "<<line.size()<<" elements."<<endl; +
+_// line.front and line.back returns the first and last element_ +
+cout<<"The first element is "<<line.front()<<endl; +
+cout<<"The last element is "<<line.back()<<endl; +
+return 0; +
+}
+|=================================================================
+
+Sample Run:
+
+[cols="",]
+|=====================================
+a|
+How many numbers are in the queue?
+
+8
+
+How many numbers will leave the queue?
+
+5
+
+The queue has 3 elements
+
+The first element is 5
+
+The last element is 7
+
+|=====================================
+
+Stacks (Last-in, First-out)
+
+Stacks are containers used to store an unknown number of elements. The
+*first element* that is added to a stack will be the *last element* to
+be removed from a stack, and the *last element* that is added to a stack
+will be the *first element* to be removed. Only the top element in a
+stack can be accessed. Stacks can be used if the *<stack> library* is
+included. More info on stacks and their member functions can be found
+http://www.cplusplus.com/reference/stack/stack/[_here_]:
+
+Example Code:
+
+[cols=",",]
+|=====================================================================
+a|
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+24
+
+25
+
+26
+
+ |#include <iostream> _// cin, cout_ +
+#include <stack> _// stack container_ +
+ +
+using namespace std; +
+int main()\{ +
+stack<int> myStack; _//initializes a stack_ +
+int temp; _// variable for user input_ +
+cout << "Type in a number to add it to the stack." << endl; +
+cout << "Press 0 to pop an element or -1 to exit." << endl; +
+while(true)\{ +
+cin >> temp; _// gets user input_ +
+if(temp==-1)\{ +
+break; _// exit user input_ +
+} +
+else if(temp==0)\{ +
+myStack.pop(); _// removes the top element of a stack_ +
+} +
+else\{ +
+myStack.push(temp); _// adds element to the top of the stack_ +
+} +
+} +
+cout << "Your stack has " << myStack.size() << " elements." << endl; +
+_// myStack.top returns the element on the top of the stack_ +
+cout << "The element on the top of the stack is " << myStack.top(); +
+return 0; +
+}
+|=====================================================================
+
+Sample Run:
+
+[cols="",]
+|=======================================
+a|
+Type in a number to add it to the stack.
+
+Press 0 to pop an element or -1 to exit.
+
+3 4 6 0 2 3 0 0 0 8 -1
+
+Your stack has 2 elements.
+
+The element on the top of the stack is 8
+
+|=======================================
+
+Pair
+
+Pairs are used to store *two data values.* They are often used in
+conjunction with other containers such as arrays or vectors. A frequent
+scenario that uses pairs is coordinates. In that scenario, an array of
+coordinates can be made with pairs. Pairs can be used if the *<utility>
+library* is included. More info on pairs and their member functions can
+be found http://www.cplusplus.com/reference/utility/pair/[_here_]:
+
+Example Code:
+
+[cols=",",]
+|====================================================================
+a|
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+24
+
+25
+
+26
+
+27
+
+28
+
+29
+
+30
+
+ a|
+#include <iostream> _// cin, cout_ +
+#include <utility> _// stack container_ +
+#include <string> _// string container_ +
+// this program stores the titles and ratings of shows +
+using namespace std; +
+int main()\{ +
+int numShows; _// variable that stores the number of shows_ +
+cout << "How many shows are there? "; +
+cin >> numShows; +
+_// Makes an array of pairs. Each pair has a string and an integer_ +
+_// string is the first data value of pair, integer is the second_ +
+pair <string,int> shows[numShows]; +
+for(int i=0;i<numShows;i++)\{ _// for loop for user input_ +
+cout << "What's the show’s name: "; +
+cin.ignore(); _// always put this before getline()_ +
+_// goes to the ith pair of the array, and stores a string to _
+
+_// the "first" variable of that pair_ +
+getline(cin,shows[i].first); +
+cout << "What's its rating: ";
+
+_// stores integer in the second variable of the ith pair_ +
+cin >> shows[i].second;
+
+} +
+int x; _// variable to store the show to be looked at_ +
+cout << "What show do you want to know about?"; +
+cin >> x; +
+_// accesses the value of the (x-1)th pair. Remember how arrays are _
+
+_// indexed starting with 0_ +
+cout << shows[x-1].first<<" has a rating of "<< shows[x-1].second; +
+return 0; +
+}
+
+|====================================================================
+
+Sample Run:
+
+[cols="",]
+|====================================================
+a|
+How many shows are there? 3
+
+What’s the show’s name: Bobby the Construction Worker
+
+What’s its rating: 3
+
+What’s the show’s name: Doris the Expeditioner
+
+What’s its rating: 9
+
+What’s the show’s name: The Magic Garbage Truck
+
+What’s its rating: 6
+
+What show do you want to know about? 2
+
+Doris the Expeditioner has a rating of 9
+
+|====================================================
+
+Maps
+
+Maps are containers that *store corresponding data values*. Instead of
+using an index to refer to a specific data value, it uses another data
+value. Maps are used whenever a value corresponds to another value. For
+example, Roman Numerals would use maps because it has a
+character-integer correspondence (V with 5). That being said, *a data
+value cannot correspond to two or more other data values*. Also, if a
+map receives an index that doesn't have a corresponding data value, it
+*returns 0* if the corresponding data value should be a an integer or an
+*empty string* *(“”)* if the data value should be a string. Maps can be
+used in a code file if the *<map> library* is included. More info on
+maps and their member functions can be found
+http://www.cplusplus.com/reference/map/map/[_here_].
+
+Example Code:
+
+[cols=",",]
+|=======================================================================
+a|
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+ |#include <iostream> _// cin, cout_ +
+#include <map> _// map container_ +
+#include <string> _// string container_ +
+ +
+using namespace std; +
+_//map pairs each Canadian province with its two letter abbreviation_ +
+int main()\{ +
+_// initializes a map where a string corresponds to another string_ +
+map<string,string> provinces; +
+provinces["AB"]="Alberta"; _// gives value for each element_ +
+provinces["BC"]="British Columbia"; _// notice how this map has no
+size_ +
+provinces["MB"]="Manitoba"; _// this list could be gigantic_ +
+provinces["NB"]="New Brunswick"; _// the list could just continue_ +
+provinces["PE"]="PEI"; _// assuming we have much more provinces_ +
+_//... This goes on for the remaining 8 provinces/territories_ +
+ +
+cout << "Hey! Which province/territory do you live in? "; +
+string abbreviation; _// string for user input_ +
+cin >> abbreviation; +
+_//province[s] would return the string that corresponds with string s_ +
+cout << "WOW! You live in " << provinces[abbreviation] << "?!?!"; +
+return 0; +
+}
+|=======================================================================
+
+Sample Run 1:
+
+[cols="",]
+|===============================================
+a|
+Hey! Which province/territory do you live in? MB
+
+WOW! You live in Manitoba?!?!
+
+|===============================================
+
+Sample Run 2:
+
+[cols="",]
+|===============================================
+a|
+Hey! Which province/territory do you live in? XX
+
+WOW! You live in ?!?!
+
+|===============================================
+
+In Summary
+
+* A vector is a container that acts like an array, but can change size
+* A queue is a container with a first-in, first-out (FIFO) policy when
+adding and removing elements
+* A stack is a container with a last-in, first out (LIFO) policy when
+adding and removing elements
+* A pair is a container that stores two data values
+* A map is a container that gives a one to one correspondence between two
+data values.
+Practice Questions
+
+* http://wcipeg.com/problem/ccc14s3[_The Geneva Confection_]

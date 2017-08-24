@@ -1,0 +1,116 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 6
+---
+= Simple Inputs and WCIPEG
+So far, the console was only told to output hardcoded values onto the
+screen. Other than outputting values, the console is also able to accept
+any inputs that are given by users.
+
+The library <iostream> not only has `cout`, a command that outputs
+values, but it also includes `cin`, a command that accepts inputs. `cin`
+stands for **C**onsole **IN**put and its syntax is formatted as
+follows.
+
+++++
+{% highlight cpp %}
+cin >> variableName;
+{% endhighlight %}
+++++
+
+The `cin` command uses `>>` in its format while cout uses of `<<`. To
+differentiate them, imagine the symbols as lines moving inwards (`>>`) or
+moving outwards (`<<`). `cin` will tell the console to put all inputs into a
+*specified variable*. Values cannot go into a `cin` command. Like `cout`,
+each `cin` command can accept multiple inputs by separating each variable
+name with `>>`.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+// This code takes two numbers and returns their sum
+int main() {
+    int num, num2;                       // initializes variables
+    cout << "Pick 2 numbers!" << endl;   // displays message
+    cin >> num >> num2;                  // receives input
+    // the first input is placed in num and the second is placed in num2
+    cout << "The Sum is " << num + num2; // outputs the sum
+    return 0;                            // returns 0
+}
+{% endhighlight %}
+++++
+
+**Sample run:**
+....
+>>> Pick 2 numbers!
+3
+87
+>>> The Sum is 90
+....
+
+== WCIPEG
+
+http://wcipeg.com/[WCIPEG] is a website that has a collection of
+coding problems from various computer science contests as well as a wiki
+filled with useful information about coding algorithms. It also features
+an automated judge that will test any submitted code against its
+problem. Users could submit their code to be tested by the judge.
+
+Only registered users are able to use the online judge on the site. To
+register, go to the http://wcipeg.com/[WCIPEG main page] and click on
+_*register an account*_ on the top right corner. To join the Markville
+Secondary School Organization on WCIPEG, go to *_My Account_ > _Edit
+User Info_*, and select *_Markville Secondary School_* as your
+organization. *:))*
+
+== DMOJ
+
+https://dmoj.ca/[DMOJ] is a website similar to WCIPEG that has
+problems from past contests as well as problems from other sources for
+students to practice coding. It also features an automated judge.
+
+Like on WCIPEG, you will have to register an account on DMOJ. To
+register, click the _*register*_ button in the top right corner. Sadly,
+Markville Secondary School isn’t an organization on DMOJ.
+
+== Submitting Code
+
+The problems page will display a list of all problems that the online
+judge can test. The points represent the general difficulty of that
+problem. (The easier problems are worth less
+points)
+
+[.center.text-center]
+image::media/image2.png[image,width=624,height=50]
+
+* Each problem will ask for a specific output given a specific input. The
+details and examples of the problem are located on the contest problem
+page.
+* On the contest problem page, the *Submit* link will be located on the
+right side.
+* Copy and paste the entire code or upload the code file into the
+submission page
+* Ensure that the language chosen in the drop-down menu is *C++ 03 (g++
+4.1.3)*
+* Pray that the code works and outputs all intended values.
+This document, from now on, will mostly use contest questions found on
+these sites for its practice questions. Expect that the contest
+questions found in the CCC to be of similar nature to the questions on
+these sites.
+
+== In Summary
+
+* `cin` is a command found in the `<iostream>` library that takes a user input
+and stores it into a variable.
+* WCIPEG and DMOJ are sites made for students to practice contest-styled
+coding problems
+
+== Practice Questions
+
+* http://wcipeg.com/problem/aplusb[A plus B]
+* http://wcipeg.com/problem/coci062p1[Task R2]
+* https://dmoj.ca/problem/ccc10j1[CCC '10 J1]

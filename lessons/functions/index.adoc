@@ -1,0 +1,583 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 13
+---
+= Functions
+
+Goal: To be able to create and call functions
+
+== What is a Function?
+
+A function in computer science works exactly like a function in
+mathematics. The purpose of a function is to take data inputs,
+manipulate them, and return an output. Functions *can have multiple
+inputs,* but can only return *one output. *
+
+Functions have been used throughout the course. Whenever a function is
+needed, a *function call* is placed in the code. An example of a
+function is the square root (`sqrt()`) function. This function will always
+return the positive square root of a given value.
+
+[.right.text-center]
+image::media/image2.png[breakdown of function syntax,width=312,height=185]
+
+All functions will have a *function name and parameters*. In the square
+root function, “sqrt” would be the function name. Functions can only be
+called when the name of the function is known. When using the square
+root function, the value to be square rooted is the input. This input
+value is called a *parameter.* Parameters are always placed between the
+parenthesis in the function. Notice how the square root function takes
+an input, and only returns one output. This output is called a *return
+value* and is found in most functions.
+
+Square root is one of many common functions that are used in C++. A list
+of commonly used functions can be found
+link:/resources/beginners/commonly-used-functions[here].
+
+Another example of a function is the *main function*, the location where
+all code so far is written in. The layout of the main function will be
+viewed in more depth.
+
+== Creating a Function
+
+So far, every function used in this course were member functions already
+made and placed in a library. Those functions are only for general use.
+If needed, multiple functions can be created and specifically used in a
+code file.
+
+A new function must first be declared and defined before it can be used.
+The function declaration and the code that makes up the function are
+placed *outside and before the main function*. A function cannot have
+another function inside of it. The general outline for a function
+declaration will resemble the following:
+
+++++
+{% highlight cpp %}
+ReturnType FunctionName(Parameters) {
+    // code to be performed
+    return returnValue;
+}
+{% endhighlight %}
+++++
+
+When a function is called in the main function, the program will
+*perform all code* in the called function before it resumes where it
+left off in the main function.
+
+The return type will be the data type that the function will output. A
+function *should always have a return statement.* (`return returnValue;`)
+Notice how there is a return statement in the main function. (`return 0;`)
+The return value will be the value the function will output. A function
+cannot output a data value that is a different type than the type listed
+at the beginning of the function. Any data type and container can be the
+return type of a function.
+
+Below is a list of common return value types in C++
+
+[cols="a,",options="header"]
+|=============================================
+|Return Type |Description
+|`void`      |Has no return value
+|`int`       |Returns an integer
+|`bool`      |Returns a boolean value (true or false)
+|`char`      |Returns a character
+|=============================================
+
+The main purpose of a function is to output a return value. Once the
+program reaches a return statement, *the program will immediately leave
+the function* with that return value. This is why all code must be
+placed after the return 0; in the main function. Once the program
+reaches return 0;, it will immediately leave the main function with the
+value of 0. A function could have multiple return statements; however, a
+function will never return multiple values.
+
+Just because functions are made to return a data value, it does not mean
+that they are unable to do anything else. Functions can have output and
+input statements. *Functions can even call other functions.* If a
+function is called within another function, the program will first work
+through the function most recently called.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+// returns an integer, output3 is the function name
+int output3() {
+    // sqrt function is called, that program will call sqrt(9) and return 3
+    return sqrt(9); // program will go to line 13 with the value of 3
+    cout << "This message will never be outputted";
+    // This output statement is placed after the return statement
+}
+
+int main() { // main function
+    cout << output3() << endl; // calls the output3 function (line 6)
+    cout << "End of Program."; // resumes executing code in main fcn
+    return 0;                  // return value of 0
+    cout << "This message will also never be outputted";
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+3
+End of Program.
+....
+
+== Parameters
+
+Parameters are all the input values that go into a function. The return
+value in a function should depend on the parameters that are given. This
+means that different input values should give different return values.
+The parameters that a function receives are defined in between the
+parentheses of the function declaration. A list of parameters for a
+function is called a *parameter list*. All parameters in a function will
+have a data type and a parameter name. A parameter list is formatted as
+follows:
+
+++++
+{% highlight cpp %}
+returnType FunctionName(p1DataType p1Name, p2DataType p2Name ...) {}
+// the number of parameters in the function could continue
+{% endhighlight %}
+++++
+
+Parameters are separated by commas and are declared as if they were
+variables. In fact, parameters can be used almost like variables.
+Parameters must have both a data type as well as a parameter name. When
+using parameters in a function, *the data* *values of these parameters
+cannot be changed.* (This will be covered further on in the chapter).
+
+Parameters and return values are the only things that are passed between
+functions. All code in a function is completely independent from all
+other functions. That means that a function will always have its own
+individual scope. This is important to note when regarding possible
+parameter or variable names.
+
+Remember how two variable names *in the same scope* cannot have the same
+variable name. However, since each function has its own individual
+scope, a variable/parameter that is declared in a function can have the
+same name as a variable located in another function. The location in
+memory that the program will look at when it uses a variable depends on
+what scope the program is currently in.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+// notice how a and b are parameter/variable names in all 3 functions
+// but there will never be multiple a's and b's in the same scope
+
+// two integer parameters are given, in the scope, there are a and b
+int subtract(int a, int b) { // a = 10, b = 5
+    // evaluates a-b, then ends function and goes to line 21
+    return a - b; // 10 - 5 = 20
+}
+
+// another function. remember, in C++, scope is shown with braces and indents
+int add(int a, int b) { // a = 5, b = 10
+    // evaluates a+b, then function ends, program goes to line 21
+    return a + b; // 10 + 5 = 15
+}
+
+int main() { // main function, the program will always start with this
+    int a=5, b=10; // initializes two variables, a and b
+    // evaluates the expression before outputting
+    cout << add(a,b) + subtract(b,a);
+    return 0; // returns 0 and program ends
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+20
+....
+
+In the code above, the program will start off in the main function.
+Variables `a` and `b` are created in the main function. On line 21,
+the program will first call the add function with parameters `a` and
+`b`. The values of `a` and `b` are passed into the add function as
+integer parameters. For clarification, the value of `a` in the main
+function will be stored in parameter `a` in the add function. Whenever
+`a` and `b` are referred to in the add function, the program always
+refers to the parameters, `a` and `b`. The add function will end up
+returning 15.
+
+The program will then move back to the main function where it then calls
+the subtract function. Notice how variables, `a` and `b`, are
+flipped on line 21. This means that the value of `b` in the main
+function will be stored in parameter `a` in the subtract function.
+Likewise, the value of `a` in the main function will be stored in
+parameter `b` in the subtract function. When the subtract function is
+called, parameter `a` has a value of 10, and parameter `b` has a value
+of 5. Thus, the program evaluates 10 - 5 on line 9. The subtract
+function will return 5, and that value will add with 15 on line 21. In
+the end, the program will output the value of 20.
+
+The concept of functions can be very difficult to learn. That is why
+some mid-chapter practice questions are added to this chapter to help
+reinforce your understanding of functions.
+
+* Write a program called maximum.cpp. Have the main function create a *ten
+element integer array,* and allow users to input values in the array.
+After that, have the main function call another function called
+`findMax()`. This function will take an array and *return the largest
+value found in the array.* Have the main function output the max value.
+* Modify maximum.cpp so that the code asking for user inputs is placed in
+another function called `getInputs()`. *`getInputs()` will ask for a value
+and return the user input.* The main function will call `getInputs()` *ten
+separate times.*
+* Add another function called *findOccurences().* This function will take
+a value and *return how many times that value appears in the array.*
+Have the main function ask for a value and then call findOccurences().
+* Jimbob made some more code and it *looks so convoluted.* Jimbob bets
+that you would not be able to predict the outcome of his code. (which is
+something he *should not* brag about) Your job is to prove him wrong.
+Predict what Jimbob’s code will output *without running it on
+Code::Blocks.*
++
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int subtract(int b, int a) {
+    return a - b;
+}
+
+int add(int x, int y) {
+    return x + y;
+}
+
+int change(int a, int b, int c) {
+    int x = (a + b) - c;
+    cout << x << endl;
+    return subtract(x, a) + add(c, x);
+}
+
+int main() {
+    int x = 30, y = 20, z = 15;
+    cout << change(y, z, x) + add(x, y);
+    return 0;
+}
+{% endhighlight %}
+++++
+
+== Passing by Value Versus Passing by Reference
+
+In all previous examples of code, all the parameters in a function were
+*passed by value*. The *values of all inputs were copied* and given to
+the parameters to be used. The values of the parameters *cannot be
+changed* as *parameters are not variables.*
+
+Functions are limited by the number of values that could be passed back
+and forth. Even though many values can be passed into a function as
+parameters, a function can only return one value (That’s the definition
+of a function). Consider a function that swaps the values of two input
+variables. This function will end up needing to change two parameters,
+something that cannot be done when the parameters were passed by value.
+This is why parameters can also pass by reference.
+
+Passing by reference is when parameters are *given an address instead of
+a value*. This address refers to a specific location in memory that
+stores data. That way, a location in memory can be accessed and
+manipulated across multiple functions. Parameters passed by reference
+can be used just like a variable. To make a parameter pass by reference,
+a `&` is placed *before* the parameter name:
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+// void has no return value, but a and b are passed by reference
+// parameter 'a' acts as variable x, and parameter 'b' acts as variable y
+void fun(int &a, int &b) {
+    a=1; // the memory that 'a' refers to is changed to 1
+    b=2;
+    // outputs the values of a and b during the call
+    cout << "During Call: " << endl;
+    cout << a << " " << b << endl;
+}
+
+int main() {
+    // 2 locations in memory are made and given data values
+    int x = 5, y = 7;
+    // outputs values of x and y before the call
+    cout << "Before Call: " << endl;
+    cout << x << " " << y << endl;
+    // calls fun, the address of variable x is passed to the function
+    // the address of variable b is passed to the function
+    fun(x, y);
+    // outputs the values of x and y after the call
+    cout << "After Call: " << endl;
+    cout << x << " " << y;
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+Before Call:
+5 7
+During Call:
+1 2
+After Call:
+1 2
+....
+
+In the previous example, the address of variables x and y were passed by
+reference when the fun function was called. Any assignment to parameters
+a and b will change the data values of variables x and y in the main
+function.
+
+Usually, a computer is quicker when passing by value as it would take
+less time to copy a value than use an address. Smaller data types such
+as integers will always be passed by value when there is no `&` before
+the parameter name. This makes an integer a *scalar data type*. It is
+easy for a computer to make a copy of a scalar data type because scalar
+data types are often small in size.
+
+Some data types are larger in size and are not scalar data type. For
+example, arrays are often so large that passing by value would take more
+time than passing by reference. This is why containers such as *arrays
+and vectors are automatically passed by reference*.
+
+Some scalar data types include *integers, characters, strings. booleans,
+and floats*.
+
+Some non-scalar data types that automatically pass by reference include
+*arrays and vectors*.
+
+== Recursion
+
+In previous examples that involve functions, there were moments where
+functions were called within another function. The program will finish
+executing the function most recently called before executing all other
+functions. Not only can functions call other functions, but *a function
+can call itself*. The process of having a function call itself is called
+recursion.
+
+A function would call itself the same way it could call any other
+function. Recursion can function similar to a loop because of how the
+same code is repeated multiple times. Unlike actual loops, there is a
+limit on how many times a function could recurse. A function cannot call
+itself forever because each function call takes up new memory.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+// This function will find terms in the fibonacci sequence. 1 1 2 3 5 8 13
+// term 1 and term 2 has the value of 1.
+// the next term in the sequence will always be the sum of the previous 2 terms
+// creates recursive function that returns a term in the fibonacci series
+int fib(int term) {     // term represents the term number in the series
+    if (term < 3) {     // term 2 = 1, term 1 = 1
+        return 1;
+    }
+    else {              // all other terms are the sum of previous 2 terms
+        return fib(term - 1) + fib(term - 2);
+    }
+}
+
+int main() {
+    int n;
+    cout << "What term of the fibonacci series do you want to find?" << endl;
+    cin >> n; // gets term number
+    cout << fib(n) << " is the term in the series."; // calls fibonacci
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Sample Run:**
+....
+What term of the fibonacci series do you want to find?
+4
+3 is the term in the series
+....
+
+The recursive function above calls itself to find a term in the
+fibonacci sequence. Since all terms in the fibonacci sequence will be
+the sum of the two previous terms, the function will call itself to find
+the values of those two previous terms. Eventually, this recursive
+procedure will continue until it adds the first and the second terms of
+the fibonacci sequence.
+
+This recursive process can be modelled using function notation in
+mathematics.
+
+++++
+\[
+\begin{aligned}
+fib(4)
+&= fib(4 - 1) + fib(4 - 2)
+&= fib(3) + fib(2) \\
+&= (fib(3 - 1) + fib(3 - 2)) + 1 \\
+&= (fib(2) + fib(1)) + 1 \\
+&= (1 + 1) + 1 \\
+&= (2) + 1 \\
+&= 3
+\end{aligned}
+\]
+++++
+
+Generally, recursion would not be used to find a term in the fibonacci
+sequence. Recursion will be often used in applications such as *graph
+theory* (advance course material). *Do not excessively use recursion.*
+If it is possible to use a loop instead of recursion, use a loop!
+
+== In Summary
+
+* A function is a set of code that outputs a single data value.
+* A function will always have a name, a return type, and parameters
+* The main function is an example of a function
+* Custom made functions are placed outside of the main function (And
+generally before it)
+* A function can only return values of a specific data type
+* Parameters are input values that should affect the return value
+* All functions have their own individual scope
+* Parameters can either be passed by value or passed by reference
+* Scalar data values, such as integers, would normally be passed by value.
+They can be passed by reference be putting a & before the parameter
+name.
+* Arrays and vectors are automatically passed by reference.
+* Functions are able to call other functions
+* Recursion is when a function calls itself repeatedly
+
+== Practice Questions
+
+* Create a file called swap.cpp. This file will have a function that will
+swap two integer values.
+Note: There are very few contest questions that require the usage of
+functions. Most of those contest questions are graph theory questions,
+which will be covered at a later time. That being said, below are
+examples of questions that could use functions.
+
+* M
+
+'''
+
+== Further Reading on Functions
+
+=== Forward Declarations
+
+For a program to be able to call another function, that function must be
+declared and defined before that call. If the function is placed
+somewhere after the function call, the program will not know that the
+function exists. This is why libraries are included at the very
+beginning of a C++ file. The program will have a list of functions it
+knows and expects to only call those functions. Thus, the program cannot
+tell whether a function does not exist, or is located further in the
+file.
+
+Forward declarations are used to notify the program that a specific
+function exists somewhere in the file. That way, the computer will
+recognize the function when it finds a function call. When there is a
+forward declaration for a function, the program expects that the
+function will later be defined. That means that a forward declaration
+must be paired with the actual function.
+
+A forward declaration in C++ resembles the following.
+
+....
+returnType functionName(p1Type p1Name, p2Type p2Name, ...);
+// All parameters and their type must be listed
+....
+
+**Example Code**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+// forward declaration, lets compiler know that write1 exists
+void write1(int n);
+// write0 alternates with write1. They both call each other a total of n times
+void write0(int n) {
+    if (n > 0) {
+        cout << 0;
+        // since the program knows that write1 exists, the compiler doesn't error out
+        write1(n - 1);  // goes back to write1
+    }
+}
+void write1(int n) {
+    if (n > 0) {
+        cout << 1;
+        write0(n - 1);  // calls write0
+    }
+}
+int main() {            // main function, program starts here
+    int n;
+    cin >> n;
+    write1(n);          // starts by calling write1
+
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Sample Run:**
+....
+7
+1010101
+....
+
+Forwards Declarations are most often used when a program alternates
+between two functions
+
+=== Global Variables
+
+Variables can be declared outside of a function. These variables are
+known as *global variables*. Variables that are declared inside of a
+function are known as *local variables.* Global variables have global
+scope. This means that they can be used throughout the entire C++ file.
+A file is able to *have a global variable and a local variable with the
+same name.* However, whenever that variable is used in a function, *the
+local variable will take priority*.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+// my global variables, can be used throughout the file
+int a = 3;
+int b = 4;
+int c = 5;
+
+int main() { // main function, program starts here
+    // local variable made and take precedence over the global variable
+    int a = 10;
+    int d = 20;        // local variable made
+    cout << a << endl; // outputs local variable
+    cout << b << endl; // no local variable exists, outputs global variable
+    cout << d << endl; // outputs local variable
+    cout << a + b + c + d;
+
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+10
+4
+20
+39
+....
+
+NOTE: *Do not get in the habit of using global variables.* In larger
+projects, global variables become very dangerous as they can easily be
+messed with. Using parameters over global variables is encouraged.

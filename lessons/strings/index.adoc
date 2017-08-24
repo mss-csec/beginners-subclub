@@ -1,0 +1,237 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 11
+---
+= Strings
+
+Goal: To understand how to initialize and manipulate text strings.
+
+== Introduction
+
+Individual variable types can be combined and be used as one unit. This
+unit is known as a *container*. A string is a type of container as it is
+a *chain of characters.* Words, and full sentences are examples of
+strings. This lesson will focus on using the string container offered in
+the `<string>` library.
+
+In order to use standard strings from the string library, an *include
+statement* must be made at the beginning of the C++ file. The string
+library includes not only the container itself, but *member functions*
+that are specifically for that container. Member functions can perform
+many operations including string manipulation. A detailed list of the
+string library can be found
+http://www.cplusplus.com/reference/string/string/[here].
+
+== Variable Initialization and Input
+
+Once the string library has been included, a string can be initialized
+like any other variable. When a string is initialized, *the string
+itself will always start off empty*. Therefore, outputting the string
+immediately after initializing will simply output an empty string (`""`)
+and not garbage.
+
+When `std::cin` from the `<iostream>` library is used to get a value for a
+string, the console will only accept all characters until it reaches
+whitespace. This means *`cin` cannot be used to store an input that is a
+sentence with spaces*. If inputs are supposed to have spaces, another
+function is used. `getline` is a function that is used to get an
+entire line of input and store it into a string. It is formatted like
+the following:
+
+++++
+{% highlight cpp %}
+getline(cin, variableName);
+{% endhighlight %}
+++++
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string name;       // initializes string
+    cout << "What's your name?" << endl;
+    getline(cin,name); // stores full name
+    cout << "Hi " << name << ”!”;
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Sample Run:**
+....
+>>> What’s your name?
+Herp da Derp
+>>> Hi Herp da Derp!
+....
+
+NOTE: If `cin` was used before `getline`, `cin.ignore()` should be placed
+before `getline()`. `cin.ignore()` is a function that clears any inputs
+that are not stored in a variable and is required for `getline()` to work
+properly.
+
+== Using Member Functions and String Manipulation
+
+As for all libraries for C++, a list of all member functions can be
+found online. For a string, every function is made to manipulate/extract
+information from a string. Therefore, most of the functions in the
+string are formatted as follows:
+
+++++
+{% highlight cpp %}
+stringName.memberFunction(parameters) // notice the dot
+{% endhighlight %}
+++++
+
+For example, to find the length of a string, `strName.length()` will
+return an integer that represents the length of the string with the
+name, strName.
+
+A string can be assigned text surrounded by quotation marks with an
+equal sign (`=`).
+
+String concatenation is the appending of two or more strings. Strings
+can be added with text or other strings using the `+` operator. Since the
+`+` operator can be used, the `+=` operator can be used as well.
+
+**Example Code**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main() {
+    string str1 = "abc", str2 = "efg", str3; // initialized 3 strings
+    cout << "str3 is " << str3.length() << " characters long." << endl;
+    str3 = str2;          // assigns a value to str3
+    cout << "str3 is " << str3.length() << " characters long." << endl;
+    str3 += "d" + str1;     // concatenates str3 with "d" and str1
+    cout << "str3 is " << str3.length() << " characters long." << endl;
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+str3 is 0 characters long.
+str3 is 3 characters long.
+str3 is 7 characters long.
+....
+
+The plus symbol (`+`) is the only arithmetic operator that can be used
+with a string. *Do not try and subtract strings using the `-` operator.*
+Likewise, `=` and `+=` are the only assignment operators that can be used
+for strings.
+
+NOTE: Do not add two string literals (text surrounded by quotation
+marks) together.
+
+++++
+{% highlight cpp %}
+str += "abc" + "def"; // "abc" can’t add with "def"
+{% endhighlight %}
+++++
+
+The above code will result in an error because the computer is trying to
+add two string literals. This could be fixed by altering the code like:
+
+++++
+{% highlight cpp %}
+|str = (str + "abc") + "def"; // str adds with "abc", then with "def"
+{% endhighlight %}
+++++
+
+That way, a *string will always add with a string literal* and *two
+string literals will never add with each other.* The reason why strings
+are able to add with string literals are beyond the scope of this
+course. Just make sure to not add string literals together.
+
+== Character Manipulation
+
+Since a string is simply a sequence of characters, each character acts
+as its own variable and *can be accessed and manipulated individually.*
+Accessing a specific character in a string is formatted as follows,
+`str[n]` where the character returned will be the ``n``th character in the
+string.
+
+[.right.text-center]
+image::media/image2.png[image,width=224,height=78]
+
+Each character in a string has an *index*. All the characters in a
+string are numbered in order *starting with index 0*. For example,
+`str[1]` will give the second character in a string. Indexes are typically
+used with for loops in order to access every character in a string.
+
+NOTE: Be Careful! `str.length()` returns the length of a string, but the
+highest index in that string will always be one less than the length of
+the string.
+
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+#include <string>
+// This code outputs the reverse of a word
+using namespace std;
+int main() {
+    string str;             // initializes string
+    cin >> str;             // gets input (no sentences)
+    string reverseStr;      // string to store the reverse of str
+    // i is initialized as the highest index of str
+    for (int i = str.length() - 1; i >= 0; i--) { // index decreases by 1 each loop
+        // in this context, i acts as an index number
+        reverseStr += str[i]; // string is made by repeated concatenation
+    }
+    cout << str << " backwards is " << reverseStr; // outputs reverse str
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Sample Run:**
+....
+Kappa
+>>> Kappa backwards is appaK
+....
+
+== ASCII
+
+ASCII stands for American Standard Code for Information Interchange.
+ASCII ensures that *every character is paired with a numerical value*.
+Each character in a string is stored as that numerical value and every
+character can be referred to be either the character itself, or its
+numerical representation.
+
+ASCII is further explained in link:/lessons/beginners/if-structures/[Chapter 7.]
+
+For a list of all characters and their numerical counterparts, click
+http://www.asciitable.com/[here].
+
+== In Summary
+
+* Containers are used to organize and store various variable types at once
+* A string is a type of container that stores a sequence of characters
+* Standard strings are found in the <string> library
+* Commands from a library are called member functions
+* getline() is used to get inputs that includes spaces
+* Member functions are formatted as str.memberFunction(parameters)
+* Strings can be concatenated with other strings or characters.
+* Each individual character can be accessed with str[]
+* Index refers to where a character is in a string
+* The first character in a string is always index 0.
+* ASCII is used to pair every character with a numerical value.
+
+== Practice Questions
+
+* http://wcipeg.com/problem/ccc11s1[English or French]
+** My personal favourite
+* http://wcipeg.com/problem/ccc16j3[Hidden Palindrome]
+* http://wcipeg.com/problem/wc96p3[Hidden Geography]
+* http://wcipeg.com/problem/ccc04j4[Simple Encryption]
+** Don’t be fooled, this is the hardest question out all of the practice
+questions

@@ -1,0 +1,117 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 14
+---
+= Structures
+
+Goal: To be able to create new data types and to be able to use them in code.
+
+== Introduction
+
+Consider having a C++ file that organizes and stores records of student
+info. Each student record will contain multiple fields of various data
+types. This data can be stored by having multiple vectors that store
+each field. This way of storing records is very messy.
+
+If another student needs to be added to the list, every single vector
+has to change in size. This will lead to many lines of code simply to
+readjust the size of each vector.
+
+A structure is used in order to create an *object*, a new data type that
+is a collection of other data types. These other data types, called
+member variables, will appear in every object. Those member variables
+can be accessed through the object. In order to use this new data type,
+this type must first be declared and defined.
+
+A struct declaration will resemble the following:
+
+
+++++
+{% highlight cpp %}
+struct typeName {
+    member1Type member1Name;
+    member2Type member2Name;
+    // the number of members in the struct can continue
+};
+{% endhighlight %}
+++++
+
+Arrays and other containers can also be placed within a structure. A
+data type of a member can start off as a certain value if that value is
+assigned within the struct declaration.
+
+Once a struct has been declared, a new data type can be used across the
+C++ file. They are initialized just like any other variable.
+
+ typeName structName;
+
+In order to access a specific member in a struct, a period is placed in
+between the struct name and the member name.
+
+ structName.memberName
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct studentInfo {     // creates struct that stores student Info
+    string studentNum;  // each student will have a student number
+    string firstName;   // each student will have a first name
+    string lastName;    // ...
+    int grade;
+    int mark;
+    bool isPassing;
+};
+
+int main() {
+    studentInfo Thomas; // creates variable that is a studentInfo type
+    Thomas.studentNum = 404;              // accesses a member of studentInfo
+    Thomas.firstName = "Thomas";
+    Thomas.lastName = "The Tank Engine";  // Assigns Thomas a last name
+    Thomas.grade = 11;
+    Thomas.mark = 44;
+    Thomas.isPassing = false;
+
+    if (Thomas.isPassing) {               // Thomas.isPassing is a boolean value
+        cout << Thomas.firstName << " " << Thomas.lastName << " is passing.";
+    }
+    else {
+        cout << Thomas.firstName << " " << Thomas.lastName << " is failing.";
+    }
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+Thomas the Tank Engine is failing.
+....
+
+Arrays and vectors of structures can also be used. When accessing a
+member variable in an array of structures, the index of the array should
+be placed before the period. (`arrayName[index].member`).
+
+Structures are effective when organizing lists of records. Structures
+must be defined within the C++ file it is in. Objects are not often used
+in contest questions, but are widely used in large scale projects and
+games. The concept of objects can be delved further into a branch of
+computer science known as *object oriented programming.*
+
+== In Summary
+
+* Structures are used to create new data types
+* Structures must first be declared and defined before use
+* All variables in a structure are called member variables
+* A period is used to access a member function in a struct
+* Arrays of structs can be made, and structs can include arrays
+
+== Practice Questions
+
+* http://wcipeg.com/problem/coci077p1[Platforme]
+* http://wcipeg.com/problem/wc151s1[Woburn Workload]

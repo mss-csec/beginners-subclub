@@ -1,0 +1,88 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 1
+---
+= Installing an IDE
+
+== Introduction
+
+In order to write code, it is recommended to use a program specifically
+made for coding. An IDE is any program that code can be written on. IDE
+stands for *Integrated Development Environment*. An ideal IDE would
+include features such as a syntax-highlighter, a compiler, and a
+debugger.
+
+Below are two IDEs that are made for writing C++:
+
+* *Code::Blocks _(recommended)_*
+
+** Code::Blocks works best for smaller programs and files (such as files
+submitted for contests)
+
+** Can work for Windows, Linux, and Mac
+
+** http://www.codeblocks.org/downloads/26[Download Link]
+
+*** When using Windows, install the _Code::Blocks-16.01mingw-setup.exe_
+
+* *Visual Studio*
+
+** Visual Studio works best for larger projects
+
+** Requires Microsoft account
+
+** https://www.visualstudio.com/downloads/[Download Link]
+
+This doc will walk through the usage of Code::Blocks.
+
+'''
+
+== Setting up Code::Blocks
+
+If Code::Blocks is running on Mac OS, the program will urge that command
+line must be downloaded. Allow Code::Blocks to install command line.
+
+Once Code::Blocks finishes installing, click *_Settings_* on the top
+task bar, then click _*compiler…*_
+
+image:media/image3.png[image,width=394,height=90]
+
+On the _*Global compiler settings*_ tab, ensure that *GNU GCC Compiler*
+is the selected compiler. If the program is complaining that it cannot
+find that compiler, click on _*Reset defaults*_.
+
+If Code::Blocks still complains, *Google is your friend! Welcome to
+Markville’s Computer Science Course :D*.
+
+== Setting up a C++ File
+
+To create a new C++ file, click on _*File*_ on the top left corner of
+the window.
+
+* Select _*File > New > Empty File*_
+
+image:media/image4.png[image,width=548,height=190]
+
+Pressing kbd:[Ctrl-S] or going to _*File > Save*_ will save your code. When
+saving, *ensure that the file name of your code ends with `.cpp` and not
+`.c`.* The extension defines whether the document is a C file or a C++
+file. A lot of material in this course cannot be used in a C file.
+
+Pressing kbd:[F2] or going to _*View > Logs*_ will display an extra window on
+the screen. This screen will be important for debugging code.
+
+image:media/image6.png[image,width=186,height=150]
+
+On the empty file, there should be line numbers shown on the left. If
+the line numbers do not show for some reason, go to _*Settings > Editor
+> Other editor settings*_ and check the box with *_Show line numbers_*
+beside it.
+
+== In Summary:
+
+* An IDE is a program that allows users to write and execute code
+
+* Visual Studio and Code::Blocks are common IDEs
+

@@ -1,0 +1,109 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 10
+---
+= Multidimensional Arrays
+
+== Introduction
+
+[.right.text-center]
+image::media/image2.png[visualization of a 5-element char array,width=263,height=110]
+
+An array can be visualized as a row of elements where each element has
+its own column number (index). A regular array is usually known as a
+*one-dimensional array* because every element can be placed in one row.
+
+[.left.text-center]
+image::media/image4.png[visualization of a 5x5 char array,width=273,height=289]
+
+A multidimensional array is simply an *array of arrays.* A
+multidimensional array has elements with *more than one index*. A
+two-dimensional array can be visualized as rows of arrays stacked
+together in order to create a grid. Therefore, each element in that
+array will have both a row number and a column number. Each pair of
+coordinates (row, column) will refer to a unique element in the array.
+What makes a one-dimensional array different than a multidimensional
+array is the number of indexes that each element has.
+
+Two-dimensional arrays (arrays with 2 indexes) are often used whenever
+variables must be organized into a grid. That way, a computer can easily
+look through an entire row/column in a grid. Three-dimensional arrays
+can be visualized as a cube where each index corresponds to a different
+dimension of the cube.
+
+In C++, each square bracket (`[ ]`) corresponds to a separate dimension of
+an array. For example, a two-dimensional array will have two sets of
+square brackets. When initializing an array, the size of each dimension
+of the array must be given.
+
+++++
+{% highlight cpp %}
+arrayType arrayName [size1] [size2];
+{% endhighlight %}
+++++
+
+When accessing an element in a multidimensional array, the index of each
+dimension must be known. Each set of indexes refers to a unique element
+in an array.
+
+++++
+{% highlight cpp %}
+arrayName[index1][index2]
+{% endhighlight %}
+++++
+
+NOTE: No set of square brackets can be left blank when accessing an
+element in an array.
+
+**Example code of a 2-dimensional array:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+int main() {
+    // the purpose of this code is to show a 4 by 4 multiplication table
+    int len = 4;            // len is the size of each dimension of the array
+    int grid[len][len];     // grid is a len by len 2-dimensional array
+    for (int i = 0; i < len; i++) {         // i represents the row number
+        for (int j = 0; j < len; j++) {     // j represents the col number
+            grid[i][j] = (i + 1) * (j + 1); // assigns a value to each element
+        }
+    }
+    cout << "Look at this Cool Multiplication Table" << endl;
+    // looks at every column in each row and outputs element in array
+    for (int i = 0; i < len; i++) {
+        for (int j = 0;j < len; j++) {
+            cout << grid[i][j] << " ";  // outputs the value of the element
+        }
+        cout << endl;                   // skips to new line when outputting
+    }
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+Look at this Cool Multiplication Table
+1 2 3 4
+2 4 6 8
+3 6 9 12
+4 8 12 16
+....
+
+== In Summary:
+
+* Arrays are used to organize multiple variables of the same type
+* Each variable in an array is called an element
+* Each element is ordered and given an index
+* The first element of an array always has an index of 0
+* The size of an array will always remain constant
+* Multidimensional arrays are arrays of arrays, and each element in a
+multidimensional array has more than one index
+
+== Practice Questions
+
+* http://wcipeg.com/problem/q4[Connect 4]
+* http://wcipeg.com/problem/ccc16j2[Magic Squares]

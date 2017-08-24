@@ -1,6 +1,7 @@
 *.sw*
 *~
 *.tmp
+*.docx
 
 .DS_Store
 .DS_Store?

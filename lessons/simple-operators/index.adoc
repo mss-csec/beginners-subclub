@@ -1,0 +1,171 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 4
+---
+= Simple Operators
+
+Goal: Have computers be able to use operators and perform basic calculations.
+
+== Introduction
+
+Computers are machines that are made to do calculations. In fact, they
+specialize in performing operations and manipulating any given data.
+
+Operators are symbols that signal the computer to perform a task with a
+given value(s). An example of an operator in code is the `<<` found in
+the `cout` command. Operators are able to add, assign, or compare values.
+This chapter will focus specifically on *arithmetic operators*,
+operators that take numbers and return a single numerical value.
+
+In C++ (and most other languages), the `+` is used to add two numbers
+together. A line of code in which operators are used is called an
+*expression*. For example, `5 + 3` and `1 + 2 + 3 + 4` are considered to be
+expressions. When given an expression, the computer will always attempt
+to evaluate the expression and return a single numerical value.
+
+== Using Operators with Outputs
+
+When putting operators onto an output command, arithmetic operators will
+naturally take priority over `<<`. This means that the computer will
+evaluate an expression between a set of `<<` before outputting.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "5 + 3 = " << 3 + 5 << endl;
+    4 + 4;             // semicolon
+    return 0;
+}
+
+{% endhighlight %}
+++++
+
+**Output:**
+....
+5 + 3 = 8
+....
+
+In the output statement in the code above (Line 5), the computer will
+first output the text ``5 + 3 = ``. Since the `+` is enclosed with
+quotations, the symbol is considered to be a *character* in text and not
+an operator. In the next portion of the output statement, there is an
+expression in which 3 and 5 are added. The computer will first evaluate
+the expression and result a number (In this case, it would be 8). Then,
+it will output that number onto the screen. Once done the output
+statement, the computer will then evaluate `4 + 4` located on the next
+line. However, the calculation is useless as the computer has nothing to
+do with the number returned from the expression. Thus, the computer
+simply continues to the next line of code.
+
+NOTE:
+Arithmetic Operators are not meant for text. Do not try to add or
+subtract text in a code file using these operators. Definitely do not
+think about adding text with numbers.
+
+Below is a list of some arithmetic operators (and more) available for
+C++.
+
+[cols=",,a,a,a",options="header",]
+|=======================================================================
+|Name |Syntax |Description |Example |Output
+
+|Addition
+|`+`
+|Adds two numbers together
+|`8 + 3`
+|`11`
+
+|Subtraction
+|`-`
+|Subtracts two numbers together
+|`8 - 3`
+|`5`
+
+|Multiplication
+|`*`
+|Multiplies two numbers together
+|`8 * 3`
+|`24`
+
+|Division
+|/
+|Divides the first number by second number +
+(Will drop the remainder when dividing integers)
+|`8 / 3` +
+`8.0 / 3`
+|`2` +
+`2.66667`
+
+|Modulo
+|`%`
+|Finds the remainder when first num is divided by the second number
+|`8 % 3` +
+`9 % 3` +
+`9 % 4`
+|`2` +
+`0` +
+`1`
+
+|Parenthesis
+|`()`
+|Dictates the order in which operations are done. Prioritizes all
+operators inside parenthesis. +
+Technically not an arithmetic operator.
+|`2 * (8 - 3)`
+|`10`
+|=======================================================================
+
+A list of these operators and more are found in
+link:/resources/beginners/syntax-references/list-of-operators[List
+of Operators] doc shared with you.
+
+== Order of Operations
+
+Generally, the order of operations for arithmetic operators will be
+similar to BEDMAS/PEMDAS. Division, multiplication, and modulo will
+typically be executed before addition or subtraction. However, adding
+parenthesis to an expression will help ensure that the expression will
+always run the way that it is intended to. *There is no consequence for
+putting excessive amounts of parenthesis in an expression* (Other than
+readability).
+
+http://en.cppreference.com/w/cpp/language/operator_precedence[Click
+here to see a chart displaying the order of operations.]
+
+== In Summary
+
+* Operators are symbols that manipulates data values
+* Arithmetic Operators are operators that deal with numeric values
+* An expression consists of a combination of numbers and arithmetic
+operators
+* Expressions are able to be placed within an output statement
+* Parenthesis are used to change the order in which operators are
+performed
+
+== Practice Questions
+
+* Create a program called 42.cpp. Since *42 is the answer to life, the
+universe, and everything*, your job is to have your code output the
+number 42 in five different ways, using each operator at least once.
+* Jimbob, being the beginner that he is, is confused on why his code
+outputs -1 and not 2. Your goal is to add parenthesis to Jimbob’s code
+in order for his code to output 2.
++
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main(){
+    cout << 14/6+4/5%8-3;
+    //arithmetics are hard
+    return 0;
+}
+{% endhighlight %}
+++++

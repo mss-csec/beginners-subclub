@@ -1,0 +1,169 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 3
+---
+= Simple Outputs
+Chapter 3:
+
+Simple Outputs
+
+Goal: To be able display numbers and text onto a screen
+
+[.left.text-center]
+image::media/image4.png[codeblock's build menu,width=201,height=94]
+
+In order for a computer to take a file and execute its code, it must be
+told to build and run the code. On Code Blocks and Visual Studio, *press
+F9* or *click the _Build and run_ option on the _Build_ drop-down menu*
+to build and run a code file.
+
+When told to build and run a file, the computer will create an .*exe
+file* located alongside the .cpp file. However, .exe files cannot be
+saved onto a school computer. Thus, the *.cpp file should be located on
+an external hard drive* such as a *USB* when using school computers.
+
+[.right.text-center]
+image:media/image3.png[a blank run window,width=313,height=49]
+
+Running the basic skeleton listed previously will create a window
+resembling the following:
+
+This window is known as the *console.* This is the text-based interface
+that accepts inputs from users and displays output values onto the
+screen. (Graphics will be done at a later time.) The text from the
+console shown above only appears once the computer finishes running the
+file.
+
+* `Process returned 0(0x0)` corresponds to the `return 0;` line in the main
+function of the code file.
+* The execution time is the amount of time the computer took to run the
+program.
+* Pressing any key will close the console window.
+
+== Outputting Values
+
+The simplest command for C++ that outputs text onto the console is the
+`cout` command. `cout` is a command that is not located in the Standard
+Library. Instead, it is located in the `<iostream>` library.
+
+In order to add any library into a C++ file, add
+`\#include` followed by the name of the library, at the top of the
+file.
+
+.Adding the iostream library
+++++
+{% highlight cpp %}
+#include <iostream>
+{% endhighlight %}
+++++
+
+NOTE: Along with using namespace std; all `\#include` statements should be
+placed at the beginning of the file
+
+`cout` stands for "`**C**onsole **OUT**put`", and it allows the console
+to output text and numbers onto the screen. In code, the `cout` command is
+formatted like so:
+
+
+++++
+{% highlight cpp %}
+cout << Output << endl;
+{% endhighlight %}
+++++
+
+The output is enclosed between two “<<” and can be one of 2 types.
+
+* Computers could output numbers (real or integer) onto the screen
+* Text (also known as string literals) can be outputted onto the screen
+** String literals must be enclosed by quotation marks (`""`)
+
+.Components of the _cout_ command:
+[cols="m,"]
+|=======================================================================
+|cout |This marks the beginning of the output command and tells the
+console that a value will be outputted
+|<< a|
+These symbols must be placed in between all outputs in the command. +
+Tip: to remember the direction of the symbol, when looking from left to
+right, the symbol goes *outwards*
+|endl |This tells the console to skip to the next line. This part is not
+required in the syntax of cout.
+|=======================================================================
+
+NOTE: Like _all other commands_ on C++, the cout command _must end with
+a semicolon (`;`)_. This marks the end of a command for a compiler.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>           // library with cout
+using namespace std;
+
+int main() {
+    cout << "Line 1" << endl; // Text on line 1
+    cout << 12;               // There is no endl
+    cout << 3.45;             // outputs on 2nd line
+    return 0;                 // ends program
+}
+
+{% endhighlight %}
+++++
+
+**Output:**
+....
+Line 1
+123.45
+....
+
+Multiple outputs can be displayed using one command simply be separating
+each output with <<. The following code has an identical output as the
+code above.
+
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Line 1" << endl << 12 << 3.45;
+    return 0;
+}
+{% endhighlight %}
+++++
+
+== In Summary:
+
+* Building and running a code file will create a .exe file and open a
+window called a console
+* The console is able to accept user inputs and display text and values
+* The `cout` command tells the computer to output a value onto the console
+window
+* Putting `\#include <iostream>` in the file will add `cout` to the computer’s
+list of known commands
+* Text outputs must be enclosed by quotation marks
+* All commands must end with a semicolon
+
+== Practice Questions
+
+*  Create a C++ file called HelloWorld.cpp that outputs “Hello, World!”
+onto the screen
+*  Explain the difference between the two statements and their outputs.
+..  `cout << "08" << endl;`
+..  `cout << 08 << endl;`
+*  Predict what the console will output given the following code:
++
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main(){
+    cout << "01" << endl << 12;
+    cout << " " << 3.58;
+    cout << endl << endl << "13";
+    return 0;
+}
+{% endhighlight %}
+++++

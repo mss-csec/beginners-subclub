@@ -1,0 +1,506 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 7
+---
+= If Structures
+
+Goal: To be able to implement structures into code.
+
+== Relational Operators
+
+Relational operators find any similarities between two values, typically
+variables. A relational operator takes two values or expressions,
+compares the two, and returns a *boolean value*. A boolean value comes
+in one of two states: *true or false*. For a computer, *true is stored
+as a 1,* and *false is stored as a 0*.
+
+An example of a relational operator is ==. It checks whether two
+values/expressions are equal to each other. The symbol == is different
+from =, an operator only used for variable assignments. Be sure not to
+mix up the two operators.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << (3 == 3) << endl;        // compares ints
+    cout << (2.6 == 3) << endl;      // compares double and ints
+    cout << ('A' == 'A') << endl;    // compares characters
+    cout << (true == false) << endl; // compares boolean values
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+1
+0
+1
+0
+....
+
+NOTE: `<<` is an operator that is evaluated before relational operators.
+Therefore, when outputting values with relational operators, parentheses
+must surround the relational operator.
+
+Relational operators are able to work with integers, floating numbers,
+characters, and boolean values. *Values of different types can also be
+compared to each other,* although computers use complicated ways to
+compare variable types such as characters.
+
+The following are more examples of relational operators.
+
+[cols=",a,,a,a",options="header"]
+|=======================================================================
+|Name |Symbol |Description |Examples |Result
+
+|Not equal to
+|`!=`
+|Checks if two values are different
+|`3 != 4` +
+`5 != 5`
+|`true` +
+`false`
+
+|Greater than
+|`>`
+|Checks if the first value is greater than the second
+|`5 > 0` +
+`6 > 6`
+|`true` +
+`false`
+
+|Less than
+|`<`
+|Checks if the first value is less than the second
+|`3 < 4` +
+`5 < 3`
+|`true` +
+`false`
+
+|Greater than or equal to
+|`>=`
+|Checks if the first value is greater than or equal to the second value
+|`5 >= 4` +
+`4 <= 4`
+|`true` +
+`true`
+
+|Less than or equal to
+|`<=`
+|Checks it the first value is less than or equal to the second value
+|`3 <= 3` +
+`4 <= 3`
+|`true`
+`false`
+
+|=======================================================================
+
+== Logical Operators
+
+Multiple comparisons can be done at once by using *logical operators*.
+These logical operators are used to *manipulate boolean values*,
+typically boolean values returned from relational operations. For
+example, a computer can check if a number is both less than a certain
+value and greater than a certain value. Relational operators are
+performed *before* logical operators. The following are examples of
+common logical operators.
+
+[cols=",a,,a,a",options="header",]
+|=======================================================================
+|Name |Symbol |Description |Examples |Result
+
+|AND
+|`&&`
+|Returns true only if *both* sides are true
+|`true && true` +
+`false && true`
+|`true` +
+`false`
+
+|OR
+| `||`
+|Returns true when either side is true
+|`true || false` +
+`false || false`
+|`true` +
+`false`
+
+|NOT
+|`!`
+|Returns true if value is false and returns false if value is true
+|`!(true)` +
+`!(false)`
+|`false` +
+`true`
+
+|=======================================================================
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << ((3 < 4) && (6 == 7)) << endl;
+    cout << (!(!(5 != 6) || !(4 >= 4))) << endl;
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Output:**
+....
+0
+1
+....
+
+Try to follow the process of the computer from all the inner brackets to
+the outer brackets.
+
+== If Statements
+
+An if statement is the simplest way of controlling the order in which
+commands are executed. The order in which actions are executed is called
+*control flow*. If statements basically tell the program to do a
+specific set of commands if a certain condition is met.
+
+The basic outline of an if statement looks like the following:
+
+++++
+{% highlight cpp %}
+if (condition) {
+    //code to be run if the condition results to true
+}
+// rest of the code
+{% endhighlight %}
+++++
+
+Inside the parenthesis will be a condition that will result either true
+or false. Normally, the if statement will have variables being compared
+using relational operators and/or logical operators. Notice how *the
+condition does not need to end with a semicolon*. Inside the braces of
+an if statement will be all the commands that the computer will execute
+if the condition results to true. If the condition results to false,
+*everything inside the braces will be skipped.* In order to make a code
+file much easier to read, *indenting all commands inside an if
+statement* is encouraged.
+
+NOTE: Do not initialize a variable within an if structure and use that
+variable outside the if structure. This subject will be explained in
+more detail in the next chapter.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>     // this code will check if a number is positive
+using namespace std;
+
+int main() {
+    int num;            // initializes an integer variable
+    cout << “Type in any number.” << endl;
+    cin >> num;         // gets user input
+    if (num > 0) {      // all positive numbers are greater than 0
+        // if num is positive, this message will be displayed
+        cout << num << " is a positive number.";
+    }                   // if num is negative or zero, output is skipped
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Sample Run:**
+....
+Type in any number.
+8
+8 is a positive number.
+....
+
+In the example above, no message will appear if the number inputted is
+negative or zero. In order to put a message stating that a number is
+negative or zero, a second and third if statement could be added.
+However, there is a cleaner way to have the program output that message.
+
+== Else and Else if Statements
+
+Else and Else if statements extend off the original if statement. They
+make a program run a different set of commands if the conditions in an
+if statement results false. An if structure that includes an else if and
+else statement will resemble the following:
+
+++++
+{% highlight cpp %}
+if (condition1) {
+    // code to be run if condition 1 results true
+}
+else if (condition2) {
+    // code if condition 1 results false but condition 2 results true
+}
+else if (condition3) {
+    // more code
+}
+// the number of else if statements could continue...
+else {
+    // code to be run if all previous conditions result false
+}
+{% endhighlight %}
+++++
+
+[.right.text-center]
+image::media/image2.png[flowchart of if statement logic,width=142,height=156]
+
+The program will always check the initial condition first and will check
+following conditions if all previous conditions result false. For
+example, if condition 2 results to true, but condition 1 also results to
+true, *the program will prioritize the _first_ set of code*. Once the
+program is done executing the commands inside an if, else if, or else
+statement, the program will skip the rest of the if structure. This
+means that if the first condition results true, the program ignores all
+other if conditions inside the if structure. A program is able to have
+multiple else if statements within one if structure. However, an if
+structure can only have one else statement. Else if statements and else
+statements are completely optional and either could be omitted from the
+if structure.
+
+Below is the same code modified to display messages for positive,
+negative numbers and zero.
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+int main() {
+    int num;
+    cin >> num;
+    if (num > 0) {        // all positive numbers are greater than 0
+        cout << num << " is an even number."; // skips to line 16
+    }
+    else if (num < 0) {   // all negative numbers are less than 0
+        cout << num << " is a negative number.”; // skips to line 16
+    }
+    else {               // 0 is neither greater or less than 0
+        cout << num << " is not positive nor negative.";
+    }
+    return 0;
+}
+{% endhighlight %}
+++++
+
+== In Summary
+
+* Relational Operators compare two values/expressions and returns a
+boolean value
+* Logical Operators manipulate boolean values and return one boolean value
+* Arithmetic Operators are executed before relational operators, which are
+executed before logical operators
+* The order in which a computer executes code is called control flow
+* If statements modify control flow by giving the program extra commands
+if a condition results to true
+* else if and else statements can be added to an if structure
+* The program, once finding a condition that results true in an if
+statement, will perform all commands and immediately skip to the end of
+the if structure.
+
+== Practice questions
+
+* http://wcipeg.com/problem/p307ex9[Leap Year]
+* http://wcipeg.com/problem/ccc15j1[Special Day]
+* http://wcipeg.com/problem/ccc07j1[Who’s in the Middle]
+* http://wcipeg.com/problem/ccc14j1[Triangle Times]
+* http://wcipeg.com/problem/p79ex5[Multiple]
+* http://wcipeg.com/problem/ccc10j2[Up and Down]
+** This is a good one.
+* Ol’ Jimbob is back and his code looks atrocious. Sure, his code works,
+but it is very hard to read and is unnecessarily complex. Your job is to
+change *only Jimbob’s if conditions* so that it makes more sense. Also,
+try and figure out why Jimbob’s code works.
++
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+// this program takes 3 side lengths of a triangle and outputs a message
+// saying what type of triangle it is
+int main() {
+    cout << "Input 3 side lengths." << endl;
+    int s1, s2, s3;
+    cin >> s1 >> s2 >> s3;
+    if(((s1!=s2)!=(s2==s3))+((s1!=s3)!=(s1==s2))==2) {
+        cout << "The triangle is scalene.";
+    }
+    else if((s1==s2)+(s2==s3)+(s1==s3)==1) {
+        cout << "The triangle is isosceles.";
+    }
+    else {
+        cout << "The triangle is equilateral.";
+    }
+    return 0;
+}
+{% endhighlight %}
+++++
+
+'''
+
+== Further Reading for If Statements
+
+=== XOR
+
+The XOR operator (`\^`) is an operator that can be used like a logical
+operator.
+
+This operator is able to take two boolean values and return true if
+only one of the given values is true. If both or neither boolean values
+are true, it will return false. The reason why this operator is not a
+logical operator is because it is a *bitwise operator* and could be used
+in scenarios beyond the scope of this chapter.
+
+[cols="2*m",options="header"]
+|===
+|Examples |Results |
+
+|true \^ true
+|true \^ false
+|false \^ true
+|false \^ false
+
+|false
+|true
+|true
+|false
+|===
+
+=== Comparing Characters
+
+Each character has its own numerical representation. When a variable
+stores a character, the variable is holding a number that corresponds to
+that character. The characters and their corresponding number follows
+the *American Standard Code for Information Interchange (ASCII)*. In
+C++, each character can be referred to by using either the character
+itself enclosed by single quotation marks (`\'A\'`) or their numerical
+representation (`65`).
+
+A table displaying each character’s corresponding number can be obtained
+http://www.asciitable.com/[_here_]:
+
+In the code below, the value of the character variable is set to ‘A’
+
+++++
+{% highlight cpp %}
+char var = 65;
+{% endhighlight %}
+++++
+
+When a character is being used with a relational operator in C++, *the
+numerical representation of that character is being compared* and not
+the character itself. So the following two excerpts of code perform the same task:
+
+.Example 1
+++++
+{% highlight cpp %}
+char c = 111;
+
+cout << (c > 'a');
+{% endhighlight %}
+++++
+
+.Example 2
+++++
+{% highlight cpp %}
+char c = ‘o’;
+
+cout << (c > 97);
+{% endhighlight %}
+++++
+
+This is how C++ uses characters with relational operators.
+
+=== Switch Statements
+
+Switch Statements are alternative ways of control flow that is used
+whenever an if structure would lead to many else if statements in code.
+They work in the same way as if statements but are more concise when the
+number of conditions is large. It is used over an if structure whenever
+the *condition is whether or not a variable is equal to a certain
+value.*
+
+A switch statement resembles the following:
+
+++++
+{% highlight cpp %}
+switch (variable name) {
+case possibleValue:
+    // your code
+    break;
+case possibleValue2:
+    // your code
+    break;
+// the number of cases may continue
+default:
+    // your code
+}
+{% endhighlight %}
+++++
+
+In a switch statement, the `default` case acts as an else statement in
+an if structure. The purpose of the break statements will be explained
+in the following chapter. Switch statements are not required as they do
+the same task as if structures.
+
+**Example Code:**
+++++
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "What's your mark?" << endl; // asks for a mark
+    char mark;              // char variable to store mark
+    cin >> mark;
+    switch(mark){           // checks value of mark
+    case 'A' :              // checks if mark == 'A'
+        cout << "Amazing!"; // output if mark == 'A'
+        break;
+    case 'B' :              // checks if mark == 'B'
+        cout << "Nice nice.";
+        break;
+    case 'C' :              // checks if mark == 'C'
+        cout << "You're getting there.";
+        break;
+    case 'D' :
+        cout << "Try Harder.";
+        break;
+    default :
+        // default statement if all previous return false
+        cout << "That's not a rank!";
+    }
+    return 0;
+}
+{% endhighlight %}
+++++
+
+.Sample Case:
+....
+What’s your mark?
+A
+Amazing!
+....
+
+.Sample Case 2:
+....
+What’s your mark?
+D
+Try Harder.
+....
+
+.Sample Case 3:
+....
+What’s your mark?
+R
+That’s not a rank!
+....

@@ -1,0 +1,146 @@
+---
+liquid: true
+layout: lesson
+category: beginners
+lesson: 2
+---
+= The Structure of a C++ File
+
+== Introduction
+
+A computer is designed to follow instructions and commands. Typically,
+these instructions are organized into a file that the computer follows
+and executes. These formatted instructions are known as *code.*
+Essentially, code is a set of commands given to a computer to execute.
+
+When reading a file of code, the computer goes through each line and
+executes every command *one at a time* in order.
+
+The basic skeleton of a C++ file will resemble the following:
+
+++++
+{% highlight cpp linenos %}
+using namespace std;
+
+int main() {
+    return 0;
+}
+{% endhighlight %}
+++++
+
+In C++, each component of this skeleton is required in order for the
+code to properly run.
+
+== Libraries
+
+There are files that store all the possible instructions C++ could
+recognize. All the commands that the computer understands and could
+execute are placed in a file called a *library.* A library stores a list
+of commands that the computer could follow. If a computer has access to
+a library, it could perform any command that is listed in that library.
+
+The most common library that is used when coding a C++ file is the
+*standard library*.
+
+For beginner purposes, all commands that will be used when coding will
+be in the standard library.
+
+To tell the computer that a file will use the standard library, using
+namespace std; is placed at the beginning of the file.
+
+NOTE: Always include libraries at the beginning of a C++ file.
+
+== The Main Function
+
+When a computer first runs a code file, it will go down each line of
+code until it reaches a line with `int main()`. This line is referred to
+as the *main function*. Once the computer finds the main function, it
+will begin executing all commands listed inside the braces (`\{}`). *Any
+commands that are in the file must be placed within the main function*.
+
+[.left]
+++++
+{% highlight cpp %}
+int main() {
+    return 0;
+}
+{% endhighlight %}
+++++
+
+The computer reads and executes each line of code in the main function
+and ends once it has reached the line `return 0;`. *Any line of code that
+follows this line will be ignored*. A C++ file should always have
+`return 0;` within its main function.
+
+== Whitespace
+
+Whitespace is any part of a file that is intentionally left blank. This
+includes spaces, indents, and empty lines. Unlike some other computing
+languages (e.g. Python), the amount of whitespace that is left in a C++
+file has *no effect on the computer’s performance* when it is executing
+the code. So both of the following examples are identical:
+
+**Example 1:**
+++++
+{% highlight cpp %}
+using namespace std;
+
+int main() {
+    return 0;
+}
+{% endhighlight %}
+++++
+
+**Example 2:**
+++++
+{% highlight cpp %}
+using namespace
+std;
+int
+main(){return 0;}
+{% endhighlight %}
+++++
+
+Though not required, it is encouraged to develop a habit of using
+whitespace in order to make a C++ file easier to read. This includes
+*indenting any commands* that are within the main function.
+
+== Comments
+
+Apart from having computers skip over any whitespace, the computer could
+also be told to skip any text in a file while executing the code. A
+comment is any text in a file that is not meant for the computer to
+read. Users put important information about the file into the code as
+comments. Overall, *comments makes code more readable for humans.*
+
+**Example:**
+++++
+{% highlight cpp linenos %}
+using namespace std;
+int main(){
+    // This is a comment.
+    /*
+        Everything between the
+        2 symbols are comments.
+    */
+    return 0;
+}
+{% endhighlight %}
+++++
+
+There are two main methods for adding comments into a C++ file. Adding
+*//* will have the computer skip all remaining text in a line of code.
+
+All text that is enclosed by `/\*` and `\*/` are commented out and not
+read by the computer.
+
+== In Summary
+
+* A library is a file that stores a list of commands that a computer can
+do
+* `using namespace std;` makes your computer able to use the standard library
+* All code must be placed in the main function
+* `return 0;` should always be placed at the end of the main function
+* Whitespaces are any spaces, indents, and empty lines
+* Whitespace is used to organize code to make it more readable
+* Comments can be used to add remarks/explanation about the code
