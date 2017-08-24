@@ -34,7 +34,7 @@ value* and is found in most functions.
 
 Square root is one of many common functions that are used in C++. A list
 of commonly used functions can be found
-link:/resources/beginners/commonly-used-functions[here].
+link:/resources/beginners/commonly-used-functions-in-cpp[here].
 
 Another example of a function is the *main function*, the location where
 all code so far is written in. The layout of the main function will be

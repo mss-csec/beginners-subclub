@@ -1,0 +1,95 @@
+---
+layout: resource
+---
+= Debugging Common Errors in C++
+
+When trying to find errors in code, a debugger is often used. A debugger
+allows users to find problems in their code. If the code failed and
+crashed when running or compiling, a message will be displayed on the
+debugger showing where and what caused the code to crash.
+
+Code::Blocks is built with a debugger. It should naturally be located on
+the bottom of the Code::Blocks window. There should be a bar with the
+name, _*Logs & Others*_ on it. If there is no debugger shown on
+Code::Blocks, *press F2 or go to _View_ > _Logs_*.
+
+.An error being displayed in the *Build messages* tab. Here, we are told that the error is due to a missing semicolon on line 6.
+image::media/image2.png[image,width=671,height=393]
+
+In the debugger, the _*Build messages*_ tab will display any messages
+when the computer is building/running a code file. If an error occurs,
+it will display a message and the line number the error is found in. In
+case you have trouble understanding what the message means, below are a
+few errors beginners to that would output a build message,
+
+== Error: redeclaration of '_____'
+* Did you initialize a variable twice? Two variables should not have the
+same names.
+
+== Error: expected ';' before .....
+* You simply missed a semicolon on the line right before the line that
+errored.
+
+== Error: '____' was not declared in this scope.......
+* This message is a little vague
+* Is the word that is not declared supposed to be a variable?
+** Is that variable initialized (Check spelling)?
+** Did you initialize a variable inside a loop/if structure and tried to
+access that variable outside of the loop?
+* Is the word that is not declared supposed to be a command?
+** Did you include both the standard library as well as the library the
+command is in.
+*** Does your file have a “using namespace std;” and an include statement
+*at the beginning* of your file?
+* Is the word that is not declared supposed to be a function?
+** Is there a part in your code where a function is used before the
+function is declared?
+*** If a function is placed after the main function, your code cannot call
+the function inside the main function.
+* Is the word that is not declared supposed to be text?
+** Put quotation marks around them
+
+== Fatal error: <name of library>: No such file or directory; .....
+* Most likely, your file is saved as a C file and not a C++ file. In a C
+file, many libraries such as string, iostream, and vectors, cannot be
+used.
+* Did you spell the name of the library correctly?
+
+== Error: no match for 'operator>>'....... _or_ Error: no match for 'operator\<<'.....
+* Did you mix up >> and <<? (<< are for cout statements and >> are for
+input statements)
+
+== Error: invalid operands of types 'const char[ ]' and 'const char[ ]' to
+binary.......
+* Did you try to add two string literals? (text that are surrounded by
+quotation marks)
+** Avoid doing that altogether, but if you really need to add them, just
+omit the *+* sign.
+
+== Error: no match for 'operator\<'
+* _This applies to every operator_
+* What happened was likely an error due to the order the computer performs
+operations. For example, << is usually executed before a relational
+operator in an output statement
+** Just add parenthesis and see if it works
+
+== Error: invalid operands of types '____' and '____' to 'binary operator%'........
+* Did you try to perform a modulus operation when one of the values is not
+an integer/character?
+** If you are trying to mod a floating number, *put _(int)_* right in front
+of the variable to change the floating number into an integer. However,
+this will cut off any decimals stored in the float.
+If your code does not crash, but it is not outputting the values that
+you expect it should output, check the following:
+* Did you use any assignment variables(“=”) in an if/loop condition when
+you should have used a relational operator (“==”)
+** Do not mix “=” and “==” up
+* When you initialize a counter variable for your for loop, did you give
+your counter a value?
+** If not, then the value of the counter will be some garbage number.
+* tAre the variables that are sent into a function as parameters the
+intended variable type?
+
+These are only a few errors that could come up when coding a C++ file.
+If you are still left with an error with a build message, read through
+your code once more to see if all of your code makes sense.

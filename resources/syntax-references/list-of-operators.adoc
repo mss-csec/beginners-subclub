@@ -1,0 +1,214 @@
+---
+layout: resource
+category: beginners
+---
+= List of Operators
+
+== Arithmetic Operators
+
+[cols=",,,a,a",options="header",]
+|=======================================================================
+|Name |Syntax |Description |Example |Output
+
+|Addition
+|`+`
+|Adds two numbers together
+|`8 + 3`
+|`11`
+
+|Subtraction
+|`-`
+|Subtracts two numbers together
+|`8 - 3`
+|`5`
+
+|Multiplication
+|`*`
+|Multiplies two numbers together
+|`8 * 3`
+|`24`
+
+|Division
+|`/`
+a|Divides the first number by second number. +
+(Will drop the remainder when dividing an integer)
+|`8 / 3` +
+`8.0 / 3`
+|`2` +
+`2.66667`
+
+|Modulo
+|`%`
+|Finds the remainder when first number is divided by the
+second number. *Only use Modulo on integer values.*
+|`8 % 3`
+|`2`
+
+|Parenthesis
+|`()`
+a|Dictates the order in which operations are done. +
+Prioritizes all operators inside parenthesis.
+|`2 * (8 - 3)`
+|`10`
+
+|=======================================================================
+
+== Assignment Operators
+
+[cols=",,,,",options="header",]
+|=======================================================================
+|Name |Syntax |Description |Example |Equivalent Operation
+
+|Addition Assignment
+|`+=`
+|Adds the current data value with another
+|`x += 3`
+|`x = x + 3`
+
+|Subtraction Assignment
+|`-=`
+|Subtracts the current data value with another
+|`x -= 4`
+|`x = x - 4`
+
+|Multiplication Assignment
+|`*=`
+|Multiplies the current data value with another
+|`x *= 2`
+|`x = x * 2`
+
+|Division Assignment
+|`/=`
+|Divides the current data value with another
+|`x /= 5`
+|`x = x / 5`
+
+|Modulo Assignment
+|`%=`
+|Takes the remainder when the current data value is divided by another value
+|`x %= 3`
+|`x = x % 3`
+
+|Increment
+|`++`
+|Increases the current data value by 1
+|`x++`
+|`x += 1`
+
+|Decrement
+|`--`
+|Decreases the current data value by 1
+|`x--`
+|`x -= 1`
+
+|=======================================================================
+
+== Relational Operators
+
+[cols=",,,a,a",options="header",]
+|=======================================================================
+|Name |Symbol |Description |Examples |Result
+
+|Equal to
+|`==`
+|Checks if two values are the same
+|`3 == 3` +
+`4 == 3`
+|`true` +
+`false`
+
+|Not equal to
+|`!=`
+|Checks it two values are different
+|`3 != 4` +
+`5 != 5`
+|`true` +
+`false`
+
+|Greater than
+|`>`
+|Checks if the first value is greater than the second
+|`5 > 0` +
+`6 > 6`
+|`true` +
+`false`
+
+|Less than
+|`\<`
+|Checks if the first value is less than the second
+|`3 < 4` +
+`5 < 3`
+|`true` +
+`false`
+
+|Greater than or equal to
+|`>=`
+|Checks if the first value is greater than or equal to the second value
+|`5 >= 4` +
+`4 <= 4`
+|`true` +
+`true`
+
+|Less than or equal to
+|`\<=`
+|Checks it the first value is less than or equal to the second value
+|`3 <= 3` +
+`4 <= 3`
+|`true` +
+`false`
+
+|=======================================================================
+
+== Logical Operators
+
+[cols=",,,a,a",options="header",]
+|==========================================================
+|Name |Symbol |Description |Examples |Result
+
+|AND
+|`&&`
+|Returns true only if *both* sides are true
+|`true && true` +
+`false && true`
+|`true` +
+`false`
+
+|OR
+|`\|\|`
+|Returns true when either side is true
+|`true \|\| false` +
+`false || false`
+|`true` +
+`false`
+
+|NOT
+|`!`
+|Returns true if false and returns false if true
+|`!(true)` +
+`!(false)`
+|`false` +
+`true`
+
+|==========================================================
+
+== Other Operators
+
+[cols=",,,a,a",options="header",]
+|=======================================================================
+|Name |Symbol |Description |Example |Result
+
+|XOR
+|`\^`
+|This is a bitwise operator. It can be used as a logical
+operator. It compares 2 boolean values and results true if only one of
+them are true.
+|`false \^ false` +
+`true ^ false` +
+`false ^ true` +
+`true ^ true`
+|`false` +
+`true` +
+`true` +
+`false`
+
+|=======================================================================

@@ -1,0 +1,105 @@
+---
+layout: resource
+category: beginners
+---
+= Variable Types and Containers
+
+== Variable Types
+
+[cols="m,,a,a",options="header",]
+|=======================================================================
+|Type a|Size +
+(bytes) |Description |Range
+
+|`int`
+|4
+|Used when the data are all integers +
+Ex: 1, 2, -8, 0, -350
+|-2 147 483 648 to +
+2 147 483 847
+
+|`unsigned int`
+|4
+|Used when the data are all positive integers and zero.
+|0 to +
+4 294 967 295
+
+|`float`
+|4
+|Includes all real numbers. +
+Ex: 1.0, 3.14, 1.2345
+|
+
+|`char`
+|1
+|Characters part of ASCII. Each character is stored as a numerical representation.
+
+Ex: ‘a’,’b’,’@’
+
+|Irrelevant if only used for ASCII
+
+|`boolean`
+|1
+|Stores either true (1) or false (0)
+|
+
+|`long long`
+|8
+|Used when the data are very large integers that go beyond the range of an integer type
+|-9 quintillion to +
+9 quintillion
+
+|`unsigned long long`
+|8
+|Used when the data are all very large integers that never go below 0
+|0 to 18 quintillion
+
+|`short`
+|2
+|Smaller range of integers, uses less memory
+|-32 768 to +
+32 767
+
+|`unsigned short`
+|2
+|Used when the data are all small positive integers and zero
+|0 to 65 535
+
+|`double`
+|8
+|Used when more memory is needed for a float
+|
+
+|=======================================================================
+
+== C++ containers:
+
+[cols=",m,a",options="header",]
+|===========================
+|Name |Library |Description
+
+|Arrays
+|
+|
+
+|Vector
+|<vector>
+|
+
+|Stack
+|<stack>
+|
+
+|Queue
+|<queue>
+|
+
+|Pair
+|<utility>
+|
+
+|Map
+|<map>
+|
+
+|===========================

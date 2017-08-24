@@ -1,0 +1,229 @@
+---
+layout: resource
+category: beginners
+---
+= C++ Syntax
+
+== Variable declaration
+
+++++
+{% highlight cpp %}
+if ([condition])
+{
+    //code
+}
+else if ([condition]); //terminates chain if true
+else
+    //one statement will fall in an if, else,
+    //else if, or loop if there are no braces.
+{% endhighlight %}
+++++
+
+== Ternary statement
+
+++++
+{% highlight cpp %}
+[conditional expression] ? [evaluates on true] : [evaluates on false]
+{% endhighlight %}
+++++
+
+== Switch
+
+++++
+{% highlight cpp %}
+switch ([basic type variable])
+{
+case [constant]:
+    //code here
+    //multiple lines work
+    break;
+case [constant]:
+    //code
+case [constant]:
+    //without a break, the previous case falls into this
+    //case and will also do the code under this case.
+default:
+    //if before is satisfied, code here runs.
+    //previous two cases will fall here as they lack a break.
+}
+{% endhighlight %}
+++++
+
+== Loops
+
+++++
+{% highlight cpp %}
+while ([condition])
+{
+    //code here that will run when condition is true
+    //while (1) gives infinite loop
+    //strongly suggested that something changes in the condition here
+    if ([condition]) break; //exits the loop (works with all loops)
+    if ([condition]) continue; //skips all code below,
+                               //returning to the top
+                               //(works with all loops)
+    //code
+}
+{% endhighlight %}
+++++
+
+++++
+{% highlight cpp %}
+do
+{
+    //code here is done once, then loops if the below condition is true
+} while ([condition]); //you need the semicolon here
+{% endhighlight %}
+++++
+
+++++
+{% highlight cpp %}
+for ([initializer]; [condition]; [counter])
+{
+    //code
+    //special loop:
+    /* allows creation of counter variable which
+     * is checked by the condition and automatically
+     * updated by the counter at the end of an iteration.
+     * code order is as follows:
+     * initializer -> condition -> code -> counter
+     *                      ^                |
+     *                      \----------------/
+     */
+    //you can use a for(;;) for an infinite loop
+    //general usage is for (int i = 0; i < times; i++)
+}
+{% endhighlight %}
+++++
+
+== Functions
+
+++++
+{% highlight cpp %}
+[return type] [scope]::[function name]([params])
+{
+    // code
+    // all branches must terminate by returning a value that is of
+    // the return type
+    // return type of void does not require return
+    // return exits function immediately
+}
+{% endhighlight %}
+++++
+
+++++
+{% highlight cpp %}
+// prototype - when referencing a function that's written later in the code,
+// first put up a prototype so that it won't tantrum with "I haven't seen this // yet, it must be nonexistent!"
+[return type] [function name]([param types]);
+{% endhighlight %}
+++++
+
+== Structs, classes, and namespaces
+
+++++
+{% highlight cpp %}
+struct [struct name]
+{
+    // variables or function prototypes
+};
+{% endhighlight %}
+++++
+
+++++
+{% highlight cpp %}
+class [class name] : [inherits from]
+{
+    public:  // denotes that everything following allows public access
+    [class name](void);  // constructor, called on create
+    ~[class name](void); // destructor, called on delete
+    // variables or function prototypes
+};
+{% endhighlight %}
+++++
+
+++++
+{% highlight cpp %}
+namespace [nsp name]
+{
+    // variables or function prototypes
+};
+{% endhighlight %}
+++++
+
+++++
+{% highlight cpp %}
+[return type] [struct/class/nsp name]::[function name]([params])
+{
+    // code
+    // prototypes not within scope require a special header
+    // for their functions using the namespace resolution operator.
+}
+{% endhighlight %}
+++++
+
+== Enums
+
+++++
+{% highlight cpp %}
+enum [enumeration name] : [type] // default type is int
+{
+    //list of terms. ex:
+    ENUM_1,                   // = 0     = 0
+    ENUM_2,                   // = 0 + 1 = 1
+    ENUM_3,                   // = 1 + 1 = 2
+    MUNE_0 = 0,               // = 0     = 0
+    MUNE_1,                   // = 0 + 1 = 1
+    MUNE_2,                   // = 1 + 1 = 2
+    MUNE_3 = MUNE_2 + ENUM_3, // = 2 + 2 = 4
+    MUNE_END                  // = 4 + 1 = 5
+    // enum terms are replaced by their values during compilation.
+    // allows for optimized readability - for example, directions can be
+    // enum'ed into integral values instead of a string
+};
+{% endhighlight %}
+++++
+
+== Arrays
+
+++++
+{% highlight cpp %}
+[type] [name][[size]] = {[list]}; // declaration and initialization
+[name][[index]]                   // references the index of the array
+
+[type] [name][[size1]][[size2]][[size3]]; // you can have multi-dimensional
+                                          // arrays, like this one with three
+{% endhighlight %}
+++++
+
+== Pointers
+
+++++
+{% highlight cpp %}
+[type] * [name] = &[reference];       // decl. and init. of a reference pointer
+[type] * [name] = new [type][[size]]; //decl. and init. of an array pointer
+*[name]                               // dereference pointer
+[name] + [offset]                     // pointer arithmetic - "point [offset] more [type]s later"
+[name][[index]]                       // dereference of pointer array at index
+*([name] + [index])                   // above
+(*[name]).[property]                  // access property of dereferenced pointer
+[name]->[property]                    // shortcut for above
+&[reference]                          // take address of reference - returns a pointer
+
+[type] ***** [name]; // pointers can be nested!
+                     // this has the potential to become a fifth-dimensional
+                     // jagged array.
+{% endhighlight %}
+++++
+
+== Main function
+
+++++
+{% highlight cpp %}
+int main (int argc, char* argv[])
+{
+    //begin code here
+    return 0;
+}
+{% endhighlight %}
+++++

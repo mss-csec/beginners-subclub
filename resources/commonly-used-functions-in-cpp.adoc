@@ -1,0 +1,35 @@
+---
+layout: resource
+category: beginners
+---
+= Commonly Used Functions in C++
+
+Make sure to add the libraries that these functions belong in.
+
+[cols=",",options="header",]
+|=======================================================================
+|Function Name |Description
+|http://www.cplusplus.com/reference/algorithm/sort/?kw=sort[std::sort]
+|Sorts an array/vector from least to greatest
+
+|http://www.cplusplus.com/reference/algorithm/reverse/[std::reverse]
+|Reverses an array/vector
+
+|http://www.cplusplus.com/reference/cmath/sqrt/[sqrt] |Returns the
+square root of a number
+
+|http://www.cplusplus.com/reference/cmath/pow/[pow] |Returns the value
+of an exponent
+
+|http://www.cplusplus.com/reference/cmath/round/?kw=round[round]
+|Rounds a floating number/double to the nearest integer
+
+|http://www.cplusplus.com/reference/cmath/ceil/?kw=ceil[ceil] |Rounds
+up a number
+
+|http://www.cplusplus.com/reference/cmath/floor/?kw=floor[floor]
+|Rounds down a number
+
+|http://www.cplusplus.com/reference/cstdlib/rand/[rand] |Returns a
+random integer
+|=======================================================================

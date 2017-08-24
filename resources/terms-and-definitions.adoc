@@ -1,0 +1,118 @@
+---
+layout: resource
+category: beginners
+---
+= Common Terms and Definitions
+
+[cols="b,a",options="header"]
+|===
+|Term |Definition
+
+|Array
+|A container that stores a series of data values of the same
+type
+
+|Boolean Values
+|Data that can be one of two values, true (1) or false
+(0)
+
+|Compiler
+|A program that takes a code file and translates it into a
+set of instructions that a computer could understand and follow.
+
+|Console
+|An interface that can receive input values and display output
+values.
+
+|Container
+|A collection of variables stored under a given identifier.
+
+|Control Flow
+|The order in which a computer executes code.
+
+|Debugger
+|A program that is used to help test and debug code files.
+
+|Documentation
+|Structure of a code file. This includes whitespacing
+and commenting.
+
+|Element
+|A variable inside of a container.
+
+|Function
+|A command for a computer. Typically, functions will include
+inputs and result one output.
+
+|Global Variables
+|Variables that are initialized outside of a
+function, they are able to be used throughout the entire C++ file.
+
+|Hard Coding
+|Giving values to variables directly in the code file.
+
+|Identifier
+|A name that a computer uses to refer to a specific
+location in memory.
+
+|Index
+|A data value that indicates which variable is being referred to
+in a container
+
+|Integrated development Environment (IDE)
+|A program that is designed
+for programmers to write code.
+
+|Library
+|A file that contains a list of functions that a computer
+should know.
+
+|Local Variables
+|Variables that are initialized in a function. These
+variables can only be used in the function they are declared in.
+
+|Operator
+|a symbol that manipulates or compares data values (Ex:
+`+`, `=`, `>`, `!`)
+
+|Parameter
+|Data Values that are sent to a function when that function
+is called
+
+|Memory
+|A part in a computer that is used to store/retrieve data
+
+|Recursion
+|The process of having a function call itself
+
+|Scalar Data Values
+|Data values that take up little memory. They are
+normally passed to a function by value.
+
+|Scope
+|A range/area in a code file that limits where variables can be
+used in.
+
+|Spaghetti
+|A type of code that is convoluted and unnecessarily hard to read.
+It is difficult to edit spaghetti code as it is prone to bugs.
+Therefore, creating spaghetti code is frowned upon.
+
+|String
+|A container that stores a series of characters
+
+|String Literal
+|A sequence of characters enclosed by quotation marks.
+(Ex: `"hello"`)
+
+|Syntax
+|Guidelines on how specific functions can be used.
+
+|Variable
+|An identifier used in a code file that refers to a specific location in memory.
+
+|Whitespace
+|Any part of the code that is left blank. This includes
+spaces, indents, and empty lines.
+
+|===
