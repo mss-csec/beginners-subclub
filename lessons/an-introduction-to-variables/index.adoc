@@ -42,16 +42,16 @@ specific parts of memory by using variable names. Using the folder
 analogy, the name will simply be the name of the folder.
 
 A variable type tells the computer what type of data this variable will
-be receiving. Each variable type in C++ has their own format and takes
+be receiving. Each variable type in {cpp} has their own format and takes
 up a certain amount of memory. That being said, it is important for the
 computer to know whether it is working with integers or characters. A
 variable cannot store a piece of data that is of a different type nor
 can it change type altogether.
 
-There are many types of variables available for C++, but below is a list
-of the most prominent variable types in C++
+There are many types of variables available for {cpp}, but below is a list
+of the most prominent variable types in {cpp}
 
-[cols=",a,a",options="header"]
+[cols=",a,ma",options="header"]
 |=======================================================================
 |Type |Description |Examples
 |Integers (int) |Includes positive and negative numbers. +
@@ -72,8 +72,8 @@ are more reliable and will cause less random bugs.
 
 |Boolean Values (bool) |Values that are either true (1) or false (0).
 This variable type takes the least memory/space.
-|`true` +
-`false`
+|true +
+false
 |=======================================================================
 
 For more information about theses variable types, as well as information
@@ -114,12 +114,12 @@ Things to avoid when thinking of variable names:
 * Giving 2 variables the same name
 ** In this case, the computer would not know which variable is being
 referred to
-* Having the name of the variable be the name of a command for C++
+* Having the name of the variable be the name of a command for {cpp}
 ** Usually variable names and commands are in different colours in an IDE
 Variable Assignment
 
 In order to store data into a variable, an equal sign (`=`) operator is
-used in C++.
+used in {cpp}.
 
  variableName = dataValue;
 
@@ -129,7 +129,7 @@ right side will be evaluated and the value is stored into the variable.
 If the variable already has data stored in it, *that data will be
 overwritten* with the new value it is given.
 
-**Note: All characters in a code file must be enclosed by [.underline]#single# quotation marks. (`''`) **
+NOTE: All characters in a code file must be enclosed by [.underline]#single# quotation marks. (`''`)
 
 ++++
 {% highlight cpp linenos %}
@@ -190,10 +190,10 @@ int main() {
 Like output commands, ensure that variable initialization and
 assignments all end with a semicolon.
 
-*Note: There are [.underline]#no such things as equations in code.# Having an equal
+NOTE: There are [.underline]#no such things as equations in code.# Having an equal
 sign does not mean that the left side is equal to the right side. It is
 simply assigning the variable on the left side to the value on the right
-side.*
+side.
 
 == In Summary:
 

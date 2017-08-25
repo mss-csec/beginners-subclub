@@ -17,7 +17,7 @@ controlled and can differ based on the values of variables.
 
 == While Loops
 
-The while loop is the most basic type of loop structure in C++. They are
+The while loop is the most basic type of loop structure in {cpp}. They are
 formatted as follows:
 
 ++++
@@ -154,7 +154,7 @@ counter was 0, and the condition results false.
 
 == Brief Introduction to Scope
 
-In C++, scope refers to a specific region in code that are *surrounded
+In {cpp}, scope refers to a specific region in code that are *surrounded
 by braces.* For example, the *main function* is its own scope and it can
 nest smaller scopes if it had loop or if structures in it. Braces act as
 *barriers* for variables. Chapter 8 warned how a variable cannot be

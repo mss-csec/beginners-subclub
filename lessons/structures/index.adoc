@@ -10,7 +10,7 @@ Goal: To be able to create new data types and to be able to use them in code.
 
 == Introduction
 
-Consider having a C++ file that organizes and stores records of student
+Consider having a {cpp} file that organizes and stores records of student
 info. Each student record will contain multiple fields of various data
 types. This data can be stored by having multiple vectors that store
 each field. This way of storing records is very messy.
@@ -43,7 +43,7 @@ data type of a member can start off as a certain value if that value is
 assigned within the struct declaration.
 
 Once a struct has been declared, a new data type can be used across the
-C++ file. They are initialized just like any other variable.
+{cpp} file. They are initialized just like any other variable.
 
  typeName structName;
 
@@ -98,7 +98,7 @@ member variable in an array of structures, the index of the array should
 be placed before the period. (`arrayName[index].member`).
 
 Structures are effective when organizing lists of records. Structures
-must be defined within the C++ file it is in. Objects are not often used
+must be defined within the {cpp} file it is in. Objects are not often used
 in contest questions, but are widely used in large scale projects and
 games. The concept of objects can be delved further into a branch of
 computer science known as *object oriented programming.*

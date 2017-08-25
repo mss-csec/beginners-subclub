@@ -381,7 +381,7 @@ Each character has its own numerical representation. When a variable
 stores a character, the variable is holding a number that corresponds to
 that character. The characters and their corresponding number follows
 the *American Standard Code for Information Interchange (ASCII)*. In
-C++, each character can be referred to by using either the character
+{cpp}, each character can be referred to by using either the character
 itself enclosed by single quotation marks (`\'A\'`) or their numerical
 representation (`65`).
 
@@ -396,7 +396,7 @@ char var = 65;
 {% endhighlight %}
 ++++
 
-When a character is being used with a relational operator in C++, *the
+When a character is being used with a relational operator in {cpp}, *the
 numerical representation of that character is being compared* and not
 the character itself. So the following two excerpts of code perform the same task:
 
@@ -418,7 +418,7 @@ cout << (c > 97);
 {% endhighlight %}
 ++++
 
-This is how C++ uses characters with relational operators.
+This is how {cpp} uses characters with relational operators.
 
 === Switch Statements
 

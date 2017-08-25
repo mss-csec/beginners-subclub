@@ -2,7 +2,7 @@
 layout: resource
 category: beginners
 ---
-= Commonly Used Functions in C++
+= Commonly Used Functions in {cpp}
 
 Make sure to add the libraries that these functions belong in.
 

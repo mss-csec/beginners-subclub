@@ -62,7 +62,7 @@ problem. Users could submit their code to be tested by the judge.
 
 Only registered users are able to use the online judge on the site. To
 register, go to the http://wcipeg.com/[WCIPEG main page] and click on
-_*register an account*_ on the top right corner. To join the Markville
+*_register an account_* on the top right corner. To join the Markville
 Secondary School Organization on WCIPEG, go to *_My Account_ > _Edit
 User Info_*, and select *_Markville Secondary School_* as your
 organization. *:))*
@@ -74,7 +74,7 @@ problems from past contests as well as problems from other sources for
 students to practice coding. It also features an automated judge.
 
 Like on WCIPEG, you will have to register an account on DMOJ. To
-register, click the _*register*_ button in the top right corner. Sadly,
+register, click the *_register_* button in the top right corner. Sadly,
 Markville Secondary School isn’t an organization on DMOJ.
 
 == Submitting Code
@@ -94,7 +94,7 @@ page.
 right side.
 * Copy and paste the entire code or upload the code file into the
 submission page
-* Ensure that the language chosen in the drop-down menu is *C++ 03 (g++
+* Ensure that the language chosen in the drop-down menu is *{cpp} 03 (g\+\+
 4.1.3)*
 * Pray that the code works and outputs all intended values.
 This document, from now on, will mostly use contest questions found on

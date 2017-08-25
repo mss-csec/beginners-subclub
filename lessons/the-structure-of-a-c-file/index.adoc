@@ -4,7 +4,7 @@ layout: lesson
 category: beginners
 lesson: 2
 ---
-= The Structure of a C++ File
+= The Structure of a {cpp} File
 
 == Introduction
 
@@ -16,7 +16,7 @@ Essentially, code is a set of commands given to a computer to execute.
 When reading a file of code, the computer goes through each line and
 executes every command *one at a time* in order.
 
-The basic skeleton of a C++ file will resemble the following:
+The basic skeleton of a {cpp} file will resemble the following:
 
 ++++
 {% highlight cpp linenos %}
@@ -28,18 +28,18 @@ int main() {
 {% endhighlight %}
 ++++
 
-In C++, each component of this skeleton is required in order for the
+In {cpp}, each component of this skeleton is required in order for the
 code to properly run.
 
 == Libraries
 
-There are files that store all the possible instructions C++ could
+There are files that store all the possible instructions {cpp} could
 recognize. All the commands that the computer understands and could
 execute are placed in a file called a *library.* A library stores a list
 of commands that the computer could follow. If a computer has access to
 a library, it could perform any command that is listed in that library.
 
-The most common library that is used when coding a C++ file is the
+The most common library that is used when coding a {cpp} file is the
 *standard library*.
 
 For beginner purposes, all commands that will be used when coding will
@@ -48,7 +48,7 @@ be in the standard library.
 To tell the computer that a file will use the standard library, using
 namespace std; is placed at the beginning of the file.
 
-NOTE: Always include libraries at the beginning of a C++ file.
+NOTE: Always include libraries at the beginning of a {cpp} file.
 
 == The Main Function
 
@@ -69,14 +69,14 @@ int main() {
 
 The computer reads and executes each line of code in the main function
 and ends once it has reached the line `return 0;`. *Any line of code that
-follows this line will be ignored*. A C++ file should always have
+follows this line will be ignored*. A {cpp} file should always have
 `return 0;` within its main function.
 
 == Whitespace
 
 Whitespace is any part of a file that is intentionally left blank. This
 includes spaces, indents, and empty lines. Unlike some other computing
-languages (e.g. Python), the amount of whitespace that is left in a C++
+languages (e.g. Python), the amount of whitespace that is left in a {cpp}
 file has *no effect on the computer’s performance* when it is executing
 the code. So both of the following examples are identical:
 
@@ -102,7 +102,7 @@ main(){return 0;}
 ++++
 
 Though not required, it is encouraged to develop a habit of using
-whitespace in order to make a C++ file easier to read. This includes
+whitespace in order to make a {cpp} file easier to read. This includes
 *indenting any commands* that are within the main function.
 
 == Comments
@@ -128,7 +128,7 @@ int main(){
 {% endhighlight %}
 ++++
 
-There are two main methods for adding comments into a C++ file. Adding
+There are two main methods for adding comments into a {cpp} file. Adding
 *//* will have the computer skip all remaining text in a line of code.
 
 All text that is enclosed by `/\*` and `\*/` are commented out and not

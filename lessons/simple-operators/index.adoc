@@ -19,7 +19,7 @@ the `cout` command. Operators are able to add, assign, or compare values.
 This chapter will focus specifically on *arithmetic operators*,
 operators that take numbers and return a single numerical value.
 
-In C++ (and most other languages), the `+` is used to add two numbers
+In {cpp} (and most other languages), the `+` is used to add two numbers
 together. A line of code in which operators are used is called an
 *expression*. For example, `5 + 3` and `1 + 2 + 3 + 4` are considered to be
 expressions. When given an expression, the computer will always attempt
@@ -69,7 +69,7 @@ subtract text in a code file using these operators. Definitely do not
 think about adding text with numbers.
 
 Below is a list of some arithmetic operators (and more) available for
-C++.
+{cpp}.
 
 [cols=",,a,a,a",options="header",]
 |=======================================================================

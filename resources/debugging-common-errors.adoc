@@ -1,7 +1,8 @@
 ---
 layout: resource
+category: beginners
 ---
-= Debugging Common Errors in C++
+= Debugging Common Errors in {cpp}
 
 When trying to find errors in code, a debugger is often used. A debugger
 allows users to find problems in their code. If the code failed and
@@ -50,7 +51,7 @@ the function inside the main function.
 ** Put quotation marks around them
 
 == Fatal error: <name of library>: No such file or directory; .....
-* Most likely, your file is saved as a C file and not a C++ file. In a C
+* Most likely, your file is saved as a C file and not a {cpp} file. In a C
 file, many libraries such as string, iostream, and vectors, cannot be
 used.
 * Did you spell the name of the library correctly?
@@ -81,15 +82,15 @@ of the variable to change the floating number into an integer. However,
 this will cut off any decimals stored in the float.
 If your code does not crash, but it is not outputting the values that
 you expect it should output, check the following:
-* Did you use any assignment variables(“=”) in an if/loop condition when
-you should have used a relational operator (“==”)
-** Do not mix “=” and “==” up
+* Did you use any assignment variables(`=`) in an if/loop condition when
+you should have used a relational operator (`==`)
+** Do not mix `=` and `==` up
 * When you initialize a counter variable for your for loop, did you give
 your counter a value?
 ** If not, then the value of the counter will be some garbage number.
-* tAre the variables that are sent into a function as parameters the
+* Are the variables that are sent into a function as parameters the
 intended variable type?
 
-These are only a few errors that could come up when coding a C++ file.
+These are only a few errors that could come up when coding a {cpp} file.
 If you are still left with an error with a build message, read through
 your code once more to see if all of your code makes sense.

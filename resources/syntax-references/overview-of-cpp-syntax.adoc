@@ -1,8 +1,9 @@
 ---
+liquid: true
 layout: resource
 category: beginners
 ---
-= C++ Syntax
+= {cpp} Syntax
 
 == Variable declaration
 

@@ -33,7 +33,7 @@ look through an entire row/column in a grid. Three-dimensional arrays
 can be visualized as a cube where each index corresponds to a different
 dimension of the cube.
 
-In C++, each square bracket (`[ ]`) corresponds to a separate dimension of
+In {cpp}, each square bracket (`[ ]`) corresponds to a separate dimension of
 an array. For example, a two-dimensional array will have two sets of
 square brackets. When initializing an array, the size of each dimension
 of the array must be given.

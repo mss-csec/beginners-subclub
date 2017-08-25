@@ -1,5 +1,7 @@
 ---
+liquid: true
 layout: resource
+category: beginners
 ---
 = Functions Questions
 
@@ -92,7 +94,7 @@ Do not use sort(). Choose one of the following sorts:
     ** The output
     ** The return values and parameters of each function call. *Only use an IDE to check your answer.*
 +
-.Code A
+**Code A**
 ++++
 {% highlight cpp linenos %}
 #include <iostream>
@@ -129,7 +131,7 @@ int main(){
 {% endhighlight %}
 ++++
 +
-.Code B
+**Code B**
 ++++
 {% highlight cpp linenos %}
 #include <iostream>
@@ -165,7 +167,7 @@ int main(){
 {% endhighlight %}
 ++++
 +
-.Code C
+**Code C**
 ++++
 {% highlight cpp linenos %}
 #include <iostream>
@@ -209,7 +211,7 @@ factorial.
 . Write a recursive function that takes an integer _n_ and returns the
 __n__th
 https://www.mathsisfun.com/algebra/triangular-numbers.html[triangular
-number]. *Do not use a loop or ++\($\dfrac{n (n + 1)}{2}\)++.*
+number]. *Do not use a loop or ++\(\dfrac{n (n + 1)}{2}\)++.*
 
 . Write a recursive function that takes a string argument and reverses
 the string.

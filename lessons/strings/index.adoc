@@ -17,7 +17,7 @@ strings. This lesson will focus on using the string container offered in
 the `<string>` library.
 
 In order to use standard strings from the string library, an *include
-statement* must be made at the beginning of the C++ file. The string
+statement* must be made at the beginning of the {cpp} file. The string
 library includes not only the container itself, but *member functions*
 that are specifically for that container. Member functions can perform
 many operations including string manipulation. A detailed list of the
@@ -76,7 +76,7 @@ properly.
 
 == Using Member Functions and String Manipulation
 
-As for all libraries for C++, a list of all member functions can be
+As for all libraries for {cpp}, a list of all member functions can be
 found online. For a string, every function is made to manipulate/extract
 information from a string. Therefore, most of the functions in the
 string are formatted as follows:

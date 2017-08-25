@@ -1,12 +1,9 @@
 ---
+liquid: true
 layout: resource
+category: beginners
 ---
 = Reinforcement Questions
-
-++++
-<style>.hidden-highlight { color: #fff; }
-.dark-theme .hidden-highlight { color: #1a1f2a }</style>
-++++
 
 These questions are here to test and reinforce your understanding of key
 concepts so that you can ease into doing contest questions.
@@ -53,7 +50,7 @@ alternate between the following:
 [lowerroman]
 .. +\(n_{\text{next}} = 2(n + 4)\)+
 
-.. +\($n_{\text{next}} = \dfrac{n + 2}{2}\)+
+.. +\(n_{\text{next}} = \dfrac{n + 2}{2}\)+
 --
 +
 The program will output the final value of _n_.
@@ -69,13 +66,13 @@ Sample Output: 34
 _Explanation:_
 +
 ++++
-\begin{aligned}
+\[\begin{aligned}
 2(\textcolor{red}{3}+4) &= \textcolor{blue}{14} \\
 \frac{\textcolor{blue}{14}+2}{2} &= \textcolor{orange}{8} \\
 2(\textcolor{orange}{8}+4) &= \textcolor{green}{24} \\
 \frac{\textcolor{green}{24}+2}{2} &= \textcolor{purple}{13} \\
 2(\textcolor{purple}{13}+4) &= \boxed{34}
-\end{aligned}
+\end{aligned}\]
 ++++
 +
 Sample Runs
@@ -95,8 +92,9 @@ of rows increases. Notice how the number of dots in each row increases
 by one each time. image:media/image2.png[image,width=165,height=139,role="right"]
 +
 --
+[[4(a)]]
 [loweralpha]
-.. [[4-a]]Given an _n_ number of rows, determine the number of dots needed to make
+.. Given an _n_ number of rows, determine the number of dots needed to make
 an equilateral triangle.
 +
 Input: __n, n__>0
@@ -114,25 +112,25 @@ Sample Run
 |=============
 
 .. The number of dots that form an equilateral triangle are called
-https://en.wikipedia.org/wiki/Triangular_number[*_triangular numbers_*].
+https://en.wikipedia.org/wiki/Triangular_number[triangular numbers].
 In a sequence of all triangular numbers, _t(n)_, _t(n)_ would be the sum
 of all natural numbers up to and including _n_; that is, _t(n)_ = 1 +
 2 + 3 + … + _n_
-
++
 There is a formula that calculates the __n__^th^ term in a sequence of
 triangle numbers:
 +
-+\[$t(n) = \frac{n(n + 1)}{2}\]+
++\[t(n) = \frac{n(n + 1)}{2}\]+
 +
 Rewrite your program so that it now uses this formula to calculate the
 number of dots in an equilateral triangle. If you have originally used
 this method, then rewrite your program so that it uses loops instead.
-Use the same test data as <<4-a>>.
+Use the same test data as <<4(a)>>.
 
 . The Fibonacci sequence is a list of numbers where each term is the
 sum of the previous two terms.
 +
-+\[$F_{n} = F_{n - 1} + F_{n - 2}\]+
++\[F_{n} = F_{n - 1} + F_{n - 2}\]+
 +
 Let the zeroth and first term of the Fibonacci sequence be 0 and 1,
 respectively. Write a program that outputs the _n_^th^ term of the
@@ -152,12 +150,12 @@ Sample Run:
 |33 |3524578
 |=============
 +
-*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">To find the _n^th^_ term in the sequence, you will start with the zeroth and first term and find all succeeding terms until you get to the _n^th^_ term.</span>]
+*Hint* (Highlight to see)*:* [hidden-highlight]#To find the _n_^th^ term in the sequence, you will start with the zeroth and first term and find all succeeding terms until you get to the _n_^th^ term.#
 
 . The 3n+1 problem. The http://wcipeg.com/problem/3nplus1[wcipeg
 page] explains this nicely.
 +
-*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">The number of times 3n+1 and n/2 will be calculated is unknown. A while loop would suit this question.</span>]
+*Hint* (Highlight to see)*:* [hidden-highlight]#The number of times 3n+1 and n/2 will be calculated is unknown. A while loop would suit this question.#
 
 == Strings
 
@@ -295,15 +293,15 @@ Sample Run:
 sentence the in words the All
 |=======================================================================
 +
-*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">All words are surrounded by spaces, and spaces are also characters. The length of each word in a sentence can be found be locating all the spaces in the sentence.</span>]
+*Hint* (Highlight to see)*:* [hidden-highlight]#All words are surrounded by spaces, and spaces are also characters. The length of each word in a sentence can be found be locating all the spaces in the sentence.#
 
 . http://wcipeg.com/problem/ccc16j3[Hidden Palindrome] is a good
 contest question that you can find on WCIPEG. (Ex: In the string abcba,
 bcb is a palindrome surrounded by two a’s)
 +
-*Hint 1* (Highlight to see)*:* pass:q[<span class="hidden-highlight">A palindrome is made up of a smaller palindrome surrounded by two of the same characters.</span>]
+*Hint 1* (Highlight to see)*:* [hidden-highlight]#A palindrome is made up of a smaller palindrome surrounded by two of the same characters.#
 +
-*Hint 2* (Highlight to see)*:* +++<span class="hidden-highlight">A way to check if a string is a palindrome is to start at the centre of the string and work outwards. For example, suppose <em>i</em> is the index of the centre of the string. For the string to be a palindrome, str[i-n] and str[i+n\] must be the same. This idea should be used when finding hidden palindromes.</span>+++
+*Hint 2* (Highlight to see)*:* [hidden-highlight]#A way to check if a string is a palindrome is to start at the centre of the string and work outwards. For example, suppose _i_ is the index of the centre of the string. For the string to be a palindrome, `str[i-n]` and `str[i+n]` must be the same. This idea should be used when finding hidden palindromes.#
 +
 The solution to Hidden Palindrome can be found in the link:/resources/beginners/example-code/strings/HiddenPalindrome.cpp[here].
 
@@ -322,11 +320,13 @@ Sample Run:
 [cols="am,m",options="header",]
 |=======================================
 |Input |Output
-|7 +
+|7
+
 1 2 0 3 8 4 9
 |9 0
 
-|16 +
+|16
+
 11 2 93 82 78 54 1 82 -90 2 8 3 4 5 1 -3
 |93 -90
 |=======================================
@@ -347,13 +347,17 @@ Sample Run:
 [cols="am,m",options="header",]
 |========================
 |Input |Output
-|10 +
-2 4 6 8 10 12 14 16 18 20 +
+|10
+
+2 4 6 8 10 12 14 16 18 20
+
 6
 |8
 
-|5 +
-1 2 3 4 5 +
+|5
+
+1 2 3 4 5
+
 1
 |4
 |========================
@@ -373,13 +377,17 @@ Sample Run:
 [cols="am,m",options="header",]
 |======================================
 |Input |Output
-a|6 +
-5 9 8 3 3 2 3 +
-3 +
+a|6
+
+5 9 8 3 3 2 3
+
+3
 |3
 
-|20 +
-1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 0 1 1 0 1 +
+|20
+
+1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 0 1 1 0 1
+
 1
 |15
 |======================================
@@ -397,16 +405,18 @@ Sample Run:
 [cols="am,m",options="header",]
 |===========================================
 |Input |Output
-|1 6 3 2 4 1 1 2 3 5 1 5 3 7 2 4 3 7 1 3 2 -1 +
+|1 6 3 2 4 1 1 2 3 5 1 5 3 7 2 4 3 7 1 3 2 -1
+
 1
 |5
 
-|7 4 9 8 4 5 2 6 7 4 3 4 -1 +
+|7 4 9 8 4 5 2 6 7 4 3 4 -1
+
 4
 |4
 |===========================================
 
-*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">Instead of having an array that stores all integer inputs, have an array that stores the number of times each number has been inputted so far.</span>]
+*Hint* (Highlight to see)*:* [hidden-highlight]#Instead of having an array that stores all integer inputs, have an array that stores the number of times each number has been inputted so far.#
 
 . {blank}
 [loweralpha]
@@ -421,25 +431,28 @@ Sample Run:
 [cols="am,m",options="header",]
 |==============
 |Input |Output
-|dormitory +
+|dormitory
+
 dirty room
 |Y
 
-|eleven plus two +
+|eleven plus two
+
 twelve plus one
 |Y
 
-|abracadabra +
+|abracadabra
+
 cabra darab
 |N
 |==============
 +
-*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">have a 26 element array that stores how many times each character appears in a string.</span>]
+*Hint* (Highlight to see)*:* [hidden-highlight]#have a 26 element array that stores how many times each character appears in a string.#
 .. Ragaman is a variation of the problem above. This question can be
 found on the http://wcipeg.com/problem/ccc16s1[WCIPEG] website.
 +
-*Hint* (Highlight to show)*:* pass:q[<span class="hidden-highlight">Since the first word will never have any asterisks, if the second word has more of one character than the first word, the two words are not ragamans.</span>]
+*Hint* (Highlight to show)*:* [hidden-highlight]#Since the first word will never have any asterisks, if the second word has more of one character than the first word, the two words are not ragamans.#
 .. Eliminanagram is another problem that involves anagrams. This can
-also be found on the http://wcipeg.com/problem/smac081p1[_WCIPEG_] site.
+also be found on the http://wcipeg.com/problem/smac081p1[WCIPEG] site.
 +
-*Hint* (Highlight to show)*:* pass:q[<span class="hidden-highlight">For two words to be eliminanagrams, the total number of each character found in the two words must be even.</span>]
+*Hint* (Highlight to show)*:* [hidden-highlight]#For two words to be eliminanagrams, the total number of each character found in the two words must be even.#

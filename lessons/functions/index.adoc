@@ -32,7 +32,7 @@ parenthesis in the function. Notice how the square root function takes
 an input, and only returns one output. This output is called a *return
 value* and is found in most functions.
 
-Square root is one of many common functions that are used in C++. A list
+Square root is one of many common functions that are used in {cpp}. A list
 of commonly used functions can be found
 link:/resources/beginners/commonly-used-functions-in-cpp[here].
 
@@ -74,7 +74,7 @@ cannot output a data value that is a different type than the type listed
 at the beginning of the function. Any data type and container can be the
 return type of a function.
 
-Below is a list of common return value types in C++
+Below is a list of common return value types in {cpp}
 
 [cols="a,",options="header"]
 |=============================================
@@ -422,7 +422,7 @@ mathematics.
 \[
 \begin{aligned}
 fib(4)
-&= fib(4 - 1) + fib(4 - 2)
+&= fib(4 - 1) + fib(4 - 2) \\
 &= fib(3) + fib(2) \\
 &= (fib(3 - 1) + fib(3 - 2)) + 1 \\
 &= (fib(2) + fib(1)) + 1 \\
@@ -477,7 +477,7 @@ For a program to be able to call another function, that function must be
 declared and defined before that call. If the function is placed
 somewhere after the function call, the program will not know that the
 function exists. This is why libraries are included at the very
-beginning of a C++ file. The program will have a list of functions it
+beginning of a {cpp} file. The program will have a list of functions it
 knows and expects to only call those functions. Thus, the program cannot
 tell whether a function does not exist, or is located further in the
 file.
@@ -489,7 +489,7 @@ forward declaration for a function, the program expects that the
 function will later be defined. That means that a forward declaration
 must be paired with the actual function.
 
-A forward declaration in C++ resembles the following.
+A forward declaration in {cpp} resembles the following.
 
 ....
 returnType functionName(p1Type p1Name, p2Type p2Name, ...);
@@ -541,7 +541,7 @@ between two functions
 Variables can be declared outside of a function. These variables are
 known as *global variables*. Variables that are declared inside of a
 function are known as *local variables.* Global variables have global
-scope. This means that they can be used throughout the entire C++ file.
+scope. This means that they can be used throughout the entire {cpp} file.
 A file is able to *have a global variable and a local variable with the
 same name.* However, whenever that variable is used in a function, *the
 local variable will take priority*.

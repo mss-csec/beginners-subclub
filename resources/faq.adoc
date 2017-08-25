@@ -4,8 +4,7 @@ category: beginners
 ---
 = Frequently Asked Questions
 
-=== Will adding comments, having whitespace, or using longer variable names
-make my code run slower?
+== Will adding comments, having whitespace, or using longer variable names make my code run slower?
 
 No. The program will not run slower. Before the computer runs a code
 file, the compiler first works with the code. Its job is to take the
@@ -18,14 +17,14 @@ time for the compiler to translate a code file with whitespace and
 comments, but compilation time is not as important. Therefore, it is
 best for a code file to be well documented with whitespace and comments.
 
-=== My cursor is being weird and appears below the characters.
+== My cursor is being weird and appears below the characters.
 
 [.right.text-center]
 image::media/image3.png[image,width=262,height=59]
 
 Press kbd:[Insert] on your keyboard.
 
-=== How do I change a floating number into an integer?
+== How do I change a floating number into an integer?
 
 [.right.text-center]
 image::media/image4.png[image,width=368,height=77]
@@ -40,7 +39,7 @@ In general, putting `(<Datatype>)` in front of a variable will change
 the type of a data value. This can be used when some functions only
 accept certain variable types as inputs.
 
-=== Why does Code::Blocks not ask me to save my files?
+== Why does Code::Blocks not ask me to save my files?
 
 Whenever you build your code, your code file will be saved and an .exe
 file will be created. Therefore, as long as you continuously build and
@@ -49,11 +48,11 @@ said, if you want to try something risky in your code file (such as
 replacing a lot of lines), make a copy of your code file so that you
 will always have a backup.
 
-=== How do I add graphics in C++?
+== How do I add graphics in {cpp}?
 
-Graphics for C++ is beyond the scope of the beginner course. *Graphics
-in C++ is complicated*. If you are very motivated, I would suggest
+Graphics for {cpp} is beyond the scope of the beginner course. *Graphics
+in {cpp} is complicated*. If you are very motivated, I would suggest
 learning SDL, Here is an online tutorial on
 http://lazyfoo.net/SDL_tutorials/[SDL]!
 
-=== Why is it `int main()` and not `void main()`?
+== Why is it `int main()` and not `void main()`?

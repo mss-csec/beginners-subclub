@@ -46,7 +46,7 @@ inputs and result one output.
 
 |Global Variables
 |Variables that are initialized outside of a
-function, they are able to be used throughout the entire C++ file.
+function, they are able to be used throughout the entire {cpp} file.
 
 |Hard Coding
 |Giving values to variables directly in the code file.

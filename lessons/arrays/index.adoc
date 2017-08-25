@@ -61,7 +61,7 @@ removed* from an array.
 
 == Array Initialization and Assignments
 
-On C++, an array initialization should be formatted like the following:
+On {cpp}, an array initialization should be formatted like the following:
 
 ++++
 {% highlight cpp %}
@@ -90,35 +90,36 @@ Since the index of an array increments by one when going through each
 element, arrays are often used together with for loops where the counter
 variable acts as the index of the element to be looked at.
 
-.Example Code:
-[cols="6a,1a"]
-|===
-|++++
+**Example Code:**
+++++
 {% highlight cpp linenos %}
 #include <iostream>
 // Makes an array storing the first 5 even number
 using namespace std;
 int main() {
-// creates integer array with 5 elements in it
-int numbers[5]; // size 5
-// for loop to store a value in each element
-for(int i=0;i<5;i++) {
-// gives each element in the array a value
-numbers[i]=i*2;
-}
-cout << "Array Contains: " << endl;
-// for loop to access the value of every element
-for(int i=0;i<5;i++) {
-// outputs value of each the current element
-cout << numbers[i] <<" ";
-}
-return 0;
+    // creates integer array with 5 elements in it
+    int numbers[5]; // size 5
+    // for loop to store a value in each element
+    for (int i = 0; i < 5; i++) {
+        // gives each element in the array a value
+        numbers[i] = i * 2;
+    }
+    cout << "Array Contains: " << endl;
+    // for loop to access the value of every element
+    for (int i = 0; i < 5; i++) {
+        // outputs value of each the current element
+        cout << numbers[i] << " ";
+    }
+    return 0;
 }
 {% endhighlight %}
-++++ |Output: +
-Array Contains: +
+++++
+
+**Output:**
+----
+Array Contains:
 0 2 4 6 8
-|===
+----
 
 Notice how the counter variable `i` is also being used as an index for
 the array. A for loop is the ideal method for reading through all
