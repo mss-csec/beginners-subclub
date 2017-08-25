@@ -1,0 +1,445 @@
+---
+layout: resource
+---
+= Reinforcement Questions
+
+++++
+<style>.hidden-highlight { color: #fff; }
+.dark-theme .hidden-highlight { color: #1a1f2a }</style>
+++++
+
+These questions are here to test and reinforce your understanding of key
+concepts so that you can ease into doing contest questions.
+
+== Loops
+
+. Write a program that outputs a smiley face, :), an _n_ number of
+times.
++
+Input: _n_ (integer)
++
+Output: ":)" written _n_ times
++
+Sample Runs:
++
+[cols="2*m",options="header",]
+|=================
+|Input |Output
+|2 |:):)
+|7 |:):):):):):):)
+|=================
+
+. Write a program that outputs the first 5 multiples of _n._
++
+Input: _n_ (integer)
++
+Output: the first 5 multiples of _n_, starting with _n_
++
+Sample Runs:
++
+[cols="2*m",options="header",]
+|======================
+|Input |Output
+|1 |1 2 3 4 5
+|17 |17 34 51 68 85
+|-8 |-8 -16 -24 -32 -40
+|======================
+
+. Write a program that takes integers _n_ and _i_. Your program will
+perform _i_ calculations on _n_. The calculations done on _n_ will
+alternate between the following:
++
+--
+[lowerroman]
+.. +\(n_{\text{next}} = 2(n + 4)\)+
+
+.. +\($n_{\text{next}} = \dfrac{n + 2}{2}\)+
+--
++
+The program will output the final value of _n_.
++
+Input: _n i_
++
+Output: resulting number after performing _i_ calculations to _n_
++
+Sample Input: +\(\color{red}3\)+ +\(5\)
++
+Sample Output: 34
++
+_Explanation:_
++
+++++
+\begin{aligned}
+2(\textcolor{red}{3}+4) &= \textcolor{blue}{14} \\
+\frac{\textcolor{blue}{14}+2}{2} &= \textcolor{orange}{8} \\
+2(\textcolor{orange}{8}+4) &= \textcolor{green}{24} \\
+\frac{\textcolor{green}{24}+2}{2} &= \textcolor{purple}{13} \\
+2(\textcolor{purple}{13}+4) &= \boxed{34}
+\end{aligned}
+++++
++
+Sample Runs
++
+[cols="2*m",options="header",]
+|=================
+|Input |Output
+|9 4 |19
+|-12 9 |24
+|35 16 |75
+|1071 13789 |71090
+|=================
+
+. Suppose a number of dots were used to form an equilateral triangle.
+The number of dots required to make the triangle increases as the number
+of rows increases. Notice how the number of dots in each row increases
+by one each time. image:media/image2.png[image,width=165,height=139,role="right"]
++
+--
+[loweralpha]
+.. [[4-a]]Given an _n_ number of rows, determine the number of dots needed to make
+an equilateral triangle.
++
+Input: __n, n__>0
++
+Output: the number of dots required to make the triangle
++
+Sample Run
++
+[cols="2*m",options="header",]
+|=============
+|Input |Output
+|6 |21
+|12 |78
+|256 |32896
+|=============
+
+.. The number of dots that form an equilateral triangle are called
+https://en.wikipedia.org/wiki/Triangular_number[*_triangular numbers_*].
+In a sequence of all triangular numbers, _t(n)_, _t(n)_ would be the sum
+of all natural numbers up to and including _n_; that is, _t(n)_ = 1 +
+2 + 3 + … + _n_
+
+There is a formula that calculates the __n__^th^ term in a sequence of
+triangle numbers:
++
++\[$t(n) = \frac{n(n + 1)}{2}\]+
++
+Rewrite your program so that it now uses this formula to calculate the
+number of dots in an equilateral triangle. If you have originally used
+this method, then rewrite your program so that it uses loops instead.
+Use the same test data as <<4-a>>.
+
+. The Fibonacci sequence is a list of numbers where each term is the
+sum of the previous two terms.
++
++\[$F_{n} = F_{n - 1} + F_{n - 2}\]+
++
+Let the zeroth and first term of the Fibonacci sequence be 0 and 1,
+respectively. Write a program that outputs the _n_^th^ term of the
+fibonacci sequence.
++
+Input: _n_
++
+Output: _n_^th^ term of the Fibonacci sequence
++
+Sample Run:
++
+[cols="2*m",options="header",]
+|=============
+|Input |Output
+|5 |5
+|13 |233
+|33 |3524578
+|=============
++
+*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">To find the _n^th^_ term in the sequence, you will start with the zeroth and first term and find all succeeding terms until you get to the _n^th^_ term.</span>]
+
+. The 3n+1 problem. The http://wcipeg.com/problem/3nplus1[wcipeg
+page] explains this nicely.
++
+*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">The number of times 3n+1 and n/2 will be calculated is unknown. A while loop would suit this question.</span>]
+
+== Strings
+
+. {blank}
+[loweralpha]
+.. Write a program that takes a word and outputs the reverse of a
+word.
++
+Sample Run:
++
+[cols="2*m",options="header",]
+|======================
+|Input |Output
+|abbc |cbba
+|qwertyuiop |poiuytrewq
+|======================
+.. A *palindrome* is a string that can be read the same backward and
+forward. Write a program that takes a word and determines if it is a
+palindrome. If it is a palindrome, output “YES”. If it is not a
+palindrome, output “NO”.
++
+Sample Run:
++
+[cols="2*m",options="header",]
+|================
+|Input |Output
+|abcddcba |YES
+|a |YES
+|qwertyqwerty |NO
+|================
+
+. Write a program that takes a word. Going through the index (_i_) of
+every character, output the _i_^th^ character in the word __i__+1 times.
++
+Sample Run
++
+[cols="2*m",options="header",]
+|=============================
+|Input |Output
+|abc |abbccc
+|qwerty |qwweeerrrrtttttyyyyyy
+|booo |booooooooo
+|=============================
+
+. {blank}
+[loweralpha]
+.. Write a program that takes a word, then a character _c_. Your
+program will determine the number of times the character is found in the
+word.
++
+Sample Run:
++
+[cols="2*m",options="header",]
+|========================
+|Input |Output
+|mississippi s |4
+|lolloooolooolasdoo o |10
+|kappa o |0
+|========================
+.. Modify the program so that it will remove all instances where _c_
+appears in the word.
++
+You may want to use
+http://www.cplusplus.com/reference/string/string/erase/[string::erase]
+from the string library.
++
+Sample Run:
++
+[cols="2*m",options="header",]
+|==============================
+|Input |Output
+|mississippi s |miiippi
+|lolloooolooolasdoo o |lllllasd
+|kappa o |kappa
+|==============================
+.. Modify your program again so that it accepts two characters this
+time, _c1_ and _c2_. Each time _c1_ is found in the string, the
+character is replaced with _c2_ instead. Each time _c2_ is found in the
+string, the character is replaced with _c1_.
++
+Sample Run:
++
+[cols=",",options="header",]
+|==========================================
+|Input |Output
+|mississippi i s |msiisiispps
+|lolloooolooolasdoo o l |oloollllollloasdll
+|kappa p p |kappa
+|==========================================
+
+. {blank}
+[loweralpha]
+.. Write a program that will take a character. If the character is
+an uppercase letter, output "`U`". If the character is a lowercase letter,
+output "`L`". If the character is not a letter, output "`N`".
++
+Sample Run
++
+[cols="2*m",options="header",]
+|=============
+|Input |Output
+|S |U
+|t |L
+|@ |N
+|=============
+.. Write a program that will take a word, and output the word in all
+caps. I suggest you refer to an http://www.asciitable.com/[ASCII
+table] instead of 26 if statements.
++
+Sample Run:
++
+[cols="2*m",options="header",]
+|==========================
+|Input |Output
+|Hello |HELLO
+|l33t |L33T
+|HoWiSLife??3 |HOWISLIFE??3
+|==========================
+
+. Write a program that takes an entire line of characters. You will
+need to use the getline() function. After receiving an entire sentence,
+output the sentence with all the words reversed. Assume no punctuation
+will be given in the input.
++
+Sample Run:
++
+[cols="2*m",options="header",]
+|=======================================================================
+|Input |Output
+|The cake is a lie |lie a is cake The
+
+|Whotypeswithspacesanyways |Whotypeswithspacesanyways
+
+|All the words in the sentence must be reversed |reversed be must
+sentence the in words the All
+|=======================================================================
++
+*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">All words are surrounded by spaces, and spaces are also characters. The length of each word in a sentence can be found be locating all the spaces in the sentence.</span>]
+
+. http://wcipeg.com/problem/ccc16j3[Hidden Palindrome] is a good
+contest question that you can find on WCIPEG. (Ex: In the string abcba,
+bcb is a palindrome surrounded by two a’s)
++
+*Hint 1* (Highlight to see)*:* pass:q[<span class="hidden-highlight">A palindrome is made up of a smaller palindrome surrounded by two of the same characters.</span>]
++
+*Hint 2* (Highlight to see)*:* +++<span class="hidden-highlight">A way to check if a string is a palindrome is to start at the centre of the string and work outwards. For example, suppose <em>i</em> is the index of the centre of the string. For the string to be a palindrome, str[i-n] and str[i+n\] must be the same. This idea should be used when finding hidden palindromes.</span>+++
++
+The solution to Hidden Palindrome can be found in the link:/resources/beginners/example-code/strings/HiddenPalindrome.cpp[here].
+
+== Arrays
+
+. Write a program that takes in an _n_ number of integer inputs. This
+program will store those integers in an array and determine the greatest
+number (_h_) and least number (_l_) of all the given integers.
++
+Input: _*n*_, the number of integers which follow _n_ integers, *_k~1~_ to _k~n~_*
++
+Output: _h l_
++
+Sample Run:
++
+[cols="am,m",options="header",]
+|=======================================
+|Input |Output
+|7 +
+1 2 0 3 8 4 9
+|9 0
+
+|16 +
+11 2 93 82 78 54 1 82 -90 2 8 3 4 5 1 -3
+|93 -90
+|=======================================
+
+. Write a program that takes an _n_ number of integers. Store all the
+integers into an array. Reorder the elements in the array so that all
+the values in the array are reversed. *Do not* make a copy of the array
+while reversing. After reversing, output the _i^th^_ element of the
+reversed array. ‘_i’_ will always be less than _n_.
++
+Input: _*n*_, the number of integers which follow _n_ integers, *_k~0~_ to _k~n-1~_* +
+_*i*_, 0 ≤ _i_ < _n_
++
+Output: The value of the element in the reversed array at index _i_.
++
+Sample Run:
++
+[cols="am,m",options="header",]
+|========================
+|Input |Output
+|10 +
+2 4 6 8 10 12 14 16 18 20 +
+6
+|8
+
+|5 +
+1 2 3 4 5 +
+1
+|4
+|========================
+
+. {blank}
+[loweralpha]
+.. Write a program that takes _n_ integers from 0 to 9. Determine
+the number of times _i_ appears in the array.
++
+Input: _*n*_, the number of integers which follow _n_ integers, *_k~0~_ to _k~n-1~_* +
+_*i*_, the integer to count
++
+Output: The number of times _i_ appeared as an input.
++
+Sample Run:
++
+[cols="am,m",options="header",]
+|======================================
+|Input |Output
+a|6 +
+5 9 8 3 3 2 3 +
+3 +
+|3
+
+|20 +
+1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 0 1 1 0 1 +
+1
+|15
+|======================================
+.. Write a program that will continually accept integer inputs from 0-9
+until it receives a -1. Determine the number of times _i_ appears in the
+array.
++
+Input: An unknown amount of integers from 0-9 , terminated by -1 +
+_*i*_, the integer to count
++
+Output: The number of times _i_ appeared as an input.
++
+Sample Run:
++
+[cols="am,m",options="header",]
+|===========================================
+|Input |Output
+|1 6 3 2 4 1 1 2 3 5 1 5 3 7 2 4 3 7 1 3 2 -1 +
+1
+|5
+
+|7 4 9 8 4 5 2 6 7 4 3 4 -1 +
+4
+|4
+|===========================================
+
+*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">Instead of having an array that stores all integer inputs, have an array that stores the number of times each number has been inputted so far.</span>]
+
+. {blank}
+[loweralpha]
+.. An anagram is a rearrangement of the letters of a word/phrase to
+form another word/phrase. Write a program that will determines if two
+phrases are anagrams. You will need to use getline() for this question.
+If the two phrases are anagrams, output "`Y`". If the two phrases are not
+anagrams, output "`N`".
++
+Sample Run:
++
+[cols="am,m",options="header",]
+|==============
+|Input |Output
+|dormitory +
+dirty room
+|Y
+
+|eleven plus two +
+twelve plus one
+|Y
+
+|abracadabra +
+cabra darab
+|N
+|==============
++
+*Hint* (Highlight to see)*:* pass:q[<span class="hidden-highlight">have a 26 element array that stores how many times each character appears in a string.</span>]
+.. Ragaman is a variation of the problem above. This question can be
+found on the http://wcipeg.com/problem/ccc16s1[WCIPEG] website.
++
+*Hint* (Highlight to show)*:* pass:q[<span class="hidden-highlight">Since the first word will never have any asterisks, if the second word has more of one character than the first word, the two words are not ragamans.</span>]
+.. Eliminanagram is another problem that involves anagrams. This can
+also be found on the http://wcipeg.com/problem/smac081p1[_WCIPEG_] site.
++
+*Hint* (Highlight to show)*:* pass:q[<span class="hidden-highlight">For two words to be eliminanagrams, the total number of each character found in the two words must be even.</span>]
