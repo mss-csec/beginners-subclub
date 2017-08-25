@@ -3,7 +3,20 @@ title: Beginners
 layout: landing
 category: beginners
 schedule:
-  example-lesson: 31 Dec 1969
+  installing-an-ide: Sep 15 2017
+  the-structure-of-a-c-file: Sep 22 2017
+  simple-outputs: Sep 29 2017
+  simple-operators: Oct 6 2017
+  an-introduction-to-variables: Oct 13 2017
+  simple-inputs-and-wcipeg: Oct 20 2017
+  if-structures: Oct 27 2017
+  loop-structures: Nov 3 2017
+  arrays: Nov 17 2017
+  multidimensional-arrays: Nov 24 2017
+  strings: Dec 1 2017
+  other-containers: Dec 8 2017
+  functions: Dec 15 2017
+  structures: Dec 22 2017
 ---
 
 Computer Science is one of the hardest courses to get started on. Unlike
