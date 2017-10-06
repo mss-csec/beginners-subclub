@@ -1,22 +1,32 @@
 ---
-title: Beginners
+title: "Beginners'"
 layout: landing
 category: beginners
 schedule:
-  installing-an-ide: Sep 15 2017
-  the-structure-of-a-c-file: Sep 22 2017
-  simple-outputs: Sep 29 2017
-  simple-operators: Oct 6 2017
-  an-introduction-to-variables: Oct 13 2017
-  simple-inputs-and-wcipeg: Oct 20 2017
-  if-structures: Oct 27 2017
-  loop-structures: Nov 3 2017
-  arrays: Nov 17 2017
-  multidimensional-arrays: Nov 24 2017
-  strings: Dec 1 2017
-  other-containers: Dec 8 2017
-  functions: Dec 15 2017
-  structures: Dec 22 2017
+  installing-an-ide: Oct 6 2017
+  the-structure-of-a-c-file: Oct 13 2017
+  simple-outputs: Oct 27 2017
+  simple-operators: Nov 3 2017
+  an-introduction-to-variables: Nov 17 2017
+  simple-inputs-and-wcipeg: Dec 1 2017
+  if-structures: Dec 8 2017
+  loop-structures: Dec 15 2017
+  arrays: Jan 12 2018
+  multidimensional-arrays: Feb 9 2018
+  strings: Feb 16 2018
+  other-containers: Feb 23 2018
+  functions: Mar 2 2018
+  functions-continued: Mar 9 2018
+  structures: Mar 23 2018
+  type-casting-type-modifiers: Apr 6 2018
+  review: Apr 13 2018
+  sorting-algorithms Apr 20 2018
+  sorting-algorithms-time-complexity: Apr 27 2018
+  linear-and-binary-searches: May 11 2018
+  intro-to-dp: May 18 2018
+  dfs: May 25 2018
+  bfs: Jun 1 2018
+  review-2: Jun 8 2018
 ---
 
 Computer Science is one of the hardest courses to get started on. Unlike
