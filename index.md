@@ -20,7 +20,7 @@ schedule:
   structures: Mar 23 2018
   type-casting-type-modifiers: Apr 6 2018
   review: Apr 13 2018
-  sorting-algorithms Apr 20 2018
+  sorting-algorithms: Apr 20 2018
   sorting-algorithms-time-complexity: Apr 27 2018
   linear-and-binary-searches: May 11 2018
   intro-to-dp: May 18 2018
