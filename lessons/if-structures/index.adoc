@@ -4,9 +4,9 @@ layout: lesson
 category: beginners
 lesson: 7
 ---
-= If Structures
+= If Statements
 
-Goal: To be able to implement structures into code.
+Goal: To be able to implement if statements into code.
 
 == Relational Operators
 
@@ -16,14 +16,14 @@ compares the two, and returns a *boolean value*. A boolean value comes
 in one of two states: *true or false*. For a computer, *true is stored
 as a 1,* and *false is stored as a 0*.
 
-An example of a relational operator is ==. It checks whether two
-values/expressions are equal to each other. The symbol == is different
-from =, an operator only used for variable assignments. Be sure not to
+An example of a relational operator is `==`. It checks whether two
+values/expressions are equal to each other. The symbol `==` is different
+from `=`, an operator only used for variable assignments. Be sure not to
 mix up the two operators.
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 
@@ -34,10 +34,9 @@ int main() {
     cout << (true == false) << endl; // compares boolean values
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Output:**
+.Output:
 ....
 1
 0
@@ -88,15 +87,15 @@ The following are more examples of relational operators.
 |`>=`
 |Checks if the first value is greater than or equal to the second value
 |`5 >= 4` +
-`4 <= 4`
+`4 >= 4`
 |`true` +
 `true`
 
 |Less than or equal to
-|`<=`
+|`+<=+`
 |Checks it the first value is less than or equal to the second value
-|`3 <= 3` +
-`4 <= 3`
+|`+3 <= 3+` +
+`+4 <= 3+`
 |`true`
 `false`
 
@@ -125,10 +124,10 @@ common logical operators.
 `false`
 
 |OR
-| `||`
+| `\|\|`
 |Returns true when either side is true
-|`true || false` +
-`false || false`
+|`true \|\| false` +
+`false \|\| false`
 |`true` +
 `false`
 
@@ -142,9 +141,9 @@ common logical operators.
 
 |=======================================================================
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 
@@ -153,10 +152,9 @@ int main() {
     cout << (!(!(5 != 6) || !(4 >= 4))) << endl;
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Output:**
+.Output:
 ....
 0
 1
@@ -174,14 +172,13 @@ specific set of commands if a certain condition is met.
 
 The basic outline of an if statement looks like the following:
 
-++++
-{% highlight cpp %}
+[source]
+----
 if (condition) {
     //code to be run if the condition results to true
 }
 // rest of the code
-{% endhighlight %}
-++++
+----
 
 Inside the parenthesis will be a condition that will result either true
 or false. Normally, the if statement will have variables being compared
@@ -197,15 +194,16 @@ NOTE: Do not initialize a variable within an if structure and use that
 variable outside the if structure. This subject will be explained in
 more detail in the next chapter.
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
-#include <iostream>     // this code will check if a number is positive
+.Example Code:
+[source,cpp]
+----
+// this code will check if a number is positive
+#include <iostream>
 using namespace std;
 
 int main() {
     int num;            // initializes an integer variable
-    cout << “Type in any number.” << endl;
+    cout << "Type in any number." << endl;
     cin >> num;         // gets user input
     if (num > 0) {      // all positive numbers are greater than 0
         // if num is positive, this message will be displayed
@@ -213,10 +211,9 @@ int main() {
     }                   // if num is negative or zero, output is skipped
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Sample Run:**
+.Sample Run:
 ....
 Type in any number.
 8
@@ -235,8 +232,8 @@ make a program run a different set of commands if the conditions in an
 if statement results false. An if structure that includes an else if and
 else statement will resemble the following:
 
-++++
-{% highlight cpp %}
+[source]
+----
 if (condition1) {
     // code to be run if condition 1 results true
 }
@@ -250,8 +247,7 @@ else if (condition3) {
 else {
     // code to be run if all previous conditions result false
 }
-{% endhighlight %}
-++++
+----
 
 [.right.text-center]
 image::media/image2.png[flowchart of if statement logic,width=142,height=156]
@@ -271,8 +267,9 @@ if structure.
 
 Below is the same code modified to display messages for positive,
 negative numbers and zero.
-++++
-{% highlight cpp linenos %}
+
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 int main() {
@@ -282,15 +279,14 @@ int main() {
         cout << num << " is an even number."; // skips to line 16
     }
     else if (num < 0) {   // all negative numbers are less than 0
-        cout << num << " is a negative number.”; // skips to line 16
+        cout << num << " is a negative number."; // skips to line 16
     }
     else {               // 0 is neither greater or less than 0
         cout << num << " is not positive nor negative.";
     }
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 == In Summary
 
@@ -307,22 +303,23 @@ if a condition results to true
 statement, will perform all commands and immediately skip to the end of
 the if structure.
 
-== Practice questions
+== Contest questions
 
 * http://wcipeg.com/problem/p307ex9[Leap Year]
 * http://wcipeg.com/problem/ccc15j1[Special Day]
-* http://wcipeg.com/problem/ccc07j1[Who’s in the Middle]
+* http://wcipeg.com/problem/ccc07j1[Who's in the Middle]
 * http://wcipeg.com/problem/ccc14j1[Triangle Times]
 * http://wcipeg.com/problem/p79ex5[Multiple]
 * http://wcipeg.com/problem/ccc10j2[Up and Down]
 ** This is a good one.
-* Ol’ Jimbob is back and his code looks atrocious. Sure, his code works,
+////
+* Ol' Jimbob is back and his code looks atrocious. Sure, his code works,
 but it is very hard to read and is unnecessarily complex. Your job is to
-change *only Jimbob’s if conditions* so that it makes more sense. Also,
-try and figure out why Jimbob’s code works.
+change *only Jimbob's if conditions* so that it makes more sense. Also,
+try and figure out why Jimbob's code works.
 +
-++++
-{% highlight cpp linenos %}
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 // this program takes 3 side lengths of a triangle and outputs a message
@@ -342,8 +339,8 @@ int main() {
     }
     return 0;
 }
-{% endhighlight %}
-++++
+----
+////
 
 '''
 
@@ -351,7 +348,7 @@ int main() {
 
 === XOR
 
-The XOR operator (`\^`) is an operator that can be used like a logical
+The XOR operator (`^`) is an operator that can be used like a logical
 operator.
 
 This operator is able to take two boolean values and return true if
@@ -362,12 +359,12 @@ in scenarios beyond the scope of this chapter.
 
 [cols="2*m",options="header"]
 |===
-|Examples |Results |
+|Examples |Results
 
-|true \^ true
-|true \^ false
-|false \^ true
-|false \^ false
+|true ^ true
+|true ^ false
+|false ^ true
+|false ^ false
 
 |false
 |true
@@ -382,41 +379,36 @@ stores a character, the variable is holding a number that corresponds to
 that character. The characters and their corresponding number follows
 the *American Standard Code for Information Interchange (ASCII)*. In
 {cpp}, each character can be referred to by using either the character
-itself enclosed by single quotation marks (`\'A\'`) or their numerical
+itself enclosed by single quotation marks (`'A'`) or their numerical
 representation (`65`).
 
-A table displaying each character’s corresponding number can be obtained
-http://www.asciitable.com/[_here_]:
+A table displaying each character's corresponding number can be obtained
+http://www.asciitable.com/[here]:
 
-In the code below, the value of the character variable is set to ‘A’
+In the code below, the value of the character variable is set to 'A':
 
-++++
-{% highlight cpp %}
+[source]
 char var = 65;
-{% endhighlight %}
-++++
 
 When a character is being used with a relational operator in {cpp}, *the
 numerical representation of that character is being compared* and not
 the character itself. So the following two excerpts of code perform the same task:
 
 .Example 1
-++++
-{% highlight cpp %}
+[source]
+----
 char c = 111;
 
 cout << (c > 'a');
-{% endhighlight %}
-++++
+----
 
 .Example 2
-++++
-{% highlight cpp %}
-char c = ‘o’;
+[source]
+----
+char c = 'o';
 
 cout << (c > 97);
-{% endhighlight %}
-++++
+----
 
 This is how {cpp} uses characters with relational operators.
 
@@ -431,8 +423,8 @@ value.*
 
 A switch statement resembles the following:
 
-++++
-{% highlight cpp %}
+[source]
+----
 switch (variable name) {
 case possibleValue:
     // your code
@@ -444,17 +436,16 @@ case possibleValue2:
 default:
     // your code
 }
-{% endhighlight %}
-++++
+----
 
 In a switch statement, the `default` case acts as an else statement in
 an if structure. The purpose of the break statements will be explained
 in the following chapter. Switch statements are not required as they do
 the same task as if structures.
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 
@@ -481,26 +472,25 @@ int main() {
     }
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 .Sample Case:
 ....
-What’s your mark?
+What's your mark?
 A
 Amazing!
 ....
 
 .Sample Case 2:
 ....
-What’s your mark?
+What's your mark?
 D
 Try Harder.
 ....
 
 .Sample Case 3:
 ....
-What’s your mark?
+What's your mark?
 R
-That’s not a rank!
+That's not a rank!
 ....
