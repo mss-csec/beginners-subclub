@@ -31,9 +31,9 @@ When putting operators onto an output command, arithmetic operators will
 naturally take priority over `<<`. This means that the computer will
 evaluate an expression between a set of `<<` before outputting.
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 
@@ -42,11 +42,9 @@ int main() {
     4 + 4;             // semicolon
     return 0;
 }
+----
 
-{% endhighlight %}
-++++
-
-**Output:**
+.Output:
 ....
 5 + 3 = 8
 ....
@@ -154,7 +152,7 @@ performed
 universe, and everything*, your job is to have your code output the
 number 42 in five different ways, using each operator at least once.
 * Jimbob, being the beginner that he is, is confused on why his code
-outputs -1 and not 2. Your goal is to add parenthesis to Jimbob’s code
+outputs -1 and not 2. Your goal is to add parenthesis to Jimbob's code
 in order for his code to output 2.
 +
 ++++

@@ -49,12 +49,9 @@ In order to add any library into a {cpp} file, add
 `#include` followed by the name of the library, at the top of the
 file.
 
-.Adding the iostream library
-++++
-{% highlight cpp %}
+.Adding the iostream library:
+[source]
 #include <iostream>
-{% endhighlight %}
-++++
 
 NOTE: Along with using namespace std; all `#include` statements should be
 placed at the beginning of the file
@@ -63,12 +60,8 @@ placed at the beginning of the file
 to output text and numbers onto the screen. In code, the `cout` command is
 formatted like so:
 
-
-++++
-{% highlight cpp %}
+[source]
 cout << Output << endl;
-{% endhighlight %}
-++++
 
 The output is enclosed between two `<<` and can be one of 2 types.
 
@@ -77,11 +70,11 @@ The output is enclosed between two `<<` and can be one of 2 types.
 ** String literals must be enclosed by quotation marks (`""`)
 
 .Components of the _cout_ command:
-[cols="m,"]
+[cols="m,a"]
 |=======================================================================
 |cout |This marks the beginning of the output command and tells the
 console that a value will be outputted
-|<< a|
+|<< |
 These symbols must be placed in between all outputs in the command.
 
 Tip: to remember the direction of the symbol, when looking from left to
@@ -93,9 +86,9 @@ required in the syntax of cout.
 NOTE: Like _all other commands_ on {cpp}, the cout command _must end with
 a semicolon (`;`)_. This marks the end of a command for a compiler.
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role="linenos"]
+----
 #include <iostream>           // library with cout
 using namespace std;
 
@@ -105,22 +98,20 @@ int main() {
     cout << 3.45;             // outputs on 2nd line
     return 0;                 // ends program
 }
+----
 
-{% endhighlight %}
-++++
-
-**Output:**
+.Output:
 ....
 Line 1
 123.45
 ....
 
 Multiple outputs can be displayed using one command simply be separating
-each output with <<. The following code has an identical output as the
+each output with `<<`. The following code has an identical output as the
 code above.
 
-++++
-{% highlight cpp linenos %}
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 
@@ -128,8 +119,7 @@ int main() {
     cout << "Line 1" << endl << 12 << 3.45;
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 == In Summary:
 
@@ -138,22 +128,22 @@ window called a console
 * The console is able to accept user inputs and display text and values
 * The `cout` command tells the computer to output a value onto the console
 window
-* Putting `#include <iostream>` in the file will add `cout` to the computer’s
+* Putting `#include <iostream>` in the file will add `cout` to the computer's
 list of known commands
 * Text outputs must be enclosed by quotation marks
 * All commands must end with a semicolon
 
 == Practice Questions
 
-*  Create a {cpp} file called HelloWorld.cpp that outputs “Hello, World!”
+*  Create a {cpp} file called HelloWorld.cpp that outputs "Hello, World!"
 onto the screen
 *  Explain the difference between the two statements and their outputs.
 ..  `cout << "08" << endl;`
 ..  `cout << 08 << endl;`
 *  Predict what the console will output given the following code:
 +
-++++
-{% highlight cpp linenos %}
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 
@@ -163,5 +153,4 @@ int main() {
     cout << endl << endl << "13";
     return 0;
 }
-{% endhighlight %}
-++++
+----
