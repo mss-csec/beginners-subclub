@@ -14,11 +14,8 @@ values, but it also includes `cin`, a command that accepts inputs. `cin`
 stands for **C**onsole **IN**put and its syntax is formatted as
 follows.
 
-++++
-{% highlight cpp %}
+[source]
 cin >> variableName;
-{% endhighlight %}
-++++
 
 The `cin` command uses `>>` in its format while cout uses of `<<`. To
 differentiate them, imagine the symbols as lines moving inwards (`>>`) or
@@ -27,9 +24,9 @@ moving outwards (`<<`). `cin` will tell the console to put all inputs into a
 each `cin` command can accept multiple inputs by separating each variable
 name with `>>`.
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 // This code takes two numbers and returns their sum
@@ -41,10 +38,9 @@ int main() {
     cout << "The Sum is " << num + num2; // outputs the sum
     return 0;                            // returns 0
 }
-{% endhighlight %}
-++++
+----
 
-**Sample run:**
+.Sample run:
 ....
 >>> Pick 2 numbers!
 3
@@ -75,7 +71,7 @@ students to practice coding. It also features an automated judge.
 
 Like on WCIPEG, you will have to register an account on DMOJ. To
 register, click the *_register_* button in the top right corner. Sadly,
-Markville Secondary School isn’t an organization on DMOJ.
+Markville Secondary School isn't an organization on DMOJ.
 
 == Submitting Code
 
@@ -94,7 +90,7 @@ page.
 right side.
 * Copy and paste the entire code or upload the code file into the
 submission page
-* Ensure that the language chosen in the drop-down menu is *{cpp} 03 (g\+\+
+* Ensure that the language chosen in the drop-down menu is *{cpp} 03 (g{pp}
 4.1.3)*
 * Pray that the code works and outputs all intended values.
 This document, from now on, will mostly use contest questions found on
@@ -109,7 +105,7 @@ and stores it into a variable.
 * WCIPEG and DMOJ are sites made for students to practice contest-styled
 coding problems
 
-== Practice Questions
+== Contest Questions
 
 * http://wcipeg.com/problem/aplusb[A plus B]
 * http://wcipeg.com/problem/coci062p1[Task R2]
