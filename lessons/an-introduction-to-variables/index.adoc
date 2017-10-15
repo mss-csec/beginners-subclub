@@ -51,28 +51,32 @@ can it change type altogether.
 There are many types of variables available for {cpp}, but below is a list
 of the most prominent variable types in {cpp}
 
-[cols=",a,ma",options="header"]
+[cols="3*a",options="header"]
 |=======================================================================
 |Type |Description |Examples
-|Integers (int) |Includes positive and negative numbers. +
+
+|Integers (int)
+|Includes positive and negative numbers. +
 Does not include decimals
-|42 +
+m|42 +
 -6
 
-|Characters (char) |Letters, numbers, all
-http://www.asciitable.com/[ASCII] Characters |&
+|Characters (char)
+|Letters, numbers, all http://www.asciitable.com/[ASCII] Characters
+m|&
 
-|Floating Numbers (float) |Floating numbers are basically real numbers. +
-
+|Floating Numbers (float)
+|Floating numbers are basically real numbers. +
 Always use *integers over floating numbers* whenever possible. Integers
 are more reliable and will cause less random bugs.
-|3.1415 +
+m|3.1415 +
 1.0 +
--0.1235 +
+-0.1235
 
-|Boolean Values (bool) |Values that are either true (1) or false (0).
+|Boolean Values (bool)
+|Values that are either true (1) or false (0).
 This variable type takes the least memory/space.
-|true +
+m|true +
 false
 |=======================================================================
 
@@ -95,8 +99,8 @@ following:
 The type of variable will be listed first, followed by the variable name
 and a semicolon.
 
-++++
-{% highlight cpp linenos %}
+[source,role="linenos"]
+----
 //Examples of Variable Initializations
 using namespace std;
 
@@ -106,8 +110,7 @@ int main() {
     bool isPassing; // boolean variable
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 Things to avoid when thinking of variable names:
 
@@ -131,8 +134,8 @@ overwritten* with the new value it is given.
 
 NOTE: All characters in a code file must be enclosed by [.underline]#single# quotation marks. (`''`)
 
-++++
-{% highlight cpp linenos %}
+[source,role="linenos"]
+----
 using namespace std;
 
 int main(){
@@ -141,8 +144,7 @@ int main(){
     bool checked;
     checked = false;
 }
-{% endhighlight %}
-++++
+----
 
 == Accessing a Variable
 
@@ -156,8 +158,8 @@ that has no relevancy.
 
 **Example Code:**
 
-++++
-{% highlight cpp linenos %}
+[source,role="linenos"]
+----
 using namespace std;
 
 int main() {
@@ -167,15 +169,14 @@ int main() {
     num = 5;
     num2 = num + 4;     // num2 = (5) + 4       num2 = 9
 }
-{% endhighlight %}
-++++
+----
 
 Since the value on the right side of the assignment will be evaluated
 before it is assigned into the variable on the left side, the same
 variable can appear on both sides of the assignment.
 
-++++
-{% highlight cpp linenos %}
+[source,role="linenos"]
+----
 using namespace std;
 
 int main() {
@@ -184,8 +185,7 @@ int main() {
     num = num + 1;      // 6 + 1 = 7
     num = num * num;    // 7 * 7 = 49
 }
-{% endhighlight %}
-++++
+----
 
 Like output commands, ensure that variable initialization and
 assignments all end with a semicolon.
@@ -222,12 +222,11 @@ without putting `a = 10` or `b = 1`
 Variable initialization and variable assignment can be combined into one
 line like so.
 
-++++
-{% highlight cpp %}
+[source]
+----
 int num = 8;
 int num2 (8);
-{% endhighlight %}
-++++
+----
 
 === Signed Integers vs. Unsigned Integers
 
@@ -253,17 +252,16 @@ the same amount of memory.
 
 === Long Long and Shorts
 
-An int variable is able to store any number from `-2 147 483 648` to `2 147
-483 647`. If the data values being used get so large that it exceeds the
+An int variable is able to store any number from stem:[-2 147 483 648] to stem:[2 147 483 647]. If the data values being used get so large that it exceeds the
 range of an int variable, another variable type would be used. *Long
 long* are variable types that take up *twice as much memory* than an int
-type. Because of that, it is able to store integers from `-9 quintillion`
-to `9 quintillion`. Since this data type does take up more memory than int
+type. Because of that, it is able to store integers from stem:[-9 \text{ quintillion}]
+to stem:[9 \text{ quintillion}]. Since this data type does take up more memory than int
 types, it is advised not to use long longs unless absolutely necessary.
 
 A *short* is a variable integer type that takes up *less memory* than an
 int variable type. Understandably, a short can only store integers from
-`-32 768` to `32 767`. Both long long and short variable types can be signed
+stem:[-32 768] to stem:[32 767]. Both long long and short variable types can be signed
 or unsigned.
 
 === Assignment Operators
