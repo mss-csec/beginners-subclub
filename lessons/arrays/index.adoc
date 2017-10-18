@@ -6,28 +6,20 @@ lesson: 9
 ---
 = Arrays
 
-== Introduction
-
 [.right.text-center]
 image::media/image2.png[image,width=327,height=155]
 
-Consider having a program that stores the price of various items in a
-store. This program could have an integer variable storing the price for
-each item in the store. Business is bad and the store is forced to raise
-the price of *every item* in the store by $1. If each price were its own
-integer variable, raising the price of every item would be messy. If
-each price were its own variable, it would take so many lines of code to
-raise each price by
-one.
+Consider having a program that stores the price of various items in a store.
+This program could have an integer variable storing the price for each item in the store.
+Business is bad and the store is forced to raise the price of *every item* in the store by $1.
+If each price were its own integer variable, raising the price of every item would be messy.
+If each price were its own variable, it would take so many lines of code to raise each price by one.
 
-Putting the store scenario aside, there are many instances where large
-amounts of variables must be changed, or even compared. Having a
-separate name for each variable would simply be too inconvenient for the
-user and the coder.
+Putting the store scenario aside, there are many instances where large amounts of variables must be changed, or even compared.
+Having a separate name for each variable would simply be too inconvenient for the user and the coder.
 
-Arrays are the solution to having large amounts of similar variables. An
-array is a data structure that collects and organizes variables under
-one name.
+Arrays are the solution to having large amounts of similar variables.
+An array is a data structure that collects and organizes variables under one name.
 
 == Structure of an Array
 
@@ -63,11 +55,8 @@ removed* from an array.
 
 On {cpp}, an array initialization should be formatted like the following:
 
-++++
-{% highlight cpp %}
+[source]
 DataType ArrayName[Size];
-{% endhighlight %}
-++++
 
 This statement will tell the computer to allocate memory for _Size_
 variables of _DataType_ type. A variable can be placed where the size of
@@ -82,17 +71,17 @@ to a variable and *operates like any other variable.* For example,
 variables and can be used as two separate variables. Each element of the
 array can be worked with individually.
 
-*Note: Initializing an array of size `n` will have its last element’s
+NOTE: Initializing an array of size `n` will have its last element's
 index be `n-1`. For example, initializing an array of size 50 will create
-50 elements numbered from 0 to 49. There is no element with index 50.*
+50 elements numbered from 0 to 49. There is no element with index 50.
 
 Since the index of an array increments by one when going through each
 element, arrays are often used together with for loops where the counter
 variable acts as the index of the element to be looked at.
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+Example Code:
+[source,role=linenos]
+----
 #include <iostream>
 // Makes an array storing the first 5 even number
 using namespace std;
@@ -112,20 +101,20 @@ int main() {
     }
     return 0;
 }
-{% endhighlight %}
-++++
-
-**Output:**
 ----
+
+.Output:
+....
 Array Contains:
 0 2 4 6 8
-----
+....
 
 Notice how the counter variable `i` is also being used as an index for
 the array. A for loop is the ideal method for reading through all
 elements in an array.
 
-== Practice Questions
+== Contest Questions
 
 * http://wcipeg.com/problem/ccc16s1[Ragaman]
+* http://wcipeg.com/problem/ccc12j2[Sounds fishy!]
 * http://wcipeg.com/problem/mockccc15s2[Problem-setting Pandemonium]

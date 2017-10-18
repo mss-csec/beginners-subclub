@@ -8,8 +8,6 @@ lesson: 8
 
 Goal: To be able to implement While and For loops into code
 
-== Introduction
-
 A loop is a mean of control flow where certain commands are repeated
 multiple times. They are used whenever similar actions are performed
 numerous times. The number of times and when to stop repeating can be
@@ -20,13 +18,10 @@ controlled and can differ based on the values of variables.
 The while loop is the most basic type of loop structure in {cpp}. They are
 formatted as follows:
 
-++++
-{% highlight cpp %}
+[source]
 while (condition) {
     // commands to loop if condition is true
 }
-{% endhighlight %}
-++++
 
 [.right.text-center]
 image:media/image2.png[flowchart of a while loop,width=165,height=209]
@@ -43,9 +38,9 @@ commands after the while loop.
 As long as the condition in parenthesis remains true, *the program will
 endlessly loop inside of the while loop.*
 
-**Sample Code:**
-++++
-{% highlight cpp linenos %}
+.Sample Code:
+[source,role="linenos"]
+----
 #include <iostream>
 using namespace std;
 int main() {
@@ -58,8 +53,7 @@ int main() {
     cout << "End";
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 In the previous example, a counter variable was initialized and the
 program will continue to loop and increase the counter by 1 when the
@@ -74,8 +68,8 @@ is met.
 
 The following code will have the same outputs as the code above:
 
-++++
-{% highlight cpp linenos %}
+[source,role=linenos]
+----
 #include <iostream>
 using namespace std;
 
@@ -91,8 +85,7 @@ int main() {
     cout << "End";
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 == For Loops
 
@@ -102,13 +95,10 @@ loops a known number of times. For loops are also known as *counted
 loops* because it is *made to have a counter variable.* The format of
 the for loop resembles the following.
 
-++++
-{% highlight cpp %}
+[source]
 for (int counterVariable; condition; changetoCounter) {
     // commands while condition above is true
 }
-{% endhighlight %}
-++++
 
 The section in parentheses are divided into three groups
 
@@ -124,9 +114,9 @@ time the program loops
 
 NOTE: Notice how each section is divided by semicolons.
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role=linenos]
+----
 #include <iostream>
 using namespace std;
 
@@ -137,10 +127,9 @@ int main() {
     }   // goes back to line 6 and subtracts 1 to i
     cout << "End";
 }
-{% endhighlight %}
-++++
+----
 
-**Output:**
+.Output:
 ....
 3
 2
@@ -185,9 +174,9 @@ in the same scope, the *two variables did not co-exist*. Instead, the
 second `i` variable was initialized when the first `i` variable was
 already destroyed.
 
-**Demonstration of Scopes:**
-++++
-{% highlight cpp linenos %}
+.Demonstration of Scopes:
+[source,role=linenos]
+----
 #include <iostream>
 using namespace std;
 // pay attention to all the indents
@@ -210,10 +199,9 @@ int main() {
     return 0;
 }
 // var does not exist anymore
-{% endhighlight %}
-++++
+----
 
-**Output:**
+.Output:
 ....
 0
 1
@@ -257,13 +245,10 @@ condition for looping is checked at the very end of the loop structure
 and not at the beginning. The syntax of the do-while loop is the
 following:
 
-++++
-{% highlight cpp linenos %}
-do{
+[source]
+do {
     //code to be executed atleast once
 } while (condition);
-{% endhighlight %}
-++++
 
 === Extra Information on For Loops and Nested Loops
 
@@ -283,8 +268,9 @@ statement.
 An demonstration of how for loops can be used and how nested loops works
 are shown below.
 
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role=linenos]
+----
 #include <iostream>
 using namespace std;
 
@@ -308,10 +294,9 @@ int main() {
     // initialized inside of the for loop
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Output:**
+.Output:
 ....
 0 0
 0 1
