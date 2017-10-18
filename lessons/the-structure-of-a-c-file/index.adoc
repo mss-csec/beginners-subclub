@@ -6,8 +6,6 @@ lesson: 2
 ---
 = The Structure of a {cpp} File
 
-== Introduction
-
 A computer is designed to follow instructions and commands. Typically,
 these instructions are organized into a file that the computer follows
 and executes. These formatted instructions are known as *code.*
@@ -18,15 +16,14 @@ executes every command *one at a time* in order.
 
 The basic skeleton of a {cpp} file will resemble the following:
 
-++++
-{% highlight cpp linenos %}
+[source,role="linenos"]
+----
 using namespace std;
 
 int main() {
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 In {cpp}, each component of this skeleton is required in order for the
 code to properly run.
@@ -55,17 +52,15 @@ NOTE: Always include libraries at the beginning of a {cpp} file.
 When a computer first runs a code file, it will go down each line of
 code until it reaches a line with `int main()`. This line is referred to
 as the *main function*. Once the computer finds the main function, it
-will begin executing all commands listed inside the braces (`\{}`). *Any
+will begin executing all commands listed inside the braces (`{}`). *Any
 commands that are in the file must be placed within the main function*.
 
-[.left]
-++++
-{% highlight cpp %}
+[source]
+----
 int main() {
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 The computer reads and executes each line of code in the main function
 and ends once it has reached the line `return 0;`. *Any line of code that
@@ -77,29 +72,27 @@ follows this line will be ignored*. A {cpp} file should always have
 Whitespace is any part of a file that is intentionally left blank. This
 includes spaces, indents, and empty lines. Unlike some other computing
 languages (e.g. Python), the amount of whitespace that is left in a {cpp}
-file has *no effect on the computer’s performance* when it is executing
+file has *no effect on the computer's performance* when it is executing
 the code. So both of the following examples are identical:
 
-**Example 1:**
-++++
-{% highlight cpp %}
+.Example 1:
+[source]
+----
 using namespace std;
 
 int main() {
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Example 2:**
-++++
-{% highlight cpp %}
+.Example 2:
+[source]
+----
 using namespace
 std;
 int
 main(){return 0;}
-{% endhighlight %}
-++++
+----
 
 Though not required, it is encouraged to develop a habit of using
 whitespace in order to make a {cpp} file easier to read. This includes
@@ -113,9 +106,9 @@ comment is any text in a file that is not meant for the computer to
 read. Users put important information about the file into the code as
 comments. Overall, *comments makes code more readable for humans.*
 
-**Example:**
-++++
-{% highlight cpp linenos %}
+.Example:
+[source,role="linenos"]
+----
 using namespace std;
 int main(){
     // This is a comment.
@@ -125,13 +118,12 @@ int main(){
     */
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
 There are two main methods for adding comments into a {cpp} file. Adding
-*//* will have the computer skip all remaining text in a line of code.
+`//` will have the computer skip all remaining text in a line of code.
 
-All text that is enclosed by `/\*` and `\*/` are commented out and not
+All text that is enclosed by `/\*` and `*/` are commented out and not
 read by the computer.
 
 == In Summary

@@ -6,8 +6,6 @@ lesson: 1
 ---
 = Installing an IDE
 
-== Introduction
-
 In order to write code, it is recommended to use a program specifically
 made for coding. An IDE is any program that code can be written on. IDE
 stands for *Integrated Development Environment*. An ideal IDE would
@@ -37,15 +35,13 @@ submitted for contests)
 
 This doc will walk through the usage of Code::Blocks.
 
-'''
-
 == Setting up Code::Blocks
 
 If Code::Blocks is running on Mac OS, the program will urge that command
 line must be downloaded. Allow Code::Blocks to install command line.
 
 Once Code::Blocks finishes installing, click *_Settings_* on the top
-task bar, then click *_compiler…_*
+task bar, then click *_compiler..._*
 
 [.right.text-center]
 image::media/image3.png[image,width=394,height=90]
@@ -55,7 +51,7 @@ is the selected compiler. If the program is complaining that it cannot
 find that compiler, click on *_Reset defaults_*.
 
 If Code::Blocks still complains, *Google is your friend! Welcome to
-Markville’s Computer Science Course :D*.
+Markville's Computer Science Course :D*.
 
 == Setting up a {cpp} File
 
