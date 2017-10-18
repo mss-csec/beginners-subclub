@@ -8,8 +8,6 @@ lesson: 11
 
 Goal: To understand how to initialize and manipulate text strings.
 
-== Introduction
-
 Individual variable types can be combined and be used as one unit. This
 unit is known as a *container*. A string is a type of container as it is
 a *chain of characters.* Words, and full sentences are examples of
@@ -40,15 +38,12 @@ function is used. `getline` is a function that is used to get an
 entire line of input and store it into a string. It is formatted like
 the following:
 
-++++
-{% highlight cpp %}
+[source]
 getline(cin, variableName);
-{% endhighlight %}
-++++
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role=linenos]
+----
 #include <iostream>
 #include <string>
 using namespace std;
@@ -56,15 +51,14 @@ int main() {
     string name;       // initializes string
     cout << "What's your name?" << endl;
     getline(cin,name); // stores full name
-    cout << "Hi " << name << ”!”;
+    cout << "Hi " << name << "!";
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Sample Run:**
+.Sample Run:
 ....
->>> What’s your name?
+>>> What's your name?
 Herp da Derp
 >>> Hi Herp da Derp!
 ....
@@ -81,11 +75,8 @@ found online. For a string, every function is made to manipulate/extract
 information from a string. Therefore, most of the functions in the
 string are formatted as follows:
 
-++++
-{% highlight cpp %}
+[source]
 stringName.memberFunction(parameters) // notice the dot
-{% endhighlight %}
-++++
 
 For example, to find the length of a string, `strName.length()` will
 return an integer that represents the length of the string with the
@@ -98,9 +89,9 @@ String concatenation is the appending of two or more strings. Strings
 can be added with text or other strings using the `+` operator. Since the
 `+` operator can be used, the `+=` operator can be used as well.
 
-**Example Code**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role=linenos]
+----
 #include <iostream>
 #include <string>
 
@@ -114,10 +105,9 @@ int main() {
     cout << "str3 is " << str3.length() << " characters long." << endl;
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Output:**
+.Output:
 ....
 str3 is 0 characters long.
 str3 is 3 characters long.
@@ -132,20 +122,14 @@ for strings.
 NOTE: Do not add two string literals (text surrounded by quotation
 marks) together.
 
-++++
-{% highlight cpp %}
-str += "abc" + "def"; // "abc" can’t add with "def"
-{% endhighlight %}
-++++
+[source]
+str += "abc" + "def"; // "abc" can't add with "def"
 
 The above code will result in an error because the computer is trying to
 add two string literals. This could be fixed by altering the code like:
 
-++++
-{% highlight cpp %}
-|str = (str + "abc") + "def"; // str adds with "abc", then with "def"
-{% endhighlight %}
-++++
+[source]
+str = (str + "abc") + "def"; // str adds with "abc", then with "def"
 
 That way, a *string will always add with a string literal* and *two
 string literals will never add with each other.* The reason why strings
@@ -172,8 +156,8 @@ NOTE: Be Careful! `str.length()` returns the length of a string, but the
 highest index in that string will always be one less than the length of
 the string.
 
-++++
-{% highlight cpp linenos %}
+[source,role=linenos]
+----
 #include <iostream>
 #include <string>
 // This code outputs the reverse of a word
@@ -190,10 +174,9 @@ int main() {
     cout << str << " backwards is " << reverseStr; // outputs reverse str
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Sample Run:**
+.Sample Run:
 ....
 Kappa
 >>> Kappa backwards is appaK
@@ -216,22 +199,24 @@ http://www.asciitable.com/[here].
 
 * Containers are used to organize and store various variable types at once
 * A string is a type of container that stores a sequence of characters
-* Standard strings are found in the <string> library
+* Standard strings are found in the `<string>` library
 * Commands from a library are called member functions
-* getline() is used to get inputs that includes spaces
-* Member functions are formatted as str.memberFunction(parameters)
+* `getline()` is used to get inputs that includes spaces
+* Member functions are formatted as `str.memberFunction(parameters)`
 * Strings can be concatenated with other strings or characters.
-* Each individual character can be accessed with str[]
+* Each individual character can be accessed with `str[]`
 * Index refers to where a character is in a string
 * The first character in a string is always index 0.
 * ASCII is used to pair every character with a numerical value.
 
-== Practice Questions
+== Contest Questions
 
 * http://wcipeg.com/problem/ccc11s1[English or French]
 ** My personal favourite
 * http://wcipeg.com/problem/ccc16j3[Hidden Palindrome]
 * http://wcipeg.com/problem/wc96p3[Hidden Geography]
+* http://wcipeg.com/problem/ccc02j2[AmeriCanadian]
+* http://wcipeg.com/problem/ccc07j2[I Speak TXTMSG]
 * http://wcipeg.com/problem/ccc04j4[Simple Encryption]
-** Don’t be fooled, this is the hardest question out all of the practice
+** Don't be fooled, this is the hardest question out all of the practice
 questions

@@ -6,8 +6,6 @@ lesson: 10
 ---
 = Multidimensional Arrays
 
-== Introduction
-
 [.right.text-center]
 image::media/image2.png[visualization of a 5-element char array,width=263,height=110]
 
@@ -38,28 +36,22 @@ an array. For example, a two-dimensional array will have two sets of
 square brackets. When initializing an array, the size of each dimension
 of the array must be given.
 
-++++
-{% highlight cpp %}
+[source]
 arrayType arrayName [size1] [size2];
-{% endhighlight %}
-++++
 
 When accessing an element in a multidimensional array, the index of each
 dimension must be known. Each set of indexes refers to a unique element
 in an array.
 
-++++
-{% highlight cpp %}
+[source]
 arrayName[index1][index2]
-{% endhighlight %}
-++++
 
 NOTE: No set of square brackets can be left blank when accessing an
 element in an array.
 
-**Example code of a 2-dimensional array:**
-++++
-{% highlight cpp linenos %}
+.Example code of a 2-dimensional array:
+[source,role=linenos]
+----
 #include <iostream>
 using namespace std;
 int main() {
@@ -81,10 +73,9 @@ int main() {
     }
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Output:**
+.Output:
 ....
 Look at this Cool Multiplication Table
 1 2 3 4
