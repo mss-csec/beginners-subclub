@@ -8,8 +8,6 @@ lesson: 14
 
 Goal: To be able to create new data types and to be able to use them in code.
 
-== Introduction
-
 Consider having a {cpp} file that organizes and stores records of student
 info. Each student record will contain multiple fields of various data
 types. This data can be stored by having multiple vectors that store
@@ -27,16 +25,12 @@ this type must first be declared and defined.
 
 A struct declaration will resemble the following:
 
-
-++++
-{% highlight cpp %}
+[source]
 struct typeName {
     member1Type member1Name;
     member2Type member2Name;
     // the number of members in the struct can continue
 };
-{% endhighlight %}
-++++
 
 Arrays and other containers can also be placed within a structure. A
 data type of a member can start off as a certain value if that value is
@@ -52,9 +46,9 @@ between the struct name and the member name.
 
  structName.memberName
 
-**Example Code:**
-++++
-{% highlight cpp linenos %}
+.Example Code:
+[source,role=linenos]
+----
 #include <iostream>
 #include <string>
 using namespace std;
@@ -85,10 +79,9 @@ int main() {
     }
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-**Output:**
+.Output:
 ....
 Thomas the Tank Engine is failing.
 ....
@@ -111,7 +104,7 @@ computer science known as *object oriented programming.*
 * A period is used to access a member function in a struct
 * Arrays of structs can be made, and structs can include arrays
 
-== Practice Questions
+== Contest Questions
 
 * http://wcipeg.com/problem/coci077p1[Platforme]
 * http://wcipeg.com/problem/wc151s1[Woburn Workload]
