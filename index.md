@@ -8,25 +8,29 @@ schedule:
   simple-outputs: Oct 13 2017
   simple-operators: Oct 13 2017
   an-introduction-to-variables: Oct 13 2017
-  simple-inputs-and-wcipeg: Oct 13 2017
-  if-structures: Oct 27 2017
-  loop-structures: Nov 3 2017
-  arrays: Nov 17 2017
-  multidimensional-arrays: Dec 1 2017
+  simple-inputs-and-wcipeg: Oct 27 2017
+  if-structures: Nov 3 2017
+  loop-structures: Nov 17 2017
+  '0@Review': Dec 1 2017
+  arrays: Dec 8 2017
   strings: Dec 8 2017
-  other-containers: Dec 15 2017
-  functions: Jan 12 2018
-  functions-continued: Feb 9 2018
-  structures: Feb 16 2018
-  type-casting-type-modifiers: Feb 23 2018
-  review: Mar 2 2018
-  sorting-algorithms: Mar 9 2018
-  sorting-algorithms-time-complexity: Mar 23 2018
-  linear-and-binary-searches: Apr 6 2018
-  intro-to-dp: Apr 13 2018
-  dfs: Apr 20 2018
-  bfs: Apr 27 2018
-  review-2: May 11 2018
+  multidimensional-arrays: Dec 15 2017
+  '1@Review': Jan 12 2017
+  '0@Take Up The CCC': Feb 9 2017
+  other-containers: Feb 16 2017
+  functions: Feb 23 2018
+  functions-continued: Mar 2 2018
+  structures: Mar 9 2018
+  type-casting-type-modifiers: Mar 23 2018
+  '2@Review': Apr 6 2018
+  sorting-algorithms: Apr 13 2018
+  sorting-algorithms-time-complexity: Apr 20 2018
+  linear-and-binary-searches: Apr 27 2018
+  intro-to-dp: May 11 2018
+  dfs: May 18 2018
+  bfs: May 25 2018
+  '3@Review': Jun 1 2018
+  '0@TBD': Jun 8 2018
 ---
 
 Computer Science is one of the hardest courses to get started on. Unlike
