@@ -2,7 +2,7 @@
 liquid: true
 layout: lesson
 category: beginners
-lesson: 14
+lesson: 15
 ---
 = Structures
 

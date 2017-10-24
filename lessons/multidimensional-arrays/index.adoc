@@ -2,7 +2,7 @@
 liquid: true
 layout: lesson
 category: beginners
-lesson: 10
+lesson: 11
 ---
 = Multidimensional Arrays
 
