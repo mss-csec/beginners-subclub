@@ -303,8 +303,9 @@ if a condition results to true
 statement, will perform all commands and immediately skip to the end of
 the if structure.
 
-== Contest questions
+== Practice Problems
 
+* /lessons/beginners/if-structures/comprehension-qs[Comprehension Questions]
 * http://wcipeg.com/problem/p307ex9[Leap Year]
 * http://wcipeg.com/problem/ccc15j1[Special Day]
 * http://wcipeg.com/problem/ccc07j1[Who's in the Middle]
