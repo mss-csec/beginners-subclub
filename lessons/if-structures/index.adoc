@@ -305,7 +305,7 @@ the if structure.
 
 == Practice Problems
 
-* /lessons/beginners/if-structures/comprehension-qs[Comprehension Questions]
+* link:/lessons/beginners/if-structures/comprehension-qs[Comprehension Questions]
 * http://wcipeg.com/problem/p307ex9[Leap Year]
 * http://wcipeg.com/problem/ccc15j1[Special Day]
 * http://wcipeg.com/problem/ccc07j1[Who's in the Middle]
