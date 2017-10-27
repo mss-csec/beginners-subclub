@@ -57,12 +57,12 @@ Complete the following truth table.
 .. ``1==2``
 .. ``6>6``
 .. ``!true``
-.. ``1+2==5||7<=7``
+.. ``+1+2==5||7<=7+``
 .. ``0``
 .. ``!false && true``
 .. ``7%4%2==7/5``
 .. ``1``
-.. ``(1==2^4==3)^(1<2^4<3)``
+.. ``+(1==2^4==3)^(1<2^4<3)+``
 .. ``!(6!=5) || !(5>8) && 7+8 >= 6+9``
 
 . Determine an If condition that can be used to solve the following
