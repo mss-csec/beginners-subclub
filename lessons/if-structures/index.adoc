@@ -5,8 +5,11 @@ category: beginners
 lesson: 7
 ---
 = If Statements
+:toc: macro
 
 Goal: To be able to implement if statements into code.
+
+toc::[]
 
 == Relational Operators
 
