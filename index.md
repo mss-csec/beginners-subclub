@@ -10,9 +10,9 @@ schedule:
   an-introduction-to-variables: Oct 13 2017
   simple-inputs-and-wcipeg: Oct 13 2017
   if-structures: Oct 27 2017
-  loop-structures: Nov 3 2017
-  '0@Review': Dec 1 2017
-  arrays: Dec 8 2017
+  '0@Review': Nov 3 2017
+  loop-structures: Nov 17 2017
+  arrays: Dec 1 2017
   strings: Dec 8 2017
   multidimensional-arrays: Dec 15 2017
   '1@Review': Jan 12 2017
