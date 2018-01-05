@@ -53,17 +53,20 @@ Complete the following truth table.
 --
 
 . Determine whether the following conditions return true or false:
-
-.. ``1==2``
-.. ``6>6``
-.. ``!true``
-.. ``1+2==5||7<=7``
-.. ``0``
-.. ``!false && true``
-.. ``7%4%2==7/5``
-.. ``1``
-.. ``(1==2^4==3)^(1<2^4<3)``
-.. ``!(6!=5) || !(5>8) && 7+8 >= 6+9``
++
+--
+[#logic-3.quiz]
+.. ``1==2`` _true_ _!false_
+.. ``6>6`` _true_ _!false_
+.. ``!true`` _true_ _!false_
+.. ``+1+2==5||7<=7+`` _!true_ _false_
+.. ``0`` _true_ _!false_
+.. ``!false && true`` _!true_ _false_
+.. ``7%4%2==7/5`` _!true_ _false_
+.. ``1`` _!true_ _false_
+.. ``+(1==2^4==3)^(1<2^4<3)+`` _!true_ _false_
+.. ``!(6!=5) || !(5>8) && 7+8 >= 6+9`` _!true_ _false_
+--
 
 . Determine an If condition that can be used to solve the following
 scenarios.
@@ -169,7 +172,7 @@ but it is very hard to read and is filled with redundant comparisons.
 Your job is to change *Mr. Chow's if conditions* so that it makes more
 sense.
 
-[source,role=linenos]
+[source.linenos]
 ----
 #include <iostream>
 using namespace std;
@@ -204,34 +207,57 @@ int main() {
 <script>
 SCRIPTS.add(function() {
   var tests = $('.truth-test'),
+      quizs = $('.quiz'),
       refs = {};
 
   tests.each(function() {
     var ems = $(this).find('td > p > em'),
         id = $(this).attr('id');
 
-    ems.each(function(j) {
-      var ref = id + '-' + j;
-      refs[ref] = $(this).text();
-      $(this).replaceWith("<input type='text' placeholder='...' data-ref='" + ref + "'>");
+    ems.each(function(e, j) {
+      var ref = id + '-' + j,
+          val = $(this).text();
+
+      if (val === 'true') val = '1';
+      else if (val === 'false') val = '0';
+
+      refs[ref] = val;
+      $(this).after("<input type='text' placeholder='...' data-ref='" + ref + "'>");
+      $(this).remove();
     });
 
     $(this).after("<div class='paragraph'><button class='button-primary' data-ref=" + id + ">Check answers</button> <span style='font-size:1em;padding:3px;margin-left:5px'></span></div>");
   });
 
-  $('button[data-ref]').click(function() {
+  /*quizs.each(function() {
+    var questions = $(this).find('li'),
+        id = $(this).attr('id');
+
+    questions.each(function(j) {
+      var ref = id + '-' + j,
+          choices = $(this).find('em');
+
+      refs[ref] = choices.filter(function() {
+        return $(this).text().trim()[0] === '!';
+      }).first().text().slice(1);
+
+      choices.replaceWith();
+    });
+  });*/
+
+  $('button[data-ref]').on('click', function() {
     var test = $('#' + $(this).data('ref')),
-        inputs = test.find('input[data-ref]'),
+        inputs = test.find('[data-ref]'),
         errors = 0;
 
     inputs.each(function() {
       var check = refs[$(this).data('ref')],
-          val = $(this).val().trim().toLowerCase();
+          val = ($(this).val() || '').trim().toLowerCase();
 
       if (val === 'true') val = '1';
       else if (val === 'false') val = '0';
 
-      $(this).attr('title', '').removeClass('success error');
+      $(this).attr('title', '').removeClass('success').removeClass('error');
       if (check === val) {
         $(this).addClass('success');
       } else {
@@ -245,9 +271,9 @@ SCRIPTS.add(function() {
     });
 
     if (errors === 0) {
-      $(this).next().removeClass().addClass('label success').text('All correct!');
+      $(this).next().removeClass().addClass('label').addClass('success').text('All correct!');
     } else {
-      $(this).next().removeClass().addClass('label error').text('You have ' + errors + ' error' + (errors > 1 ? 's' : '') + '.');
+      $(this).next().removeClass().addClass('label').addClass('error').text('You have ' + errors + ' error' + (errors > 1 ? 's' : '') + '.');
     }
   });
 })
