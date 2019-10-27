@@ -4,7 +4,7 @@ layout: lesson
 category: beginners
 lesson: 6
 ---
-= Simple Inputs and WCIPEG
+= Simple Inputs and Markville Online Judge
 So far, the console was only told to output hardcoded values onto the
 screen. Other than outputting values, the console is also able to accept
 any inputs that are given by users.
@@ -48,30 +48,19 @@ int main() {
 >>> The Sum is 90
 ....
 
-== WCIPEG
+== M3C/MOJ
 
-http://wcipeg.com/[WCIPEG] is a website that has a collection of
-coding problems from various computer science contests as well as a wiki
-filled with useful information about coding algorithms. It also features
-an automated judge that will test any submitted code against its
-problem. Users could submit their code to be tested by the judge.
+https://m3cjudge.tk/[Markville Coding Online Judge] is a website that has
+problems from past contests as well as problems from other sources for
+students to practice coding. It also features an automated judge that will
+test any submitted code against its problems. Users could submit their code
+to be tested by the judge. This website also has live coding contests to
+allow users to practice for the CCC in February.
 
 Only registered users are able to use the online judge on the site. To
-register, go to the http://wcipeg.com/[WCIPEG main page] and click on
-*_register an account_* on the top right corner. To join the Markville
-Secondary School Organization on WCIPEG, go to *_My Account_ > _Edit
-User Info_*, and select *_Markville Secondary School_* as your
-organization. *:))*
-
-== DMOJ
-
-https://dmoj.ca/[DMOJ] is a website similar to WCIPEG that has
-problems from past contests as well as problems from other sources for
-students to practice coding. It also features an automated judge.
-
-Like on WCIPEG, you will have to register an account on DMOJ. To
-register, click the *_register_* button in the top right corner. Sadly,
-Markville Secondary School isn't an organization on DMOJ.
+register, click the *_register_* button in the top right corner. To join the
+Markville Secodnary School Organization on M3C, go to your profile
+and change the organization to *_Markville Secondary School CS_*. *:))*
 
 == Submitting Code
 
@@ -102,11 +91,11 @@ these sites.
 
 * `cin` is a command found in the `<iostream>` library that takes a user input
 and stores it into a variable.
-* WCIPEG and DMOJ are sites made for students to practice contest-styled
+* M3C is a site made for students to practice contest-styled
 coding problems
 
 == Contest Questions
 
-* http://wcipeg.com/problem/aplusb[A plus B]
-* http://wcipeg.com/problem/coci062p1[Task R2]
-* https://dmoj.ca/problem/ccc10j1[CCC '10 J1]
+* http://m3cjudge.tk/problem/aplusb[A plus B]
+* http://m3cjudge.tk/problem/coci062p1[Task R2]
+* http://m3cjudge.tk/problem/ccc10j1[CCC '10 J1]
