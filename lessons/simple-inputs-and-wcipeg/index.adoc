@@ -50,7 +50,7 @@ int main() {
 
 == M3C/MOJ
 
-https://m3cjudge.tk/[Markville Coding Online Judge] is a website that has
+http://m3cjudge.tk/[Markville Coding Online Judge] is a website that has
 problems from past contests as well as problems from other sources for
 students to practice coding. It also features an automated judge that will
 test any submitted code against its problems. Users could submit their code
