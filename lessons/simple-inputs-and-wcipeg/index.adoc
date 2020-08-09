@@ -5,6 +5,7 @@ category: beginners
 lesson: 6
 ---
 = Simple Inputs and Markville Online Judge
+
 So far, the console was only told to output hardcoded values onto the
 screen. Other than outputting values, the console is also able to accept
 any inputs that are given by users.
